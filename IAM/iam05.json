@@ -1,0 +1,11 @@
+{
+  "bindings":[
+    {
+      "role": "roles/dataproc.serviceAgent",
+      "members": [
+        "user:admin@yuanhancn.altostrat.com"
+      ]
+    }
+  ],
+  "etag": "ACAB"
+}

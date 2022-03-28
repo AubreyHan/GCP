@@ -1,0 +1,127 @@
+{
+  "bindings": [
+    {
+      "members": [
+        "serviceAccount:abc-aditum-dev-demo@appspot.gserviceaccount.com"
+      ],
+      "role": "roles/bigquery.dataEditor"
+    },
+    {
+      "members": [
+        "serviceAccount:cloud-environments.google.com@appspot.gserviceaccount.com",
+        "user:admin@yuanhancn.altostrat.com"
+      ],
+      "role": "roles/billing.admin"
+    },
+    {
+      "members": [
+        "user:admin@yuanhancn.altostrat.com"
+      ],
+      "role": "roles/billing.user"
+    },
+    {
+      "members": [
+        "group:cloud-sales-gcp-resource-mgmt@twosync.google.com",
+        "serviceAccount:abc-aditum-dev-demo@appspot.gserviceaccount.com"
+      ],
+      "role": "roles/cloudasset.owner"
+    },
+    {
+      "members": [
+        "user:admin@yuanhancn.altostrat.com"
+      ],
+      "role": "roles/cloudsupport.admin"
+    },
+    {
+      "members": [
+        "user:admin@yuanhancn.altostrat.com"
+      ],
+      "role": "roles/dataproc.editor"
+    },
+    {
+      "members": [
+        "group:cloud-sales-gcp-resource-mgmt@twosync.google.com"
+      ],
+      "role": "roles/dns.admin"
+    },
+    {
+      "members": [
+        "serviceAccount:cloud-environments.google.com@appspot.gserviceaccount.com"
+      ],
+      "role": "roles/essentialcontacts.admin"
+    },
+    {
+      "members": [
+        "user:admin@yuanhancn.altostrat.com"
+      ],
+      "role": "roles/iam.organizationRoleAdmin"
+    },
+    {
+      "members": [
+        "group:cloud-sales-gcp-resource-mgmt@twosync.google.com",
+        "serviceAccount:611923862592@cloudbuild.gserviceaccount.com",
+        "serviceAccount:cloud-environments.google.com@appspot.gserviceaccount.com",
+        "user:admin@yuanhancn.altostrat.com"
+      ],
+      "role": "roles/orgpolicy.policyAdmin"
+    },
+    {
+      "members": [
+        "serviceAccount:611923862592@cloudbuild.gserviceaccount.com",
+        "serviceAccount:cloud-environments.google.com@appspot.gserviceaccount.com",
+        "user:admin@yuanhancn.altostrat.com"
+      ],
+      "role": "roles/owner"
+    },
+    {
+      "members": [
+        "serviceAccount:abc-aditum-dev-demo@appspot.gserviceaccount.com"
+      ],
+      "role": "roles/pubsub.editor"
+    },
+    {
+      "members": [
+        "serviceAccount:cloud-environments.google.com@appspot.gserviceaccount.com",
+        "user:admin@yuanhancn.altostrat.com"
+      ],
+      "role": "roles/resourcemanager.folderAdmin"
+    },
+    {
+      "members": [
+        "serviceAccount:611923862592@cloudbuild.gserviceaccount.com"
+      ],
+      "role": "roles/resourcemanager.folderCreator"
+    },
+    {
+      "members": [
+        "group:cloud-sales-gcp-resource-mgmt@twosync.google.com",
+        "serviceAccount:cloud-environments.google.com@appspot.gserviceaccount.com",
+        "user:admin@yuanhancn.altostrat.com"
+      ],
+      "role": "roles/resourcemanager.organizationAdmin"
+    },
+    {
+      "members": [
+        "user:admin@yuanhancn.altostrat.com"
+      ],
+      "role": "roles/resourcemanager.organizationViewer"
+    },
+    {
+      "members": [
+        "domain:yuanhancn.altostrat.com",
+        "serviceAccount:611923862592@cloudbuild.gserviceaccount.com",
+        "user:admin@yuanhancn.altostrat.com"
+      ],
+      "role": "roles/resourcemanager.projectCreator"
+    },
+    {
+      "members": [
+        "serviceAccount:cloud-environments.google.com@appspot.gserviceaccount.com",
+        "user:admin@yuanhancn.altostrat.com"
+      ],
+      "role": "roles/securitycenter.admin"
+    }
+  ],
+  "etag": "BwXbRwp3jlw=",
+  "version": 1
+}

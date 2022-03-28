@@ -1,0 +1,39 @@
+{
+  "bindings": [
+    {
+      "members": [
+        "serviceAccount:service-309478345384@compute-system.iam.gserviceaccount.com"
+      ],
+      "role": "roles/compute.serviceAgent"
+    },
+    {
+      "members": [
+        "serviceAccount:hy-dataproc@hy-demo20220328-02.iam.gserviceaccount.com",
+        "user:admin@yuanhancn.altostrat.com"
+      ],
+      "role": "roles/dataproc.editor"
+    },
+    {
+      "members": [
+        "serviceAccount:service-309478345384@dataproc-accounts.iam.gserviceaccount.com",
+        "serviceAccount:hy-dataproc@hy-demo20220328-02.iam.gserviceaccount.com"
+      ],
+      "role": "roles/dataproc.serviceAgent"
+    },
+    {
+      "members": [
+        "serviceAccount:309478345384@cloudservices.gserviceaccount.com",
+        "user:admin@yuanhancn.altostrat.com"
+      ],
+      "role": "roles/editor"
+    },
+    {
+      "members": [
+        "user:admin@yuanhancn.altostrat.com"
+      ],
+      "role": "roles/owner"
+    }
+  ],
+  "etag": "BwXbR2XrwA0=",
+  "version": 1
+}

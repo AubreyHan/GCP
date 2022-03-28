@@ -1,0 +1,24 @@
+{
+  "bindings": [
+    {
+      "members": [
+        "serviceAccount:337350943022@cloudservices.gserviceaccount.com"
+      ],
+      "role": "roles/editor"
+    },
+    {
+      "members": [
+        "user:admin@yuanhancn.altostrat.com"
+      ],
+      "role": "roles/owner"
+    },
+    {
+      "members":[
+        "user:admin@yuanhancn.altostrat.com"
+      ],
+      "role": "roles/compute.storageAdmin"
+    }
+  ],
+  "etag": "BwXbQlLgFYs=",
+  "version": 1
+}
