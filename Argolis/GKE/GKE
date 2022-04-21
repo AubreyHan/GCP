@@ -1,0 +1,57 @@
+#Enable API
+gcloud services enable compute.googleapis.com
+gcloud services enable container.googleapis.com
+
+
+#Create VPC
+gcloud compute networks create default --subnet-mode=auto
+
+
+#Update Policy
+project_id=hy-k8s-004
+
+cat > os_login.yaml << ENDOFFILE
+name: projects/$project_id/policies/compute.requireOsLogin
+spec:
+  rules:
+  - enforce: false
+ENDOFFILE
+
+gcloud org-policies set-policy os_login.yaml 
+
+cat > shieldedVm.yaml << ENDOFFILE
+name: projects/$project_id/policies/compute.requireShieldedVm
+spec:
+  rules:
+  - enforce: false
+ENDOFFILE
+
+gcloud org-policies set-policy shieldedVm.yaml 
+
+cat > vmCanIpForward.yaml << ENDOFFILE
+name: projects/$project_id/policies/compute.vmCanIpForward
+spec:
+  rules:
+  - allowAll: true
+ENDOFFILE
+
+gcloud org-policies set-policy vmCanIpForward.yaml
+
+
+cat > vmExternalIpAccess.yaml << ENDOFFILE
+name: projects/$project_id/policies/compute.vmExternalIpAccess
+spec:
+  rules:
+  - allowAll: true
+ENDOFFILE
+
+gcloud org-policies set-policy vmExternalIpAccess.yaml
+
+cat > restrictVpcPeering.yaml << ENDOFFILE
+name: projects/$project_id/policies/compute.restrictVpcPeering
+spec:
+  rules:
+  - allowAll: true
+ENDOFFILE
+
+gcloud org-policies set-policy restrictVpcPeering.yaml
