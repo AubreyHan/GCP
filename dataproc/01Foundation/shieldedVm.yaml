@@ -1,4 +1,0 @@
-name: projects/hy-dataproc-02/policies/compute.requireShieldedVm
-spec:
-  rules:
-  - enforce: false

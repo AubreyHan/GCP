@@ -8,7 +8,7 @@ gcloud compute networks create default --subnet-mode=auto
 
 
 #Update Policy
-project_id=hy-k8s-004
+project_id=hy-202200422-01
 
 cat > os_login.yaml << ENDOFFILE
 name: projects/$project_id/policies/compute.requireOsLogin

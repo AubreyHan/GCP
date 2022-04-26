@@ -4,9 +4,9 @@ gcloud container clusters create demo02 \
     --addons ConfigConnector \
     --region=us-east1 \
     --node-locations us-east1-b \
-    --workload-pool=hy-k8s-003.svc.id.goog \
+    --workload-pool=hy-202200422-01.svc.id.goog \
     --workload-metadata=GKE_METADATA \
-    --node-version=1.21.10-gke.2000 \
+    --node-version=1.21.6-gke.1503 \
     --num-nodes=1 \
     --machine-type=n2d-standard-4 \
     --enable-network-policy --enable-autorepair
