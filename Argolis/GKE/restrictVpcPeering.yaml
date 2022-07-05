@@ -1,4 +1,4 @@
-name: projects/hy-k8s-001/policies/compute.restrictVpcPeering
+name: projects/hy-20220705-01/policies/compute.restrictVpcPeering
 spec:
   rules:
   - allowAll: true

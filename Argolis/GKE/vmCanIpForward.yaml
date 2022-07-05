@@ -1,4 +1,4 @@
-name: projects/hy-k8s-001/policies/compute.vmCanIpForward
+name: projects/hy-20220705-01/policies/compute.vmCanIpForward
 spec:
   rules:
   - allowAll: true
