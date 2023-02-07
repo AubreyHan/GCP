@@ -1,0 +1,4 @@
+name: folders/939316359797/policies/compute.requireShieldedVm
+spec:
+  rules:
+  - enforce: false

@@ -1,4 +1,0 @@
-name: projects/hy-20220705-01/policies/compute.requireOsLogin
-spec:
-  rules:
-  - enforce: false
