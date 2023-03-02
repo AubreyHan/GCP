@@ -5,4 +5,4 @@ gcloud org-policies set-policy vmCanIpForward.yaml
 gcloud org-policies set-policy vmExternalIpAccess.yaml
 gcloud org-policies set-policy trustedImageProjects.yaml
 gcloud org-policies set-policy allowedPolicyMemberDomains.yaml
-
+gcloud org-policies set-policy disableServiceAccountKeyCreation.yaml
