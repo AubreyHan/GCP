@@ -8,6 +8,9 @@ REGION='us-central1'
 VPC_NETWORK='default'
 VPC_SUBNETWORK='default'
 BUILD_REGIST='hy-repo-001'
+FILESTORE_NAME='hy-fstore-001'
+FILESTORE_ZONE='us-central1-a'
+FILESHARE_NAME='hy_fshare_001'
 
 #GKE Create and Config
 gcloud beta container --project ${PROJECT_ID} clusters create ${GKE_CLUSTER_NAME} --region ${REGION} \
@@ -34,3 +37,10 @@ gcloud auth configure-docker ${REGION}-docker.pkg.dev
 cd Stable-Diffusion-on-GCP/Stable-Diffusion-UI-Agones/sd-webui
 docker build . -t ${REGION}-docker.pkg.dev/${PROJECT_ID}/${BUILD_REGIST}/sd-webui:0.1
 docker push ${REGION}-docker.pkg.dev/${PROJECT_ID}/${BUILD_REGIST}/sd-webui:0.1
+
+#Create FileStor and mount
+gcloud filestore instances create ${FILESTORE_NAME} --zone=${FILESTORE_ZONE} --tier=BASIC_HDD --file-share=name=${FILESHARE_NAME},capacity=1TB --network=name=${VPC_NETWORK}
+gcloud filestore instances create nfs-store --zone=us-central1-b --tier=BASIC_HDD --file-share=name="vol1",capacity=1TB --network=name=${VPC_NETWORK}
+kubectl apply -f ./Stable-Diffusion-UI-Agones/agones/nfs_pv.yaml
+kubectl apply -f ./Stable-Diffusion-UI-Agones/agones/nfs_pvc.yaml
+
