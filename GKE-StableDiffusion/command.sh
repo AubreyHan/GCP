@@ -29,3 +29,8 @@ kubectl apply -f https://raw.githubusercontent.com/GoogleCloudPlatform/container
 gcloud artifacts repositories create ${BUILD_REGIST} --repository-format=docker \
 --location=${REGION}
 gcloud auth configure-docker ${REGION}-docker.pkg.dev
+
+# Build Stable Diffusion Image
+cd Stable-Diffusion-on-GCP/Stable-Diffusion-UI-Agones/sd-webui
+docker build . -t ${REGION}-docker.pkg.dev/${PROJECT_ID}/${BUILD_REGIST}/sd-webui:0.1
+docker push ${REGION}-docker.pkg.dev/${PROJECT_ID}/${BUILD_REGIST}/sd-webui:0.1
