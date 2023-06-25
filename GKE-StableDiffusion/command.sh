@@ -44,3 +44,12 @@ gcloud filestore instances create nfs-store --zone=us-central1-b --tier=BASIC_HD
 kubectl apply -f ./Stable-Diffusion-UI-Agones/agones/nfs_pv.yaml
 kubectl apply -f ./Stable-Diffusion-UI-Agones/agones/nfs_pvc.yaml
 
+# Install Argones
+helm repo add agones https://agones.dev/chart/stable
+helm repo update
+kubectl create namespace agones-system
+cd Stable-Diffusion-on-GCP/Stable-Diffusion-UI-Agones
+helm install sd-agones-release --namespace agones-system -f ./agones/values.yaml agones/agones
+
+# Create Redis
+
