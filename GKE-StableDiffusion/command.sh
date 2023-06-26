@@ -52,4 +52,5 @@ cd Stable-Diffusion-on-GCP/Stable-Diffusion-UI-Agones
 helm install sd-agones-release --namespace agones-system -f ./agones/values.yaml agones/agones
 
 # Create Redis
-
+gcloud redis instances create --project=${PROJECT_ID}  sd-agones-cache --tier=standard --size=1 --region=${REGION} --redis-version=redis_6_x --network=projects/${PROJECT_ID}/global/networks/${VPC_NETWORK} --connect-mode=DIRECT_PEERING
+gcloud redis instances describe sd-agones-cache --region ${REGION} --format=json | jq .host
