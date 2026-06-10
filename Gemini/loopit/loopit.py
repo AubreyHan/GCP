@@ -5,7 +5,7 @@ client = genai.Client(
   project="cloud-llm-preview4",
   location="global",
   vertexai=True,
-  v
+  vertex
 )
 
 user_prompt = "制作一个我和网红小猫Fedya打网球的游戏，第一视角游戏，我的人物不需要出镜，网球过半场后，我点击网球，网球根据我点击的位置物理弹回到Fedya那边，初始球速慢，球速随着回合数增加，逐渐加快，生成游戏包含的全部素材，场景图，角色精灵图，音效等。"
