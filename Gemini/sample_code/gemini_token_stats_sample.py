@@ -1,3 +1,5 @@
+import os
+import urllib.request
 from collections import defaultdict
 from google import genai
 from google.genai import types
@@ -14,16 +16,24 @@ client = genai.Client(
     http_options={"base_url": "https://us-central1-aiplatform.googleapis.com"},
 )
 
-# 标准合法的 1x1 像素 PNG 单色图片字节流（用于真实触发大模型图像模态内核）
-sample_img_bytes = b"\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR\x00\x00\x00\x01\x00\x00\x00\x01\x08\x06\x00\x00\x00\x1f\x15c4\x00\x00\x00\rIDATx\x9cc`\xd0\xd2\xc2\x00\x00\x03\x1f\x01\x19\xed\x95\x80\xb7\x00\x00\x00\x00IEND\xaeB`\x82"
+img_path = "google_logo_sample.png"
+if not os.path.exists(img_path):
+    print("正在自动下载标准测试图像...")
+    urllib.request.urlretrieve(
+        "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png",
+        img_path
+    )
 
-print("正在发起多模态（文本 + 图片）混合 Token 评测请求...")
+print("正在发起多模态（文本指令 + 真实GoogleLogo图片）混合请求...")
+
+with open(img_path, "rb") as f:
+    img_bytes = f.read()
 
 response = client.models.generate_content(
     model="gemini-3.5-flash",
     contents=[
-        "请确认你收到了一张图片，并向我问好：hello",
-        types.Part.from_bytes(data=sample_img_bytes, mime_type="image/png"),
+        "请确认你看到了 Google 的 Logo，并说：hello",
+        types.Part.from_bytes(data=img_bytes, mime_type="image/png"),
     ],
 )
 
@@ -31,7 +41,7 @@ usage = response.usage_metadata
 
 print("-" * 50)
 print(f"【Model】: gemini-3.5-flash @ us (Multi-Region)")
-print(f"【Prompt】: 文本指令 + 1x1像素PNG图片示例")
+print(f"【Prompt】: 文本指令 + GoogleLogo测试图片")
 print(f"【Response】:\n{response.text.strip() if response.text else ""}")
 print("-" * 50)
 
