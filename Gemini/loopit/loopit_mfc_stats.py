@@ -436,6 +436,7 @@ tools_definition = [{
 
 
 import os as _os
+import time as _time
 
 models_to_test = [
     "gemini-3-flash-preview",
@@ -443,24 +444,51 @@ models_to_test = [
     "gemini-3.1-pro-preview"
 ]
 
-thinking_levels = ["MINIMAL", "HIGH"]
+candidate_levels = [None, "MINIMAL", "HIGH"]
 
-NUM_RUNS = 10
-log_path = _os.path.join(_os.path.dirname(__file__), "mfc_benchmark_thinking_levels.log")
-log_file = open(log_path, "a", encoding="utf-8")
+NUM_RUNS = 100
+log_path = _os.path.join(_os.path.dirname(__file__), "mfc_benchmark_all_levels_100.log")
 
 def log_print(msg=""):
     print(msg)
-    log_file.write(msg + "\n")
-    log_file.flush()
+    with open(log_path, "a", encoding="utf-8") as f:
+        f.write(msg + "\n")
 
-log_print("=" * 60)
-log_print(f"开始多 Thinking Level × 多机型 对比评测 (每组合 {NUM_RUNS} 遍) - 日志: {log_path}")
-log_print("=" * 60)
+log_print("=" * 70)
+log_print(f"开始 终极全组合评测: 多机型 × 自适应 Thinking Level (每组合 {NUM_RUNS} 遍)")
+log_print(f"开始时间: {_time.strftime("%Y-%m-%d %H:%M:%S")} | 日志文件: {log_path}")
+log_print("=" * 70)
 
 for model_name in models_to_test:
-    for t_level in thinking_levels:
-        log_print(f"\n正在评测机型: [{model_name}] | Thinking Level: [{t_level}] ...")
+    log_print(f"\n" + "*" * 60)
+    log_print(f"【进入机型】: {model_name}")
+    log_print("*" * 60)
+    
+    supported_levels = []
+    log_print("正在智能探测该机型支持的 Thinking Level 兼容性...")
+    
+    for lvl in candidate_levels:
+        try:
+            probe_config = types.GenerateContentConfig(
+                thinking_config=types.ThinkingConfig(thinking_level=lvl) if lvl else None,
+            )
+            client.models.generate_content(
+                model=model_name,
+                contents="ping",
+                config=probe_config
+            )
+            supported_levels.append(lvl)
+            log_print(f"  [探测成功] 支持 level: {lvl or "Default(None)"}")
+        except Exception as e:
+            log_print(f"  [探测失败/不支持] level: {lvl or "Default(None)"} (原因: {e})")
+
+    log_print(f"机型 [{model_name}] 最终确认支持的 Level 列表: {[l or "Default" for l in supported_levels]}\n")
+
+    for t_level in supported_levels:
+        lvl_label = t_level or "Default"
+        log_print(f"\n" + "-" * 55)
+        log_print(f">>> 开始组合评测: 机型 [{model_name}] | Thinking: [{lvl_label}]")
+        log_print("-" * 55)
         
         curr_config = types.GenerateContentConfig(
             system_instruction=system_instruction,
@@ -505,15 +533,21 @@ for model_name in models_to_test:
                 if stop_reason and "MALFORMED_FUNCTION_CALL" in str(stop_reason):
                     mfc_count += 1
                 success_runs += 1
-                log_print(f"  - 第 {i:2d} 遍完成，Stop Reason: {stop_reason}")
+                
+                print(f"  - 第 {i:3d} 遍完成，Stop Reason: {stop_reason}")
                 
             except Exception as e:
-                log_print(f"  - 第 {i:2d} 遍请求发生异常: {e}")
+                print(f"  - 第 {i:3d} 遍请求发生异常: {e}")
+                _time.sleep(2)
 
         freq = (mfc_count / success_runs) * 100 if success_runs > 0 else 0
         log_print("-" * 50)
-        log_print(f"【组合统计报告】: {model_name} (Thinking: {t_level})")
-        log_print(f"  * 成功运行总遍数: {success_runs} / {NUM_RUNS}")
-        log_print(f"  * MFC 出现次数  : {mfc_count}")
-        log_print(f"  * MFC 出现频率  : {freq:.2f}% ({mfc_count}/{success_runs})")
+        log_print(f"【终极统计报告】: {model_name} (Thinking Level: {lvl_label})")
+        log_print(f"  * 成功样本数  : {success_runs} / {NUM_RUNS}")
+        log_print(f"  * MFC 出现次数: {mfc_count}")
+        log_print(f"  * MFC 发生频率: {freq:.2f}% ({mfc_count}/{success_runs})")
         log_print("-" * 50)
+
+log_print("\n" + "=" * 70)
+log_print(f"全量百遍组合评测圆满完成！完成时间: {_time.strftime("%Y-%m-%d %H:%M:%S")}")
+log_print("=" * 70)
