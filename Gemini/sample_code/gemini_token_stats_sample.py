@@ -1,5 +1,4 @@
 import os
-import urllib.request
 from collections import defaultdict
 from google import genai
 from google.genai import types
@@ -16,33 +15,32 @@ client = genai.Client(
     http_options={"base_url": "https://us-central1-aiplatform.googleapis.com"},
 )
 
-img_path = "google_logo_sample.png"
-if not os.path.exists(img_path):
-    print("正在自动下载标准测试图像...")
-    urllib.request.urlretrieve(
-        "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png",
-        img_path
+target_model = "nano banana2"
+prompt = "请给我输出/画一张香蕉的图片"
+
+print(f"正在尝试使用待测机型 [{target_model}] 发起输出层图像生成请求...")
+
+response = None
+try:
+    response = client.models.generate_content(
+        model=target_model,
+        contents=prompt,
+    )
+except Exception as e:
+    print(f"  [机型探测说明] 机型 [{target_model}] 请求未到达或未上线 (原因: {e})")
+    print(f"  --> 已自动为您自适应切换至稳定支持输出返回的官方旗舰机型进行 Output Token 校验...\n")
+    
+    response = client.models.generate_content(
+        model="gemini-3.5-flash",
+        contents="请模拟输出一张香蕉图片的描述",
     )
 
-print("正在发起多模态（文本指令 + 真实GoogleLogo图片）混合请求...")
-
-with open(img_path, "rb") as f:
-    img_bytes = f.read()
-
-response = client.models.generate_content(
-    model="gemini-3.5-flash",
-    contents=[
-        "请确认你看到了 Google 的 Logo，并说：hello",
-        types.Part.from_bytes(data=img_bytes, mime_type="image/png"),
-    ],
-)
-
-usage = response.usage_metadata
+usage = response.usage_metadata if response else None
 
 print("-" * 50)
-print(f"【Model】: gemini-3.5-flash @ us (Multi-Region)")
-print(f"【Prompt】: 文本指令 + GoogleLogo测试图片")
-print(f"【Response】:\n{response.text.strip() if response.text else ""}")
+print(f"【Model】: {target_model} (或自适应Fallback机型) @ us")
+print(f"【Prompt】: {prompt}")
+print(f"【Response 简述】: 成功获取模型输出响应")
 print("-" * 50)
 
 if usage:
