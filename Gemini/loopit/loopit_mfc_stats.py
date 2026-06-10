@@ -444,7 +444,20 @@ config = types.GenerateContentConfig(
     tool_config=types.ToolConfig(
         function_calling_config=types.FunctionCallingConfig(
             mode="ANY",
-            allowed_funcmodels_to_test = [
+            allowed_function_names=[
+                "read",
+                "write",
+                "edit",
+                "shell",
+                "generate_assets",
+                "finish",
+            ],
+            stream_function_call_arguments=True,
+        )
+    ),
+)
+
+models_to_test = [
     "gemini-3-flash-preview",
     "gemini-3.5-flash",
     "gemini-3.1-pro-preview"
@@ -474,7 +487,7 @@ for model_name in models_to_test:
                 if chunk.candidates:
                     for cand in chunk.candidates:
                         if cand.finish_reason:
-                            stop_reason = getattr(cand.finish_reason, 'name', cand.finish_reason)
+                            stop_reason = getattr(cand.finish_reason, "name", cand.finish_reason)
                             
             if stop_reason and "MALFORMED_FUNCTION_CALL" in str(stop_reason):
                 mfc_count += 1
@@ -491,15 +504,3 @@ for model_name in models_to_test:
     print(f"  * MFC 出现次数  : {mfc_count}")
     print(f"  * MFC 出现频率  : {freq:.2f}% ({mfc_count}/{success_runs})")
     print("-" * 50)
-s
-
-        print("-" * 50)
-        print(f"【Function Name】: {fn_name}")
-        print(f"【Arguments】: {fn_args}")
-        print(f"【Stop Reason】: {stop_reason}")
-        print("-" * 50)
-                        
-    except Exception as e:
-        print(f"请求发生异常: {e}")
-
-
