@@ -435,27 +435,7 @@ tools_definition = [{
 }]
 
 
-config = types.GenerateContentConfig(
-    system_instruction=system_instruction,
-    temperature=1.0,
-    thinking_config=types.ThinkingConfig(thinking_level="HIGH"),
-    tools=tools_definition,
-    max_output_tokens=65536,
-    tool_config=types.ToolConfig(
-        function_calling_config=types.FunctionCallingConfig(
-            mode="ANY",
-            allowed_function_names=[
-                "read",
-                "write",
-                "edit",
-                "shell",
-                "generate_assets",
-                "finish",
-            ],
-            stream_function_call_arguments=True,
-        )
-    ),
-)
+import os as _os
 
 models_to_test = [
     "gemini-3-flash-preview",
@@ -463,10 +443,10 @@ models_to_test = [
     "gemini-3.1-pro-preview"
 ]
 
-import os as _os
+thinking_levels = ["MINIMAL", "HIGH"]
 
-NUM_RUNS = 100
-log_path = _os.path.join(_os.path.dirname(__file__), "mfc_benchmark_100_thinking_high.log")
+NUM_RUNS = 10
+log_path = _os.path.join(_os.path.dirname(__file__), "mfc_benchmark_thinking_levels.log")
 log_file = open(log_path, "a", encoding="utf-8")
 
 def log_print(msg=""):
@@ -474,44 +454,66 @@ def log_print(msg=""):
     log_file.write(msg + "\n")
     log_file.flush()
 
-
-log_print("=" * 50)
-log_print(f"开始 MFC (MALFORMED_FUNCTION_CALL) 频率评测 (每机型 {NUM_RUNS} 遍) - 日志: {log_path}")
-log_print("=" * 50)
+log_print("=" * 60)
+log_print(f"开始多 Thinking Level × 多机型 对比评测 (每组合 {NUM_RUNS} 遍) - 日志: {log_path}")
+log_print("=" * 60)
 
 for model_name in models_to_test:
-    log_print(f"\n正在评测机型: [{model_name}] ...")
-    mfc_count = 0
-    success_runs = 0
-    
-    for i in range(1, NUM_RUNS + 1):
-        try:
-            response_stream = client.models.generate_content_stream(
-                model=model_name,
-                contents=user_prompt,
-                config=config
-            )
-            
-            stop_reason = None
-            for chunk in response_stream:
-                if chunk.candidates:
-                    for cand in chunk.candidates:
-                        if cand.finish_reason:
-                            stop_reason = getattr(cand.finish_reason, "name", cand.finish_reason)
-                            
-            if stop_reason and "MALFORMED_FUNCTION_CALL" in str(stop_reason):
-                mfc_count += 1
-            success_runs += 1
-            log_print(f"  - 第 {i:3d} 遍完成，Stop Reason: {stop_reason}")
-            
-        except Exception as e:
-            log_print(f"  - 第 {i:3d} 遍请求发生异常: {e}")
+    for t_level in thinking_levels:
+        log_print(f"\n正在评测机型: [{model_name}] | Thinking Level: [{t_level}] ...")
+        
+        curr_config = types.GenerateContentConfig(
+            system_instruction=system_instruction,
+            temperature=1.0,
+            thinking_config=types.ThinkingConfig(thinking_level=t_level) if t_level else None,
+            tools=tools_definition,
+            max_output_tokens=65536,
+            tool_config=types.ToolConfig(
+                function_calling_config=types.FunctionCallingConfig(
+                    mode="ANY",
+                    allowed_function_names=[
+                        "read",
+                        "write",
+                        "edit",
+                        "shell",
+                        "generate_assets",
+                        "finish",
+                    ],
+                    stream_function_call_arguments=True,
+                )
+            ),
+        )
 
-    freq = (mfc_count / success_runs) * 100 if success_runs > 0 else 0
-    log_print("-" * 50)
-    log_print(f"【机型统计报告】: {model_name}")
-    log_print(f"  * 成功运行总遍数: {success_runs} / {NUM_RUNS}")
-    log_print(f"  * MFC 出现次数  : {mfc_count}")
-    log_print(f"  * MFC 出现频率  : {freq:.2f}% ({mfc_count}/{success_runs})")
-    log_print("-" * 50)
+        mfc_count = 0
+        success_runs = 0
+        
+        for i in range(1, NUM_RUNS + 1):
+            try:
+                response_stream = client.models.generate_content_stream(
+                    model=model_name,
+                    contents=user_prompt,
+                    config=curr_config
+                )
+                
+                stop_reason = None
+                for chunk in response_stream:
+                    if chunk.candidates:
+                        for cand in chunk.candidates:
+                            if cand.finish_reason:
+                                stop_reason = getattr(cand.finish_reason, "name", cand.finish_reason)
+                                
+                if stop_reason and "MALFORMED_FUNCTION_CALL" in str(stop_reason):
+                    mfc_count += 1
+                success_runs += 1
+                log_print(f"  - 第 {i:2d} 遍完成，Stop Reason: {stop_reason}")
+                
+            except Exception as e:
+                log_print(f"  - 第 {i:2d} 遍请求发生异常: {e}")
 
+        freq = (mfc_count / success_runs) * 100 if success_runs > 0 else 0
+        log_print("-" * 50)
+        log_print(f"【组合统计报告】: {model_name} (Thinking: {t_level})")
+        log_print(f"  * 成功运行总遍数: {success_runs} / {NUM_RUNS}")
+        log_print(f"  * MFC 出现次数  : {mfc_count}")
+        log_print(f"  * MFC 出现频率  : {freq:.2f}% ({mfc_count}/{success_runs})")
+        log_print("-" * 50)
