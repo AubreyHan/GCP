@@ -463,7 +463,7 @@ models_to_test = [
     "gemini-3.1-pro-preview"
 ]
 
-NUM_RUNS = 10
+NUM_RUNS = 100
 
 print("=" * 50)
 print(f"开始 MFC (MALFORMED_FUNCTION_CALL) 频率评测 (每机型 {NUM_RUNS} 遍)")
