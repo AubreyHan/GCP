@@ -1,6 +1,11 @@
 from collections import defaultdict
 from google import genai
+from google.genai import types
 
+# =====================================================================
+# 终极多模态 Token 用量统计标杆程序
+# 原生支持全模态动态归类：TEXT（文本）、IMAGE（图片）、AUDIO（音频）、VIDEO（视频）
+# =====================================================================
 # 按照最新的 multi-region 方式，使用 "us" 作为区域标识；
 # 针对本地 DNS 无法解析 mtls.rep 域名的问题，底层重定向至合法的 API 接入点
 client = genai.Client(
