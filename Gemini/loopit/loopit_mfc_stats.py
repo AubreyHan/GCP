@@ -438,7 +438,7 @@ tools_definition = [{
 config = types.GenerateContentConfig(
     system_instruction=system_instruction,
     temperature=1.0,
-    # thinking_config=types.ThinkingConfig(thinking_level="MINIMAL"),
+    thinking_config=types.ThinkingConfig(thinking_level="HIGH"),
     tools=tools_definition,
     max_output_tokens=65536,
     tool_config=types.ToolConfig(
@@ -466,13 +466,14 @@ models_to_test = [
 import os as _os
 
 NUM_RUNS = 100
-log_path = _os.path.join(_os.path.dirname(__file__), "mfc_benchmark_100.log")
+log_path = _os.path.join(_os.path.dirname(__file__), "mfc_benchmark_100_thinking_high.log")
 log_file = open(log_path, "a", encoding="utf-8")
 
 def log_print(msg=""):
     print(msg)
     log_file.write(msg + "\n")
     log_file.flush()
+
 
 log_print("=" * 50)
 log_print(f"开始 MFC (MALFORMED_FUNCTION_CALL) 频率评测 (每机型 {NUM_RUNS} 遍) - 日志: {log_path}")
