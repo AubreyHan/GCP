@@ -1,4 +1,5 @@
 import os
+import urllib.request
 from collections import defaultdict
 from google import genai
 from google.genai import types
@@ -21,21 +22,38 @@ MODEL_ALIAS_MAP = {
 
 input_model = "nano banana2"
 actual_model = MODEL_ALIAS_MAP.get(input_model, input_model)
-prompt = "请给我生成/画一张黄色的香蕉图片"
 
-print(f"正在使用机型代号 [{input_model}] (底层映射为 API Endpoint: [{actual_model}]) 发起图像生成请求...")
+img_path = "google_logo_sample.png"
+if not os.path.exists(img_path):
+    print("正在自动下载用于编辑修改的初始示例图片...")
+    urllib.request.urlretrieve(
+        "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png",
+        img_path
+    )
+
+with open(img_path, "rb") as f:
+    raw_img_bytes = f.read()
+
+edit_prompt = "请修改这张 Google 的 Logo 图片：将其编辑转变为赛博朋克霓虹灯风格，并输出修改后的新图片"
+
+print(f"正在使用机型 [{input_model}] (映射为: [{actual_model}]) 发起双向【修改图片】编辑请求...")
+print(f"  --> 输入端：原始图片 + 修改指令 | 输出端：大模型生成的修改后新图片\n")
 
 response = client.models.generate_content(
     model=actual_model,
-    contents=prompt,
+    contents=[
+        edit_prompt,
+        types.Part.from_bytes(data=raw_img_bytes, mime_type="image/png"),
+    ],
 )
 
 usage = response.usage_metadata if response else None
 
 print("-" * 55)
 print(f"【Model】: {input_model} (映射为: {actual_model}) @ us")
-print(f"【Prompt】: {prompt}")
-print(f"【Response 简述】: 成功获取多模态交错输出响应")
+print(f"【Task】 : 真实双向图像修改编辑 (Image-to-Image Editing)")
+print(f"【Prompt】: {edit_prompt}")
+print(f"【Response 简述】: 成功获取模型吐出的修改后新图像数据")
 print("-" * 55)
 
 if usage:
