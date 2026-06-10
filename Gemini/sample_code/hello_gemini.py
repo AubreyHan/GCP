@@ -24,7 +24,7 @@ print(f"【Response】:\n{response.text.strip() if response.text else ''}")
 print("-" * 50)
 
 if usage:
-    print(f"【Token 全量与模态细化消耗报告】")
+    print(f"【Token 消耗细化统计报告】")
     
     p_cnt = getattr(usage, 'prompt_token_count', 0) or 0
     c_cnt = getattr(usage, 'candidates_token_count', 0) or 0
@@ -32,36 +32,46 @@ if usage:
     cache_cnt = getattr(usage, 'cached_content_token_count', 0) or 0
     thought_cnt = getattr(usage, 'thoughts_token_count', 0) or 0
     
-    print(f"  [基础总量]")
-    print(f"    - Prompt Tokens (总输入)     : {p_cnt}")
-    print(f"    - Candidate Tokens (总输出)  : {c_cnt}")
-    print(f"    - Total Tokens (总计)        : {t_cnt}")
-    print(f"    - Cached Content Tokens (缓存): {cache_cnt}")
-    if thought_cnt:
-        print(f"    * Thoughts Tokens (思考过程) : {thought_cnt}")
-    print("")
-
-    def print_modality_details(label, details_list):
-        print(f"  [{label} 按模态细分]")
+    def get_mod_str(details_list):
         if not details_list:
-            print("    * 无模态细分数据")
-            return
+            return ""
         mod_map = defaultdict(int)
         for d in details_list:
             m_name = getattr(d.modality, 'name', str(d.modality)).split('.')[-1]
             mod_map[m_name] += (d.token_count or 0)
-        for m, cnt in mod_map.items():
-            print(f"    * 模态 [{m.upper()}] : {cnt} tokens")
+        return "\n".join([f"      * 模态 [{m.upper()}] : {cnt}" for m, cnt in mod_map.items()])
 
-    print_modality_details("Prompt / 输入层", getattr(usage, 'prompt_tokens_details', []))
+    # 1. Input / Prompt
+    print(f"  - Prompt Tokens (输入层总计)     : {p_cnt}")
+    p_mods = get_mod_str(getattr(usage, 'prompt_tokens_details', []))
+    if p_mods:
+        print(p_mods)
     print("")
-    print_modality_details("Candidate / 输出层", getattr(usage, 'candidates_tokens_details', []))
-    
-    cache_details = getattr(usage, 'cache_tokens_details', [])
-    if cache_cnt or cache_details:
+
+    # 2. Output / Candidate
+    print(f"  - Candidate Tokens (输出层总计)  : {c_cnt}")
+    c_mods = get_mod_str(getattr(usage, 'candidates_tokens_details', []))
+    if c_mods:
+        print(c_mods)
+    print("")
+
+    # 3. Cache
+    print(f"  - Cached Content Tokens (缓存命中): {cache_cnt}")
+    cache_mods = get_mod_str(getattr(usage, 'cache_tokens_details', []))
+    if cache_mods:
+        print(cache_mods)
+    print("")
+
+    # 4. Thoughts
+    if thought_cnt:
+        print(f"  - Thoughts Tokens (思考推理过程): {thought_cnt}")
         print("")
-        print_modality_details("Cached Content / 缓存层", cache_details)
+
+    # 5. Total 放在最后压轴
+    print(f"  ========================================")
+    print(f"  - Total Tokens (总计消耗)        : {t_cnt}")
 
 else:
     print("【Token 消耗】: 无 usage_metadata 数据")
 print("-" * 50)
+
