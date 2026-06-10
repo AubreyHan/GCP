@@ -15,33 +15,28 @@ client = genai.Client(
     http_options={"base_url": "https://us-central1-aiplatform.googleapis.com"},
 )
 
-target_model = "nano banana2"
-prompt = "请给我输出/画一张香蕉的图片"
+MODEL_ALIAS_MAP = {
+    "nano banana2": "gemini-3.1-flash-image",
+}
 
-print(f"正在尝试使用待测机型 [{target_model}] 发起输出层图像生成请求...")
+input_model = "nano banana2"
+actual_model = MODEL_ALIAS_MAP.get(input_model, input_model)
+prompt = "请给我生成/画一张黄色的香蕉图片"
 
-response = None
-try:
-    response = client.models.generate_content(
-        model=target_model,
-        contents=prompt,
-    )
-except Exception as e:
-    print(f"  [机型探测说明] 机型 [{target_model}] 请求未到达或未上线 (原因: {e})")
-    print(f"  --> 已自动为您自适应切换至稳定支持输出返回的官方旗舰机型进行 Output Token 校验...\n")
-    
-    response = client.models.generate_content(
-        model="gemini-3.5-flash",
-        contents="请模拟输出一张香蕉图片的描述",
-    )
+print(f"正在使用机型代号 [{input_model}] (底层映射为 API Endpoint: [{actual_model}]) 发起图像生成请求...")
+
+response = client.models.generate_content(
+    model=actual_model,
+    contents=prompt,
+)
 
 usage = response.usage_metadata if response else None
 
-print("-" * 50)
-print(f"【Model】: {target_model} (或自适应Fallback机型) @ us")
+print("-" * 55)
+print(f"【Model】: {input_model} (映射为: {actual_model}) @ us")
 print(f"【Prompt】: {prompt}")
-print(f"【Response 简述】: 成功获取模型输出响应")
-print("-" * 50)
+print(f"【Response 简述】: 成功获取多模态交错输出响应")
+print("-" * 55)
 
 if usage:
     print(f"【Token 消耗细化统计报告】")
@@ -93,4 +88,4 @@ if usage:
 
 else:
     print("【Token 消耗】: 无 usage_metadata 数据")
-print("-" * 50)
+print("-" * 55)
