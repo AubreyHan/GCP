@@ -1,0 +1,18 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Auto Sync & Pull on Folder Open",
+      "type": "shell",
+      "command": "/Users/yuanhancn/Tools/GitRepo/GCP/.env/git_auto_sync.sh",
+      "isBackground": true,
+      "runOptions": {
+        "runOn": "folderOpen"
+      },
+      "presentation": {
+        "reveal": "never",
+        "panel": "shared"
+      }
+    }
+  ]
+}
