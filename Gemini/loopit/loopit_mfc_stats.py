@@ -442,13 +442,11 @@ from google import genai
 from google.genai import types
 
 MODEL_THINKING_MAP = {
-    "gemini-3-flash-preview": ["MINIMAL", "LOW", "MEDIUM", "HIGH"],
     "gemini-3.5-flash": ["MINIMAL", "LOW", "MEDIUM", "HIGH"],
-    "gemini-3.1-pro-preview": ["LOW", "MEDIUM", "HIGH"]
 }
 
 NUM_RUNS = 100
-log_path = _os.path.join(_os.path.dirname(__file__), "mfc_benchmark_round2_100.log")
+log_path = _os.path.join(_os.path.dirname(__file__), "gemini_3.5_flash_mfc_stats.log")
 
 def log_print(msg=""):
     print(msg)
@@ -456,7 +454,7 @@ def log_print(msg=""):
         f.write(msg + "\n")
 
 log_print("=" * 80)
-log_print(f"开始 第二轮官方规范全量评测 (最新的 us Multi-Region 方式) - 每组合 {NUM_RUNS} 遍")
+log_print(f"开始 Gemini 3.5 Flash 各级 thinking level 评测 - 每组合 {NUM_RUNS} 遍")
 log_print(f"参考规范: https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/thinking")
 log_print(f"开始时间: {_time.strftime('%Y-%m-%d %H:%M:%S')} | 日志文件: {log_path}")
 log_print("=" * 80)
