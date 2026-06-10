@@ -437,6 +437,7 @@ tools_definition = [{
 
 import os as _os
 import time as _time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from google.genai import types
 
 MODEL_THINKING_MAP = {
@@ -446,87 +447,102 @@ MODEL_THINKING_MAP = {
 }
 
 NUM_RUNS = 100
-log_path = _os.path.join(_os.path.dirname(__file__), "mfc_benchmark_official_docs_100.log")
+log_path = _os.path.join(_os.path.dirname(__file__), "mfc_benchmark_parallel_100.log")
 
 def log_print(msg=""):
     print(msg)
     with open(log_path, "a", encoding="utf-8") as f:
         f.write(msg + "\n")
 
-log_print("=" * 75)
-log_print(f"开始 史诗级官方规范全量评测: 多机型 × 全量 Thinking Level (每组合 {NUM_RUNS} 遍)")
+log_print("=" * 80)
+log_print(f"开始 极速并行版官方规范全量评测 (3线程并发) - 每组合 {NUM_RUNS} 遍")
 log_print(f"参考规范: https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/thinking")
-log_print(f"开始时间: {_time.strftime("%Y-%m-%d %H:%M:%S")} | 独立日志文件: {log_path}")
-log_print("=" * 75)
+log_print(f"开始时间: {_time.strftime("%Y-%m-%d %H:%M:%S")} | 日志文件: {log_path}")
+log_print("=" * 80)
 
+def benchmark_combination(model_name, t_level):
+    start_t = _time.time()
+    curr_config = types.GenerateContentConfig(
+        system_instruction=system_instruction,
+        temperature=1.0,
+        thinking_config=types.ThinkingConfig(thinking_level=t_level),
+        tools=tools_definition,
+        max_output_tokens=65536,
+        tool_config=types.ToolConfig(
+            function_calling_config=types.FunctionCallingConfig(
+                mode="ANY",
+                allowed_function_names=[
+                    "read",
+                    "write",
+                    "edit",
+                    "shell",
+                    "generate_assets",
+                    "finish",
+                ],
+                stream_function_call_arguments=True,
+            )
+        ),
+    )
+
+    mfc_count = 0
+    success_runs = 0
+
+    for i in range(1, NUM_RUNS + 1):
+        try:
+            response_stream = client.models.generate_content_stream(
+                model=model_name,
+                contents=user_prompt,
+                config=curr_config
+            )
+            
+            stop_reason = None
+            for chunk in response_stream:
+                if chunk.candidates:
+                    for cand in chunk.candidates:
+                        if cand.finish_reason:
+                            stop_reason = getattr(cand.finish_reason, "name", cand.finish_reason)
+                            
+            if stop_reason and "MALFORMED_FUNCTION_CALL" in str(stop_reason):
+                mfc_count += 1
+            success_runs += 1
+            
+            print(f"  [并发进度 | {model_name} @ {t_level}] 第 {i:3d}/{NUM_RUNS} 遍完成，Stop: {stop_reason}")
+            
+        except Exception as e:
+            print(f"  [并发异常 | {model_name} @ {t_level}] 第 {i:3d} 遍报错: {e}")
+            _time.sleep(2)
+
+    cost_t = _time.time() - start_t
+    freq = (mfc_count / success_runs) * 100 if success_runs > 0 else 0
+    
+    report = (
+        f"【并行组合终极报告】: 机型 [{model_name}] | Thinking: [{t_level}]\n"
+        f"  * 成功样本数  : {success_runs} / {NUM_RUNS} (耗时: {cost_t:.1f}s)\n"
+        f"  * MFC 出现次数: {mfc_count}\n"
+        f"  * MFC 发生频率: {freq:.2f}% ({mfc_count}/{success_runs})\n"
+        f"  " + "-" * 60
+    )
+    return report
+
+tasks = []
 for model_name, levels in MODEL_THINKING_MAP.items():
-    log_print(f"\n" + "*" * 65)
-    log_print(f"【进入机型】: {model_name} | 官方规范支持 Level 清单: {levels}")
-    log_print("*" * 65)
+    for lvl in levels:
+        tasks.append((model_name, lvl))
 
-    for t_level in levels:
-        log_print(f"\n" + "-" * 60)
-        log_print(f">>> 开始百遍大样本评测: 机型 [{model_name}] | Thinking Level: [{t_level}]")
-        log_print("-" * 60)
-        
-        curr_config = types.GenerateContentConfig(
-            system_instruction=system_instruction,
-            temperature=1.0,
-            thinking_config=types.ThinkingConfig(thinking_level=t_level),
-            tools=tools_definition,
-            max_output_tokens=65536,
-            tool_config=types.ToolConfig(
-                function_calling_config=types.FunctionCallingConfig(
-                    mode="ANY",
-                    allowed_function_names=[
-                        "read",
-                        "write",
-                        "edit",
-                        "shell",
-                        "generate_assets",
-                        "finish",
-                    ],
-                    stream_function_call_arguments=True,
-                )
-            ),
-        )
+log_print(f"共计组装完成 {len(tasks)} 个评测任务，启动 3 线程并发池...")
 
-        mfc_count = 0
-        success_runs = 0
-        
-        for i in range(1, NUM_RUNS + 1):
-            try:
-                response_stream = client.models.generate_content_stream(
-                    model=model_name,
-                    contents=user_prompt,
-                    config=curr_config
-                )
-                
-                stop_reason = None
-                for chunk in response_stream:
-                    if chunk.candidates:
-                        for cand in chunk.candidates:
-                            if cand.finish_reason:
-                                stop_reason = getattr(cand.finish_reason, "name", cand.finish_reason)
-                                
-                if stop_reason and "MALFORMED_FUNCTION_CALL" in str(stop_reason):
-                    mfc_count += 1
-                success_runs += 1
-                
-                print(f"  - 第 {i:3d} 遍完成，Stop Reason: {stop_reason}")
-                
-            except Exception as e:
-                print(f"  - 第 {i:3d} 遍请求发生异常: {e}")
-                _time.sleep(2)
+with ThreadPoolExecutor(max_workers=3) as executor:
+    future_to_task = {executor.submit(benchmark_combination, m, l): (m, l) for m, l in tasks}
+    
+    for future in as_completed(future_to_task):
+        m, l = future_to_task[future]
+        try:
+            res_report = future.result()
+            log_print(f"\n" + "-" * 60)
+            log_print(res_report)
+        except Exception as exc:
+            log_print(f"\n[任务池崩溃] 组合 ({m} @ {l}) 执行引发未捕获异常: {exc}")
 
-        freq = (mfc_count / success_runs) * 100 if success_runs > 0 else 0
-        log_print("-" * 55)
-        log_print(f"【终极官方规范统计报告】: {model_name} (Thinking: {t_level})")
-        log_print(f"  * 成功样本数  : {success_runs} / {NUM_RUNS}")
-        log_print(f"  * MFC 出现次数: {mfc_count}")
-        log_print(f"  * MFC 发生频率: {freq:.2f}% ({mfc_count}/{success_runs})")
-        log_print("-" * 55)
-
-log_print("\n" + "=" * 75)
-log_print(f"史诗级官方规范全量百遍评测圆满结束！结束时间: {_time.strftime("%Y-%m-%d %H:%M:%S")}")
-log_print("=" * 75)
+log_print("\n" + "=" * 80)
+log_print(f"史诗级 3线程并发版全量百遍评测圆满结束！结束时间: {_time.strftime("%Y-%m-%d %H:%M:%S")}")
+log_print("=" * 80)
