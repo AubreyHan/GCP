@@ -467,7 +467,7 @@ models_to_test = [
 ]
 log_file_path = os.path.join(os.path.dirname(__file__), "gemini_models_benchmark.log")
 
-NUM_RUNS = 100
+NUM_RUNS = 10
 
 with open(log_file_path, "a", encoding="utf-8") as log_f:
     def output_msg(msg):
