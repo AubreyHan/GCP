@@ -463,14 +463,23 @@ models_to_test = [
     "gemini-3.1-pro-preview"
 ]
 
-NUM_RUNS = 100
+import os as _os
 
-print("=" * 50)
-print(f"开始 MFC (MALFORMED_FUNCTION_CALL) 频率评测 (每机型 {NUM_RUNS} 遍)")
-print("=" * 50)
+NUM_RUNS = 100
+log_path = _os.path.join(_os.path.dirname(__file__), "mfc_benchmark_100.log")
+log_file = open(log_path, "a", encoding="utf-8")
+
+def log_print(msg=""):
+    print(msg)
+    log_file.write(msg + "\n")
+    log_file.flush()
+
+log_print("=" * 50)
+log_print(f"开始 MFC (MALFORMED_FUNCTION_CALL) 频率评测 (每机型 {NUM_RUNS} 遍) - 日志: {log_path}")
+log_print("=" * 50)
 
 for model_name in models_to_test:
-    print(f"\n正在评测机型: [{model_name}] ...")
+    log_print(f"\n正在评测机型: [{model_name}] ...")
     mfc_count = 0
     success_runs = 0
     
@@ -492,15 +501,16 @@ for model_name in models_to_test:
             if stop_reason and "MALFORMED_FUNCTION_CALL" in str(stop_reason):
                 mfc_count += 1
             success_runs += 1
-            print(f"  - 第 {i:2d} 遍完成，Stop Reason: {stop_reason}")
+            log_print(f"  - 第 {i:3d} 遍完成，Stop Reason: {stop_reason}")
             
         except Exception as e:
-            print(f"  - 第 {i:2d} 遍请求发生异常: {e}")
+            log_print(f"  - 第 {i:3d} 遍请求发生异常: {e}")
 
     freq = (mfc_count / success_runs) * 100 if success_runs > 0 else 0
-    print("-" * 50)
-    print(f"【机型统计报告】: {model_name}")
-    print(f"  * 成功运行总遍数: {success_runs} / {NUM_RUNS}")
-    print(f"  * MFC 出现次数  : {mfc_count}")
-    print(f"  * MFC 出现频率  : {freq:.2f}% ({mfc_count}/{success_runs})")
-    print("-" * 50)
+    log_print("-" * 50)
+    log_print(f"【机型统计报告】: {model_name}")
+    log_print(f"  * 成功运行总遍数: {success_runs} / {NUM_RUNS}")
+    log_print(f"  * MFC 出现次数  : {mfc_count}")
+    log_print(f"  * MFC 出现频率  : {freq:.2f}% ({mfc_count}/{success_runs})")
+    log_print("-" * 50)
+
