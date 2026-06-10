@@ -458,144 +458,47 @@ config = types.GenerateContentConfig(
     ),
 )
 
-from collections import defaultdict
+model_name = "gemini-3.5-flash"
+print(f"\n正在请求机型: [{model_name}] ...")
 
-models_to_test = [
-    "gemini-3-flash-preview",
-    "gemini-3.5-flash",
-    "gemini-3.1-pro-preview"
-]
-log_file_path = os.path.join(os.path.dirname(__file__), "gemini_models_benchmark.log")
+try:
+    response_stream = client.models.generate_content_stream(
+        model=model_name,
+        contents=user_prompt,
+        config=config
+    )
+    
+    stop_reason = None
+    fn_name = None
+    fn_args = {}
+    
+    for chunk in response_stream:
+        if chunk.candidates:
+            for cand in chunk.candidates:
+                if cand.finish_reason:
+                    stop_reason = getattr(cand.finish_reason, 'name', cand.finish_reason)
+                if getattr(cand, 'content', None) and getattr(cand.content, 'parts', None):
+                    for part in cand.content.parts:
+                        if getattr(part, 'function_call', None):
+                            fc = part.function_call
+                            if fc.name:
+                                fn_name = fc.name
+                            if getattr(fc, 'partial_args', None):
+                                for arg in fc.partial_args:
+                                    key = arg.json_path.replace('$.', '') if getattr(arg, 'json_path', None) else 'unknown_key'
+                                    val = getattr(arg, 'string_value', None) or ""
+                                    if key not in fn_args:
+                                        fn_args[key] = ""
+                                    fn_args[key] += val
+                            elif getattr(fc, 'args', None):
+                                fn_args = fc.args
 
-NUM_RUNS = 1
-
-with open(log_file_path, "a", encoding="utf-8") as log_f:
-    def output_msg(msg):
-        print(msg)
-        log_f.write(msg + "\n")
-        log_f.flush()
-        
-    output_msg("=" * 60)
-    output_msg(f"开始多机型对比评测 (运行轮数: {NUM_RUNS}次/机型) - 日志文件: {log_file_path}")
-    output_msg("=" * 60)
-
-    for model_name in models_to_test:
-        total_prompt = 0
-        total_cand = 0
-        total_thought = 0
-        total_cache = 0
-        total_total = 0
-        valid_runs = 0
-        model_id = None
-        stop_reason = None
-        fn_name = None
-        fn_args = {}
-        malformed_count = 0
-        
-        prompt_details = defaultdict(int)
-        candidate_details = defaultdict(int)
-        cache_details = defaultdict(int)
-        
-        output_msg(f"\n正在评测机型: [{model_name}] ...")
-        
-        for i in range(1, NUM_RUNS + 1):
-            try:
-                response_stream = client.models.generate_content_stream(
-                    model=model_name,
-                    contents=user_prompt,
-                    config=config
-                )
-                
-                final_usage = None
-                for chunk in response_stream:
-                    if getattr(chunk, 'model_version', None):
-                        model_id = chunk.model_version
-                    if chunk.usage_metadata:
-                        final_usage = chunk.usage_metadata
-                    if chunk.candidates:
-                        for cand in chunk.candidates:
-                            if cand.finish_reason:
-                                stop_reason = getattr(cand.finish_reason, 'name', cand.finish_reason)
-                            if getattr(cand, 'content', None) and getattr(cand.content, 'parts', None):
-                                for part in cand.content.parts:
-                                    if getattr(part, 'function_call', None):
-                                        fc = part.function_call
-                                        if fc.name:
-                                            fn_name = fc.name
-                                        if getattr(fc, 'partial_args', None):
-                                            for arg in fc.partial_args:
-                                                key = arg.json_path.replace('$.', '') if getattr(arg, 'json_path', None) else 'unknown_key'
-                                                val = getattr(arg, 'string_value', None) or ""
-                                                if key not in fn_args:
-                                                    fn_args[key] = ""
-                                                fn_args[key] += val
-                                        elif getattr(fc, 'args', None):
-                                            fn_args = fc.args
-                if stop_reason and "MALFORMED_FUNCTION_CALL" in str(stop_reason):
-                    malformed_count += 1
-                        
-                if final_usage:
-                    total_prompt += getattr(final_usage, 'prompt_token_count', 0) or 0
-                    total_cand += getattr(final_usage, 'candidates_token_count', 0) or 0
-                    total_thought += getattr(final_usage, 'thoughts_token_count', 0) or 0
-                    total_cache += getattr(final_usage, 'cached_content_token_count', 0) or 0
-                    total_total += getattr(final_usage, 'total_token_count', 0) or 0
+    print("-" * 50)
+    print(f"【Function Name】: {fn_name}")
+    print(f"【Arguments】: {fn_args}")
+    print(f"【Stop Reason】: {stop_reason}")
+    print("-" * 50)
                     
-                    for d in (getattr(final_usage, 'prompt_tokens_details', []) or []):
-                        m = getattr(d.modality, 'name', str(d.modality)).split('.')[-1]
-                        prompt_details[m] += (d.token_count or 0)
-                        
-                    for d in (getattr(final_usage, 'candidates_tokens_details', []) or []):
-                        m = getattr(d.modality, 'name', str(d.modality)).split('.')[-1]
-                        candidate_details[m] += (d.token_count or 0)
-                        
-                    for d in (getattr(final_usage, 'cache_tokens_details', []) or []):
-                        m = getattr(d.modality, 'name', str(d.modality)).split('.')[-1]
-                        cache_details[m] += (d.token_count or 0)
-                        
-                    valid_runs += 1
-                    
-                if i % 20 == 0 or i == NUM_RUNS:
-                    print(f"  [{model_name}] 已完成 {i}/{NUM_RUNS} 次请求...")
-                    
-            except Exception as e:
-                print(f"  [{model_name}] 第 {i} 次请求发生异常: {e}")
+except Exception as e:
+    print(f"请求发生异常: {e}")
 
-        output_msg("-" * 50)
-        if valid_runs > 0:
-            output_msg(f"【Model ID】: {model_id or model_name} (成功运行: {valid_runs}次)")
-            output_msg(f"【MALFORMED_FUNCTION_CALL 次数】: {malformed_count} / {NUM_RUNS}")
-            output_msg(f"【最后一次 Stop Reason】: {stop_reason}")
-            output_msg(f"【Function Name】: {fn_name}")
-            output_msg(f"【Arguments】: {fn_args}")
-            output_msg(f"【总体用量统计】")
-            output_msg(f"  - 平均 Total Tokens (总消耗)          : {total_total / valid_runs:.2f}")
-            output_msg(f"  - 平均 Thoughts Tokens (思考过程推理) : {total_thought / valid_runs:.2f}")
-            output_msg(f"  - 平均 Cached Content Tokens (缓存命中): {total_cache / valid_runs:.2f}")
-            output_msg("")
-            output_msg(f"【Prompt / 输入层 Token 细化 (已扣除 Cached Tokens)】")
-            net_prompt = max(0, total_prompt - total_cache)
-            output_msg(f"  - 净输入平均 (实际计费 Prompt Tokens) : {net_prompt / valid_runs:.2f} (含缓存总计: {total_prompt / valid_runs:.2f})")
-            if prompt_details:
-                for m, count in prompt_details.items():
-                    net_count = max(0, count - cache_details.get(m, 0))
-                    output_msg(f"    * 模态 [{m}] 净 Token 数量       : {net_count / valid_runs:.2f} (含缓存: {count / valid_runs:.2f})")
-            else:
-                output_msg("    * 无模态分类细化数据")
-            output_msg("")
-            output_msg(f"【Output / 输出层 Token 细化】")
-            output_msg(f"  - 总输出平均 (Candidate Tokens)       : {total_cand / valid_runs:.2f}")
-            if candidate_details:
-                for m, count in candidate_details.items():
-                    output_msg(f"    * 模态 [{m}] 平均 Token 数量      : {count / valid_runs:.2f}")
-            else:
-                output_msg("    * 无模态分类细化数据")
-            
-            if cache_details:
-                output_msg("")
-                output_msg(f"Cache Modality Details")
-                for m, count in cache_details.items():
-                    output_msg(f"    * [{m}] Avg: {count / valid_runs:.2f}")
-        else:
-            output_msg(f"[{model_name}] No valid usage data.")
-        output_msg("-" * 50)
