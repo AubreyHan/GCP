@@ -438,6 +438,7 @@ tools_definition = [{
 import os as _os
 import time as _time
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from google import genai
 from google.genai import types
 
 MODEL_THINKING_MAP = {
@@ -447,7 +448,7 @@ MODEL_THINKING_MAP = {
 }
 
 NUM_RUNS = 100
-log_path = _os.path.join(_os.path.dirname(__file__), "mfc_benchmark_parallel_100.log")
+log_path = _os.path.join(_os.path.dirname(__file__), "mfc_benchmark_parallel_threadsafe_100.log")
 
 def log_print(msg=""):
     print(msg)
@@ -455,13 +456,20 @@ def log_print(msg=""):
         f.write(msg + "\n")
 
 log_print("=" * 80)
-log_print(f"开始 极速并行版官方规范全量评测 (3线程并发) - 每组合 {NUM_RUNS} 遍")
+log_print(f"开始 完美线程安全版官方规范全量评测 (3线程并发隔离Client) - 每组合 {NUM_RUNS} 遍")
 log_print(f"参考规范: https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/thinking")
 log_print(f"开始时间: {_time.strftime("%Y-%m-%d %H:%M:%S")} | 日志文件: {log_path}")
 log_print("=" * 80)
 
 def benchmark_combination(model_name, t_level):
     start_t = _time.time()
+    
+    local_client = genai.Client(
+        project="cloud-llm-preview4",
+        location="global",
+        vertexai=True,
+    )
+
     curr_config = types.GenerateContentConfig(
         system_instruction=system_instruction,
         temperature=1.0,
@@ -489,7 +497,7 @@ def benchmark_combination(model_name, t_level):
 
     for i in range(1, NUM_RUNS + 1):
         try:
-            response_stream = client.models.generate_content_stream(
+            response_stream = local_client.models.generate_content_stream(
                 model=model_name,
                 contents=user_prompt,
                 config=curr_config
@@ -506,17 +514,17 @@ def benchmark_combination(model_name, t_level):
                 mfc_count += 1
             success_runs += 1
             
-            print(f"  [并发进度 | {model_name} @ {t_level}] 第 {i:3d}/{NUM_RUNS} 遍完成，Stop: {stop_reason}")
+            print(f"  [线程安全并发 | {model_name} @ {t_level}] 第 {i:3d}/{NUM_RUNS} 遍完成，Stop: {stop_reason}")
             
         except Exception as e:
-            print(f"  [并发异常 | {model_name} @ {t_level}] 第 {i:3d} 遍报错: {e}")
+            print(f"  [并发重试 | {model_name} @ {t_level}] 第 {i:3d} 遍网络波动: {e}")
             _time.sleep(2)
 
     cost_t = _time.time() - start_t
     freq = (mfc_count / success_runs) * 100 if success_runs > 0 else 0
     
     report = (
-        f"【并行组合终极报告】: 机型 [{model_name}] | Thinking: [{t_level}]\n"
+        f"【完美并行组合终极报告】: 机型 [{model_name}] | Thinking: [{t_level}]\n"
         f"  * 成功样本数  : {success_runs} / {NUM_RUNS} (耗时: {cost_t:.1f}s)\n"
         f"  * MFC 出现次数: {mfc_count}\n"
         f"  * MFC 发生频率: {freq:.2f}% ({mfc_count}/{success_runs})\n"
@@ -529,7 +537,7 @@ for model_name, levels in MODEL_THINKING_MAP.items():
     for lvl in levels:
         tasks.append((model_name, lvl))
 
-log_print(f"共计组装完成 {len(tasks)} 个评测任务，启动 3 线程并发池...")
+log_print(f"共计组装完成 {len(tasks)} 个评测任务，启动 3 线程安全隔离并发池...")
 
 with ThreadPoolExecutor(max_workers=3) as executor:
     future_to_task = {executor.submit(benchmark_combination, m, l): (m, l) for m, l in tasks}
@@ -541,8 +549,8 @@ with ThreadPoolExecutor(max_workers=3) as executor:
             log_print(f"\n" + "-" * 60)
             log_print(res_report)
         except Exception as exc:
-            log_print(f"\n[任务池崩溃] 组合 ({m} @ {l}) 执行引发未捕获异常: {exc}")
+            log_print(f"\n[任务池异常] 组合 ({m} @ {l}) 执行崩溃: {exc}")
 
 log_print("\n" + "=" * 80)
-log_print(f"史诗级 3线程并发版全量百遍评测圆满结束！结束时间: {_time.strftime("%Y-%m-%d %H:%M:%S")}")
+log_print(f"史诗级 3线程安全隔离版全量百遍评测圆满结束！结束时间: {_time.strftime("%Y-%m-%d %H:%M:%S")}")
 log_print("=" * 80)
