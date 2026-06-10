@@ -457,47 +457,53 @@ config = types.GenerateContentConfig(
     ),
 )
 
-model_name = "gemini-3.5-flash"
-print(f"\n正在请求机型: [{model_name}] ...")
+models_to_test = [
+    "gemini-3-flash-preview",
+    "gemini-3.5-flash",
+    "gemini-3.1-pro-preview"
+]
 
-try:
-    response_stream = client.models.generate_content_stream(
-        model=model_name,
-        contents=user_prompt,
-        config=config
-    )
-    
-    stop_reason = None
-    fn_name = None
-    fn_args = {}
-    
-    for chunk in response_stream:
-        if chunk.candidates:
-            for cand in chunk.candidates:
-                if cand.finish_reason:
-                    stop_reason = getattr(cand.finish_reason, 'name', cand.finish_reason)
-                if getattr(cand, 'content', None) and getattr(cand.content, 'parts', None):
-                    for part in cand.content.parts:
-                        if getattr(part, 'function_call', None):
-                            fc = part.function_call
-                            if fc.name:
-                                fn_name = fc.name
-                            if getattr(fc, 'partial_args', None):
-                                for arg in fc.partial_args:
-                                    key = arg.json_path.replace('$.', '') if getattr(arg, 'json_path', None) else 'unknown_key'
-                                    val = getattr(arg, 'string_value', None) or ""
-                                    if key not in fn_args:
-                                        fn_args[key] = ""
-                                    fn_args[key] += val
-                            elif getattr(fc, 'args', None):
-                                fn_args = fc.args
+for model_name in models_to_test:
+    print(f"\n正在请求机型: [{model_name}] ...")
+    try:
+        response_stream = client.models.generate_content_stream(
+            model=model_name,
+            contents=user_prompt,
+            config=config
+        )
+        
+        stop_reason = None
+        fn_name = None
+        fn_args = {}
+        
+        for chunk in response_stream:
+            if chunk.candidates:
+                for cand in chunk.candidates:
+                    if cand.finish_reason:
+                        stop_reason = getattr(cand.finish_reason, 'name', cand.finish_reason)
+                    if getattr(cand, 'content', None) and getattr(cand.content, 'parts', None):
+                        for part in cand.content.parts:
+                            if getattr(part, 'function_call', None):
+                                fc = part.function_call
+                                if fc.name:
+                                    fn_name = fc.name
+                                if getattr(fc, 'partial_args', None):
+                                    for arg in fc.partial_args:
+                                        key = arg.json_path.replace('$.', '') if getattr(arg, 'json_path', None) else 'unknown_key'
+                                        val = getattr(arg, 'string_value', None) or ""
+                                        if key not in fn_args:
+                                            fn_args[key] = ""
+                                        fn_args[key] += val
+                                elif getattr(fc, 'args', None):
+                                    fn_args = fc.args
 
-    print("-" * 50)
-    print(f"【Function Name】: {fn_name}")
-    print(f"【Arguments】: {fn_args}")
-    print(f"【Stop Reason】: {stop_reason}")
-    print("-" * 50)
-                    
-except Exception as e:
-    print(f"请求发生异常: {e}")
+        print("-" * 50)
+        print(f"【Function Name】: {fn_name}")
+        print(f"【Arguments】: {fn_args}")
+        print(f"【Stop Reason】: {stop_reason}")
+        print("-" * 50)
+                        
+    except Exception as e:
+        print(f"请求发生异常: {e}")
+
 
