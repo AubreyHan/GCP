@@ -3,7 +3,7 @@ from pickle import TRUE
 from dotenv import load_dotenv
 import os
 
-load_dotenv(override=True)
 
 while TRUE:
+    load_dotenv()
     print(os.environ.get("PROJECT_ID"))
