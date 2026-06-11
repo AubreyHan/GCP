@@ -1,28 +1,7 @@
 from google import genai
 from google.genai import types
-import os
-
-def _load_env_vars():
-    for rel_path in ["../../.env/vars", "../.env/vars", ".env/vars"]:
-        vars_path = os.path.abspath(os.path.join(os.path.dirname(__file__), rel_path))
-        if os.path.exists(vars_path):
-            with open(vars_path, "r", encoding="utf-8") as f:
-                for line in f:
-                    line = line.strip()
-                    if line and not line.startswith("#"):
-                        parts = line.split("=", 1)
-                        if len(parts) == 2:
-                            key, val = parts[0].strip(), parts[1].strip()
-                            if (val.startswith('"') and val.endswith('"')) or (val.startswith("'") and val.endswith("'")):
-                                val = val[1:-1]
-                            os.environ[key] = val
-            break
-
-_load_env_vars()
-project_id = os.environ.get("MY_PROJECT_ENV")
-
 client = genai.Client(
-    project=project_id,
+    project="hy-ai-demo",
     location="global",
     vertexai=True,
 )
