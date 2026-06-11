@@ -457,6 +457,7 @@ tools_definition = [{
 
 import os as _os
 import time as _time
+import threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from google import genai
 from google.genai import types
@@ -466,12 +467,18 @@ MODEL_THINKING_MAP = {
 }
 
 NUM_RUNS = 100
-log_path = _os.path.join(_os.path.dirname(__file__), "gemini_3.5_flash_mfc_stats.log")
+summary_log_path = _os.path.join(_os.path.dirname(__file__), "gemini_3.5_flash_mfc_stats_summary.log")
+print_lock = threading.Lock()
 
-def log_print(msg=""):
-    print(msg)
-    with open(log_path, "a", encoding="utf-8") as f:
-        f.write(msg + "\n")
+def log_print(msg="", t_level=None):
+    with print_lock:
+        print(msg)
+        with open(summary_log_path, "a", encoding="utf-8") as f:
+            f.write(msg + "\n")
+        if t_level:
+            level_log_path = _os.path.join(_os.path.dirname(__file__), f"gemini_3.5_flash_mfc_stats_{t_level.lower()}.log")
+            with open(level_log_path, "a", encoding="utf-8") as f:
+                f.write(msg + "\n")
 
 def benchmark_combination(model_name, t_level):
     start_t = _time.time()
@@ -527,17 +534,17 @@ def benchmark_combination(model_name, t_level):
                 mfc_count += 1
             success_runs += 1
             
-            print(f"  [线程安全并发 | {model_name} @ {t_level}] 第 {i:3d}/{NUM_RUNS} 遍完成，Stop: {stop_reason}")
+            log_print(f"  [线程安全并发 | {model_name} @ {t_level}] 第 {i:3d}/{NUM_RUNS} 遍完成，Stop: {stop_reason}", t_level=t_level)
             i += 1
             _time.sleep(1)
             
         except Exception as e:
             err_msg = str(e)
             if "429" in err_msg or "Resource exhausted" in err_msg:
-                print(f"  [并发重试 | {model_name} @ {t_level}] 第 {i:3d} 遍 429 频率限制，等待 15 秒...")
+                log_print(f"  [并发重试 | {model_name} @ {t_level}] 第 {i:3d} 遍 429 频率限制，等待 15 秒...", t_level=t_level)
                 _time.sleep(15)
             else:
-                print(f"  [并发重试 | {model_name} @ {t_level}] 第 {i:3d} 遍异常: {e}")
+                log_print(f"  [并发重试 | {model_name} @ {t_level}] 第 {i:3d} 遍异常: {e}", t_level=t_level)
                 i += 1
                 _time.sleep(2)
 
@@ -557,7 +564,7 @@ def main():
     log_print("=" * 80)
     log_print(f"开始 Gemini 3.5 Flash 各级 thinking level 评测 - 每组合 {NUM_RUNS} 遍")
     log_print(f"参考规范: https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/thinking")
-    log_print(f"开始时间: {_time.strftime('%Y-%m-%d %H:%M:%S')} | 日志文件: {log_path}")
+    log_print(f"开始时间: {_time.strftime('%Y-%m-%d %H:%M:%S')} | 日志文件: {summary_log_path}")
     log_print("=" * 80)
 
     tasks = []
@@ -565,9 +572,9 @@ def main():
         for lvl in levels:
             tasks.append((model_name, lvl))
 
-    log_print(f"共计组装完成 {len(tasks)} 个评测任务，启动 3 线程安全隔离并发池...")
+    log_print(f"共计组装完成 {len(tasks)} 个评测任务，启动 4 线程安全隔离并发池...")
 
-    with ThreadPoolExecutor(max_workers=3) as executor:
+    with ThreadPoolExecutor(max_workers=4) as executor:
         future_to_task = {executor.submit(benchmark_combination, m, l): (m, l) for m, l in tasks}
         
         for future in as_completed(future_to_task):
@@ -580,7 +587,7 @@ def main():
                 log_print(f"\n[任务池异常] 组合 ({m} @ {l}) 执行崩溃: {exc}")
 
     log_print("\n" + "=" * 80)
-    log_print(f"史诗级 3线程安全隔离版全量百遍评测圆满结束！结束时间: {_time.strftime('%Y-%m-%d %H:%M:%S')}")
+    log_print(f"史诗级 4线程安全隔离版全量百遍评测圆满结束！结束时间: {_time.strftime('%Y-%m-%d %H:%M:%S')}")
     log_print("=" * 80)
 
 if __name__ == "__main__":
