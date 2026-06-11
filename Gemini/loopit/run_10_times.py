@@ -27,12 +27,10 @@ project_id = os.environ.get("MY_PROJECT_ENV")
 
 client = genai.Client(
     project=project_id,
-    location="us",
+    location="global",
     vertexai=True,
-    http_options={"base_url": "https://us-central1-aiplatform.googleapis.com"},
 )
 
-# We will run gemini-3.5-flash with MEDIUM thinking level as specified by user settings
 thinking_level = "MEDIUM"
 print(f"Running gemini-3.5-flash with thinking level {thinking_level} for 10 times...")
 
@@ -58,7 +56,8 @@ config = types.GenerateContentConfig(
     ),
 )
 
-for i in range(1, 11):
+i = 1
+while i <= 10:
     print(f"\n--- Run {i} ---")
     try:
         response_stream = client.models.generate_content_stream(
@@ -84,6 +83,14 @@ for i in range(1, 11):
                                     
         print(f"Stop Reason: {stop_reason}")
         print(f"Function Name: {fn_name}")
+        i += 1
+        time.sleep(2)
     except Exception as e:
-        print(f"Error during run {i}: {e}")
-    time.sleep(1)
+        err_msg = str(e)
+        if "429" in err_msg or "Resource exhausted" in err_msg:
+            print(f"Got 429 Resource Exhausted. Sleeping 15 seconds before retrying run {i}...")
+            time.sleep(15)
+        else:
+            print(f"Error during run {i}: {e}")
+            i += 1
+            time.sleep(2)
