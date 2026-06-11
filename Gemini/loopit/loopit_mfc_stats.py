@@ -466,7 +466,7 @@ MODEL_THINKING_MAP = {
     "gemini-3.5-flash": ["MINIMAL", "LOW", "MEDIUM", "HIGH"],
 }
 
-NUM_RUNS = 2
+NUM_RUNS = 100
 summary_log_path = _os.path.join(_os.path.dirname(__file__), "gemini_3.5_flash_mfc_stats_summary.log")
 print_lock = threading.Lock()
 
