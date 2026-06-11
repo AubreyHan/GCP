@@ -3,4 +3,4 @@ import os
 
 load_dotenv(override=True)
 print(os.environ.get("PROJECT_ID"))
-print(os.g)
+print(os.getenv("PROJECT_ID"))
