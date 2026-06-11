@@ -10,10 +10,10 @@ from google.genai import types
 # =====================================================================
 
 client = genai.Client(
-    project="cloud-llm-preview4",
-    location="us",
+    project="hy-ai-demo",
+    location="global",
     vertexai=True,
-    http_options={"base_url": "https://us-central1-aiplatform.googleapis.com"},
+    http_options={"base_url": "https://aiplatform.googleapis.com"},
 )
 
 MODEL_ALIAS_MAP = {
