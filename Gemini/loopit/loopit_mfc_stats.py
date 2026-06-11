@@ -1,8 +1,11 @@
 from google import genai
 from google.genai import types
+import os
+
+project_id = os.environ.get("MY_PROJECT_ENV")
 
 client = genai.Client(
-  project="cloud-llm-preview4",
+  project=project_id,
   location="global",
   vertexai=True,
 )
@@ -453,17 +456,18 @@ def log_print(msg=""):
     with open(log_path, "a", encoding="utf-8") as f:
         f.write(msg + "\n")
 
-log_print("=" * 80)
-log_print(f"开始 Gemini 3.5 Flash 各级 thinking level 评测 - 每组合 {NUM_RUNS} 遍")
-log_print(f"参考规范: https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/thinking")
-log_print(f"开始时间: {_time.strftime('%Y-%m-%d %H:%M:%S')} | 日志文件: {log_path}")
-log_print("=" * 80)
+def main():
+    log_print("=" * 80)
+    log_print(f"开始 Gemini 3.5 Flash 各级 thinking level 评测 - 每组合 {NUM_RUNS} 遍")
+    log_print(f"参考规范: https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/thinking")
+    log_print(f"开始时间: {_time.strftime('%Y-%m-%d %H:%M:%S')} | 日志文件: {log_path}")
+    log_print("=" * 80)
 
 def benchmark_combination(model_name, t_level):
     start_t = _time.time()
     
     local_client = genai.Client(
-        project="cloud-llm-preview4",
+        project=project_id,
         location="us",
         vertexai=True,
         http_options={"base_url": "https://us-central1-aiplatform.googleapis.com"},
@@ -531,25 +535,28 @@ def benchmark_combination(model_name, t_level):
     )
     return report
 
-tasks = []
-for model_name, levels in MODEL_THINKING_MAP.items():
-    for lvl in levels:
-        tasks.append((model_name, lvl))
+    tasks = []
+    for model_name, levels in MODEL_THINKING_MAP.items():
+        for lvl in levels:
+            tasks.append((model_name, lvl))
 
-log_print(f"共计组装完成 {len(tasks)} 个评测任务，启动 3 线程安全隔离并发池...")
+    log_print(f"共计组装完成 {len(tasks)} 个评测任务，启动 3 线程安全隔离并发池...")
 
-with ThreadPoolExecutor(max_workers=3) as executor:
-    future_to_task = {executor.submit(benchmark_combination, m, l): (m, l) for m, l in tasks}
-    
-    for future in as_completed(future_to_task):
-        m, l = future_to_task[future]
-        try:
-            res_report = future.result()
-            log_print(f"\n" + "-" * 60)
-            log_print(res_report)
-        except Exception as exc:
-            log_print(f"\n[任务池异常] 组合 ({m} @ {l}) 执行崩溃: {exc}")
+    with ThreadPoolExecutor(max_workers=3) as executor:
+        future_to_task = {executor.submit(benchmark_combination, m, l): (m, l) for m, l in tasks}
+        
+        for future in as_completed(future_to_task):
+            m, l = future_to_task[future]
+            try:
+                res_report = future.result()
+                log_print(f"\n" + "-" * 60)
+                log_print(res_report)
+            except Exception as exc:
+                log_print(f"\n[任务池异常] 组合 ({m} @ {l}) 执行崩溃: {exc}")
 
-log_print("\n" + "=" * 80)
-log_print(f"史诗级 3线程安全隔离版全量百遍评测圆满结束！结束时间: {_time.strftime("%Y-%m-%d %H:%M:%S")}")
-log_print("=" * 80)
+    log_print("\n" + "=" * 80)
+    log_print(f"史诗级 3线程安全隔离版全量百遍评测圆满结束！结束时间: {_time.strftime('%Y-%m-%d %H:%M:%S')}")
+    log_print("=" * 80)
+
+if __name__ == "__main__":
+    main()

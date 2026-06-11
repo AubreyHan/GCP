@@ -9,8 +9,10 @@ from google.genai import types
 # 原生支持全模态动态归类：TEXT（文本）、IMAGE（图片）、AUDIO（音频）、VIDEO（视频）
 # =====================================================================
 
+project_id = os.environ.get("MY_PROJECT_ENV")
+
 client = genai.Client(
-    project="hy-ai-demo",
+    project=project_id,
     location="global",
     vertexai=True,
     http_options={"base_url": "https://aiplatform.googleapis.com"},

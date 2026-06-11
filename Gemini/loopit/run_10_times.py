@@ -6,8 +6,10 @@ from google.genai import types
 # Import variables from loopit_mfc_stats
 from loopit_mfc_stats import system_instruction, tools_definition, user_prompt
 
+project_id = os.environ.get("MY_PROJECT_ENV")
+
 client = genai.Client(
-    project="cloud-llm-preview4",
+    project=project_id,
     location="us",
     vertexai=True,
     http_options={"base_url": "https://us-central1-aiplatform.googleapis.com"},

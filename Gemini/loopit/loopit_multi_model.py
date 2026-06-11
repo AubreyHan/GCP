@@ -1,8 +1,11 @@
 from google import genai
 from google.genai import types
+import os
+
+project_id = os.environ.get("MY_PROJECT_ENV")
 
 client = genai.Client(
-  project="cloud-llm-preview4",
+  project=project_id,
   location="global",
   vertexai=True,
 )
