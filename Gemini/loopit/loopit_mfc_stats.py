@@ -485,9 +485,8 @@ def benchmark_combination(model_name, t_level):
     
     local_client = genai.Client(
         project=project_id,
-        location="us",
+        location="global",
         vertexai=True,
-        http_options={"base_url": "https://us-central1-aiplatform.googleapis.com"},
     )
 
     curr_config = types.GenerateContentConfig(
@@ -515,7 +514,8 @@ def benchmark_combination(model_name, t_level):
     mfc_count = 0
     success_runs = 0
 
-    for i in range(1, NUM_RUNS + 1):
+    i = 1
+    while i <= NUM_RUNS:
         try:
             response_stream = local_client.models.generate_content_stream(
                 model=model_name,
@@ -535,10 +535,18 @@ def benchmark_combination(model_name, t_level):
             success_runs += 1
             
             print(f"  [线程安全并发 | {model_name} @ {t_level}] 第 {i:3d}/{NUM_RUNS} 遍完成，Stop: {stop_reason}")
+            i += 1
+            _time.sleep(1)
             
         except Exception as e:
-            print(f"  [并发重试 | {model_name} @ {t_level}] 第 {i:3d} 遍网络波动: {e}")
-            _time.sleep(2)
+            err_msg = str(e)
+            if "429" in err_msg or "Resource exhausted" in err_msg:
+                print(f"  [并发重试 | {model_name} @ {t_level}] 第 {i:3d} 遍 429 频率限制，等待 15 秒...")
+                _time.sleep(15)
+            else:
+                print(f"  [并发重试 | {model_name} @ {t_level}] 第 {i:3d} 遍异常: {e}")
+                i += 1
+                _time.sleep(2)
 
     cost_t = _time.time() - start_t
     freq = (mfc_count / success_runs) * 100 if success_runs > 0 else 0
