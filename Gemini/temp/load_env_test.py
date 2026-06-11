@@ -5,5 +5,5 @@ import os
 
 load_dotenv(override=True)
 
-if TRUE:
+while TRUE:
     print(os.environ.get("PROJECT_ID"))
