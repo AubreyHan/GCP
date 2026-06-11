@@ -473,13 +473,6 @@ def log_print(msg=""):
     with open(log_path, "a", encoding="utf-8") as f:
         f.write(msg + "\n")
 
-def main():
-    log_print("=" * 80)
-    log_print(f"开始 Gemini 3.5 Flash 各级 thinking level 评测 - 每组合 {NUM_RUNS} 遍")
-    log_print(f"参考规范: https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/thinking")
-    log_print(f"开始时间: {_time.strftime('%Y-%m-%d %H:%M:%S')} | 日志文件: {log_path}")
-    log_print("=" * 80)
-
 def benchmark_combination(model_name, t_level):
     start_t = _time.time()
     
@@ -559,6 +552,13 @@ def benchmark_combination(model_name, t_level):
         f"  " + "-" * 60
     )
     return report
+
+def main():
+    log_print("=" * 80)
+    log_print(f"开始 Gemini 3.5 Flash 各级 thinking level 评测 - 每组合 {NUM_RUNS} 遍")
+    log_print(f"参考规范: https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/thinking")
+    log_print(f"开始时间: {_time.strftime('%Y-%m-%d %H:%M:%S')} | 日志文件: {log_path}")
+    log_print("=" * 80)
 
     tasks = []
     for model_name, levels in MODEL_THINKING_MAP.items():
