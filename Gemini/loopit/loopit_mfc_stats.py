@@ -534,7 +534,8 @@ def benchmark_combination(model_name, t_level):
                 mfc_count += 1
             success_runs += 1
             
-            log_print(f"  [线程安全并发 | {model_name} @ {t_level}] 第 {i:3d}/{NUM_RUNS} 遍完成，Stop: {stop_reason}", t_level=t_level)
+            current_rate = (mfc_count / success_runs) * 100
+            log_print(f"  [线程安全并发 | {model_name} @ {t_level}] 第 {i:3d}/{NUM_RUNS} 遍完成，Stop: {stop_reason} | 累计 MFC: {mfc_count}/{success_runs} ({current_rate:.2f}%)", t_level=t_level)
             i += 1
             _time.sleep(1)
             
@@ -561,6 +562,13 @@ def benchmark_combination(model_name, t_level):
     return report
 
 def main():
+    # 清空历史日志文件以开始全新的统计
+    for lvl in ["summary", "minimal", "low", "medium", "high"]:
+        log_file = _os.path.join(_os.path.dirname(__file__), f"gemini_3.5_flash_mfc_stats_{lvl}.log")
+        if _os.path.exists(log_file):
+            with open(log_file, "w", encoding="utf-8") as f:
+                pass
+
     log_print("=" * 80)
     log_print(f"开始 Gemini 3.5 Flash 各级 thinking level 评测 - 每组合 {NUM_RUNS} 遍")
     log_print(f"参考规范: https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/thinking")
@@ -581,10 +589,10 @@ def main():
             m, l = future_to_task[future]
             try:
                 res_report = future.result()
-                log_print(f"\n" + "-" * 60)
-                log_print(res_report)
+                log_print(f"\n" + "-" * 60, t_level=l)
+                log_print(res_report, t_level=l)
             except Exception as exc:
-                log_print(f"\n[任务池异常] 组合 ({m} @ {l}) 执行崩溃: {exc}")
+                log_print(f"\n[任务池异常] 组合 ({m} @ {l}) 执行崩溃: {exc}", t_level=l)
 
     log_print("\n" + "=" * 80)
     log_print(f"史诗级 4线程安全隔离版全量百遍评测圆满结束！结束时间: {_time.strftime('%Y-%m-%d %H:%M:%S')}")
