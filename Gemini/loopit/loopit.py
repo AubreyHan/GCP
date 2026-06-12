@@ -1,5 +1,3 @@
-from nt import environ
-
 from dotenv import load_dotenv
 import os
 from google import genai
