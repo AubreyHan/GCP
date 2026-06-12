@@ -1,14 +1,14 @@
 {
   "model": "gemini-3.5-flash",
-  "total_duration_s": 49.2,
-  "timestamp": "2026-06-12T08:52:10Z",
+  "total_duration_s": 45.47,
+  "timestamp": "2026-06-12T09:07:06Z",
   "summary": [
     {
       "thinking_level": "MEDIUM",
-      "mfc_count": 2,
+      "mfc_count": 5,
       "total_runs": 100,
-      "mfc_rate": "2.0%",
-      "duration_s": 49.19
+      "mfc_rate": "5.0%",
+      "duration_s": 45.46
     }
   ],
   "invocation_details": {
@@ -22,7 +22,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.03
+        "duration_s": 5.32
       },
       {
         "success": true,
@@ -33,7 +33,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 6.3
+        "duration_s": 5.32
       },
       {
         "success": true,
@@ -44,7 +44,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.69
+        "duration_s": 5.76
       },
       {
         "success": true,
@@ -55,7 +55,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.72
+        "duration_s": 5.34
       },
       {
         "success": true,
@@ -66,7 +66,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.26
+        "duration_s": 5.78
       },
       {
         "success": true,
@@ -77,18 +77,19 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 6.53
+        "duration_s": 5.5
       },
       {
         "success": true,
         "thinking_level": "MEDIUM",
         "run_index": 7,
-        "is_mfc": false,
+        "is_mfc": true,
         "function_calls": [
-          "read"
+          "read",
+          "shell"
         ],
-        "count": 1,
-        "duration_s": 5.52
+        "count": 2,
+        "duration_s": 7.17
       },
       {
         "success": true,
@@ -99,7 +100,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.7
+        "duration_s": 6.0
       },
       {
         "success": true,
@@ -110,18 +111,19 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.01
+        "duration_s": 6.42
       },
       {
         "success": true,
         "thinking_level": "MEDIUM",
         "run_index": 10,
-        "is_mfc": false,
+        "is_mfc": true,
         "function_calls": [
+          "shell",
           "read"
         ],
-        "count": 1,
-        "duration_s": 5.78
+        "count": 2,
+        "duration_s": 7.69
       },
       {
         "success": true,
@@ -132,7 +134,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.94
+        "duration_s": 4.07
       },
       {
         "success": true,
@@ -143,7 +145,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.12
+        "duration_s": 3.35
       },
       {
         "success": true,
@@ -154,7 +156,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.46
+        "duration_s": 4.08
       },
       {
         "success": true,
@@ -165,7 +167,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.54
+        "duration_s": 4.25
       },
       {
         "success": true,
@@ -176,7 +178,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.62
+        "duration_s": 3.68
       },
       {
         "success": true,
@@ -187,7 +189,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.62
+        "duration_s": 5.19
       },
       {
         "success": true,
@@ -198,7 +200,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.27
+        "duration_s": 4.73
       },
       {
         "success": true,
@@ -209,7 +211,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.27
+        "duration_s": 4.52
       },
       {
         "success": true,
@@ -220,7 +222,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.27
+        "duration_s": 4.0
       },
       {
         "success": true,
@@ -231,7 +233,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.61
+        "duration_s": 3.67
       },
       {
         "success": true,
@@ -242,18 +244,19 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.04
+        "duration_s": 3.59
       },
       {
         "success": true,
         "thinking_level": "MEDIUM",
         "run_index": 22,
-        "is_mfc": false,
+        "is_mfc": true,
         "function_calls": [
-          "read"
+          "read",
+          "shell"
         ],
-        "count": 1,
-        "duration_s": 4.36
+        "count": 2,
+        "duration_s": 4.51
       },
       {
         "success": true,
@@ -264,7 +267,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.73
+        "duration_s": 3.55
       },
       {
         "success": true,
@@ -275,7 +278,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.13
+        "duration_s": 3.12
       },
       {
         "success": true,
@@ -286,18 +289,19 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.54
+        "duration_s": 3.43
       },
       {
         "success": true,
         "thinking_level": "MEDIUM",
         "run_index": 26,
-        "is_mfc": false,
+        "is_mfc": true,
         "function_calls": [
-          "read"
+          "read",
+          "shell"
         ],
-        "count": 1,
-        "duration_s": 4.5
+        "count": 2,
+        "duration_s": 4.68
       },
       {
         "success": true,
@@ -308,7 +312,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.94
+        "duration_s": 3.48
       },
       {
         "success": true,
@@ -319,7 +323,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.48
+        "duration_s": 3.26
       },
       {
         "success": true,
@@ -330,7 +334,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.18
+        "duration_s": 3.84
       },
       {
         "success": true,
@@ -341,7 +345,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.54
+        "duration_s": 4.12
       },
       {
         "success": true,
@@ -352,7 +356,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.41
+        "duration_s": 3.63
       },
       {
         "success": true,
@@ -363,7 +367,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.72
+        "duration_s": 4.26
       },
       {
         "success": true,
@@ -374,7 +378,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.32
+        "duration_s": 4.33
       },
       {
         "success": true,
@@ -385,20 +389,18 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.71
+        "duration_s": 4.96
       },
       {
         "success": true,
         "thinking_level": "MEDIUM",
         "run_index": 35,
-        "is_mfc": true,
+        "is_mfc": false,
         "function_calls": [
-          "read",
-          "read",
           "read"
         ],
-        "count": 3,
-        "duration_s": 5.13
+        "count": 1,
+        "duration_s": 4.47
       },
       {
         "success": true,
@@ -409,7 +411,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.05
+        "duration_s": 3.04
       },
       {
         "success": true,
@@ -420,7 +422,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.33
+        "duration_s": 4.7
       },
       {
         "success": true,
@@ -431,7 +433,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.26
+        "duration_s": 4.42
       },
       {
         "success": true,
@@ -442,7 +444,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.83
+        "duration_s": 3.47
       },
       {
         "success": true,
@@ -453,7 +455,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.21
+        "duration_s": 3.91
       },
       {
         "success": true,
@@ -461,22 +463,21 @@
         "run_index": 41,
         "is_mfc": false,
         "function_calls": [
-          "read"
+          "shell"
         ],
         "count": 1,
-        "duration_s": 3.74
+        "duration_s": 3.68
       },
       {
         "success": true,
         "thinking_level": "MEDIUM",
         "run_index": 42,
-        "is_mfc": true,
+        "is_mfc": false,
         "function_calls": [
-          "read",
-          "shell"
+          "read"
         ],
-        "count": 2,
-        "duration_s": 4.21
+        "count": 1,
+        "duration_s": 3.67
       },
       {
         "success": true,
@@ -487,18 +488,19 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.52
+        "duration_s": 4.89
       },
       {
         "success": true,
         "thinking_level": "MEDIUM",
         "run_index": 44,
-        "is_mfc": false,
+        "is_mfc": true,
         "function_calls": [
-          "read"
+          "read",
+          "shell"
         ],
-        "count": 1,
-        "duration_s": 4.06
+        "count": 2,
+        "duration_s": 4.97
       },
       {
         "success": true,
@@ -520,7 +522,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.69
+        "duration_s": 3.78
       },
       {
         "success": true,
@@ -531,7 +533,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.94
+        "duration_s": 3.01
       },
       {
         "success": true,
@@ -542,7 +544,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.33
+        "duration_s": 4.44
       },
       {
         "success": true,
@@ -553,7 +555,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.48
+        "duration_s": 3.66
       },
       {
         "success": true,
@@ -564,7 +566,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.26
+        "duration_s": 4.41
       },
       {
         "success": true,
@@ -575,7 +577,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.47
+        "duration_s": 3.66
       },
       {
         "success": true,
@@ -586,7 +588,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.26
+        "duration_s": 4.09
       },
       {
         "success": true,
@@ -597,7 +599,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.43
+        "duration_s": 3.44
       },
       {
         "success": true,
@@ -608,7 +610,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.17
+        "duration_s": 3.75
       },
       {
         "success": true,
@@ -619,7 +621,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.53
+        "duration_s": 4.29
       },
       {
         "success": true,
@@ -630,7 +632,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.53
+        "duration_s": 3.81
       },
       {
         "success": true,
@@ -641,7 +643,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.77
+        "duration_s": 4.49
       },
       {
         "success": true,
@@ -652,7 +654,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.7
+        "duration_s": 4.55
       },
       {
         "success": true,
@@ -663,7 +665,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.43
+        "duration_s": 3.97
       },
       {
         "success": true,
@@ -674,7 +676,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.33
+        "duration_s": 3.92
       },
       {
         "success": true,
@@ -685,7 +687,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.21
+        "duration_s": 4.35
       },
       {
         "success": true,
@@ -696,7 +698,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.2
+        "duration_s": 4.15
       },
       {
         "success": true,
@@ -707,7 +709,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.89
+        "duration_s": 5.31
       },
       {
         "success": true,
@@ -718,7 +720,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.51
+        "duration_s": 4.15
       },
       {
         "success": true,
@@ -729,7 +731,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.42
+        "duration_s": 4.27
       },
       {
         "success": true,
@@ -740,7 +742,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.08
+        "duration_s": 3.86
       },
       {
         "success": true,
@@ -751,7 +753,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.78
+        "duration_s": 3.8
       },
       {
         "success": true,
@@ -762,7 +764,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.41
+        "duration_s": 3.49
       },
       {
         "success": true,
@@ -773,7 +775,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.4
+        "duration_s": 4.37
       },
       {
         "success": true,
@@ -784,7 +786,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.51
+        "duration_s": 3.48
       },
       {
         "success": true,
@@ -795,7 +797,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.39
+        "duration_s": 3.87
       },
       {
         "success": true,
@@ -806,7 +808,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.73
+        "duration_s": 3.85
       },
       {
         "success": true,
@@ -817,7 +819,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.59
+        "duration_s": 4.15
       },
       {
         "success": true,
@@ -828,7 +830,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.19
+        "duration_s": 4.39
       },
       {
         "success": true,
@@ -839,7 +841,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.59
+        "duration_s": 3.45
       },
       {
         "success": true,
@@ -850,7 +852,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.19
+        "duration_s": 3.39
       },
       {
         "success": true,
@@ -861,7 +863,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.02
+        "duration_s": 4.12
       },
       {
         "success": true,
@@ -872,7 +874,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.87
+        "duration_s": 3.79
       },
       {
         "success": true,
@@ -883,7 +885,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.44
+        "duration_s": 3.59
       },
       {
         "success": true,
@@ -894,7 +896,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.21
+        "duration_s": 4.43
       },
       {
         "success": true,
@@ -905,7 +907,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.51
+        "duration_s": 5.29
       },
       {
         "success": true,
@@ -916,7 +918,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.06
+        "duration_s": 3.81
       },
       {
         "success": true,
@@ -927,7 +929,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.83
+        "duration_s": 3.84
       },
       {
         "success": true,
@@ -938,7 +940,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.47
+        "duration_s": 4.58
       },
       {
         "success": true,
@@ -949,7 +951,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.07
+        "duration_s": 3.85
       },
       {
         "success": true,
@@ -960,7 +962,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.96
+        "duration_s": 3.56
       },
       {
         "success": true,
@@ -971,7 +973,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.51
+        "duration_s": 4.16
       },
       {
         "success": true,
@@ -982,7 +984,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.46
+        "duration_s": 3.62
       },
       {
         "success": true,
@@ -993,7 +995,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.4
+        "duration_s": 4.56
       },
       {
         "success": true,
@@ -1004,7 +1006,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.21
+        "duration_s": 4.53
       },
       {
         "success": true,
@@ -1015,7 +1017,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.76
+        "duration_s": 4.04
       },
       {
         "success": true,
@@ -1026,7 +1028,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.79
+        "duration_s": 3.71
       },
       {
         "success": true,
@@ -1037,7 +1039,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.5
+        "duration_s": 3.44
       },
       {
         "success": true,
@@ -1048,7 +1050,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.79
+        "duration_s": 5.01
       },
       {
         "success": true,
@@ -1059,7 +1061,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.96
+        "duration_s": 3.12
       },
       {
         "success": true,
@@ -1070,7 +1072,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.76
+        "duration_s": 4.11
       },
       {
         "success": true,
@@ -1081,7 +1083,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.03
+        "duration_s": 4.48
       },
       {
         "success": true,
@@ -1092,7 +1094,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.87
+        "duration_s": 4.72
       },
       {
         "success": true,
@@ -1103,7 +1105,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.55
+        "duration_s": 3.54
       },
       {
         "success": true,
@@ -1114,7 +1116,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.69
+        "duration_s": 3.29
       }
     ]
   }
