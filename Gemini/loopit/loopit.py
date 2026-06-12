@@ -9,7 +9,7 @@ load_dotenv(override=True)
 project_id = os(environ.get(PROJECT_ID))
 
 client = genai.Client(
-    project="hy-ai-demo",
+    project=project_id,
     location="global",
     vertexai=True,
 )
