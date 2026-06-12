@@ -1,4455 +1,2844 @@
 {
   "model": "gemini-3.5-flash",
-  "total_duration_s": 91.7,
-  "timestamp": "2026-06-12T06:31:57Z",
+  "total_duration_s": 229.54,
+  "timestamp": "2026-06-12T06:47:36Z",
   "summary": [
     {
       "thinking_level": "MINIMAL",
       "mfc_count": 0,
       "total_runs": 100,
       "mfc_rate": "0.0%",
-      "duration_s": 73.66
+      "duration_s": 229.54
     },
     {
       "thinking_level": "LOW",
-      "mfc_count": 2,
+      "mfc_count": 0,
       "total_runs": 100,
-      "mfc_rate": "2.0%",
-      "duration_s": 85.0
+      "mfc_rate": "0.0%",
+      "duration_s": 229.17
     },
     {
       "thinking_level": "MEDIUM",
-      "mfc_count": 1,
+      "mfc_count": 0,
       "total_runs": 100,
-      "mfc_rate": "1.0%",
-      "duration_s": 87.46
+      "mfc_rate": "0.0%",
+      "duration_s": 229.17
     },
     {
       "thinking_level": "HIGH",
-      "mfc_count": 8,
+      "mfc_count": 0,
       "total_runs": 100,
-      "mfc_rate": "8.0%",
-      "duration_s": 91.7
+      "mfc_rate": "0.0%",
+      "duration_s": 228.17
     }
   ],
   "invocation_details": {
     "MINIMAL": [
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 1,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 9.07
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 27.3
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 2,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 8.89
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 27.47
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 3,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 8.96
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 26.13
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 4,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 9.4
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 26.99
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 5,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 9.46
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 25.35
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 6,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 8.62
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 26.35
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 7,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 9.4
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 26.69
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 8,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 9.33
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 27.43
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 9,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 9.39
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 27.0
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 10,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 9.03
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 26.52
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 11,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 6.96
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 22.57
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 12,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 6.51
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 26.6
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 13,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 6.35
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 25.2
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 14,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 6.3
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 24.61
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 15,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 6.24
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 24.5
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 16,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 6.2
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 25.19
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 17,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 5.76
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 25.9
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 18,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 6.25
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 25.79
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 19,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 5.68
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 24.88
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 20,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 5.95
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 25.01
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 21,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 5.47
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.83
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 22,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 6.33
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.39
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 23,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 6.58
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 24.22
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 24,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 6.53
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 23.62
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 25,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 6.55
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 23.59
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 26,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 6.35
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 24.08
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 27,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 6.55
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 25.54
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 28,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 6.13
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 24.8
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 29,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 6.43
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 24.68
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 30,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 6.03
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 25.83
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 31,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 6.64
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.4
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 32,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 7.01
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.99
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 33,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 7.53
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.54
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 34,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 8.11
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.17
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 35,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 7.42
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.54
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 36,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 7.79
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.87
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 37,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 7.24
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 23.08
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 38,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 7.81
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 23.06
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 39,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 7.57
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 22.6
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 40,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 7.62
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.0
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 41,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 6.78
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 19.98
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 42,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 6.21
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.51
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 43,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 6.03
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.8
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 44,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 5.71
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 19.71
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 45,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 6.24
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.38
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 46,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 6.89
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.89
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 47,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 6.86
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 19.81
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 48,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 8.58
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.07
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 49,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 7.04
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.62
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 50,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 6.78
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.09
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 51,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 6.85
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.04
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 52,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 6.47
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 19.53
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 53,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 6.25
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.16
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 54,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 7.93
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.41
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 55,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 7.63
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.93
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 56,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 5.83
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.53
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 57,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 7.47
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.76
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 58,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 6.95
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.14
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 59,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 7.12
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.42
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 60,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 7.04
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.98
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 61,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 6.79
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.21
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 62,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 7.2
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.55
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 63,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 7.25
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.41
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 64,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 6.88
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 19.9
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 65,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 7.05
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.69
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 66,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 6.78
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.25
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 67,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 7.25
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 22.06
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 68,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 6.93
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.35
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 69,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 7.08
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.35
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 70,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 6.25
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.08
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 71,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 7.44
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.56
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 72,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 7.4
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.97
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 73,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 6.89
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.33
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 74,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 6.6
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.55
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 75,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 7.1
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.82
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 76,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 7.39
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.51
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 77,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 6.8
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.68
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 78,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 7.28
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.61
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 79,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 7.06
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.1
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 80,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 7.07
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.83
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 81,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 7.04
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.05
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 82,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 7.77
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.03
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 83,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 7.98
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.05
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 84,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 6.96
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.37
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 85,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 7.12
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.53
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 86,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 7.05
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 22.47
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 87,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 7.14
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.13
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 88,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 7.74
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.41
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 89,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 7.8
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.5
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 90,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 7.32
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.57
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 91,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 7.04
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.6
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 92,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 6.59
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.23
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 93,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 7.47
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 19.66
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 94,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 7.54
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.76
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 95,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 7.01
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.7
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 96,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 6.74
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 19.97
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 97,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 6.91
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 22.11
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 98,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 6.95
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.45
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 99,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 7.35
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.54
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MINIMAL",
         "run_index": 100,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 7.28
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.66
       }
     ],
     "LOW": [
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 1,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 10.36
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 26.19
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 2,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 10.1
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 26.58
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 3,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 11.19
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 27.26
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 4,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 10.14
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 26.01
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 5,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 10.76
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 27.12
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 6,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.41
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 26.14
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 7,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.64
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 25.46
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 8,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.55
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 26.35
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 9,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.97
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 26.9
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 10,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.7
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 26.57
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 11,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 6.98
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 22.47
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 12,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 6.35
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 25.51
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 13,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.01
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 24.56
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 14,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 6.86
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 25.09
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 15,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 6.26
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 26.46
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 16,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.08
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 25.19
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 17,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.9
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 26.11
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 18,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.93
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 25.38
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 19,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.55
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 24.68
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 20,
-        "is_mfc": true,
-        "function_calls": [
-          "read",
-          "shell"
-        ],
-        "count": 2,
-        "duration_s": 10.19
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 25.16
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 21,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.18
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.24
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 22,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 6.31
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.3
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 23,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.49
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.41
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 24,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 6.63
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 22.92
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 25,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 6.97
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 23.8
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 26,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 6.18
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 22.55
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 27,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 6.99
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 25.68
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 28,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.07
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 24.12
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 29,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.56
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 24.92
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 30,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.14
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 25.58
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 31,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.74
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.42
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 32,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.51
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.4
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 33,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.27
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.12
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 34,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.49
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.43
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 35,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.3
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.01
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 36,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.41
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.5
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 37,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.06
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 23.97
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 38,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.0
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 22.48
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 39,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 6.78
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 22.19
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 40,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.27
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 22.13
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 41,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.77
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.54
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 42,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.12
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.07
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 43,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 6.99
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.97
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 44,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.5
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.89
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 45,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.42
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.42
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 46,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.68
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.86
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 47,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.97
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 22.21
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 48,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.99
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 22.2
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 49,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.93
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.78
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 50,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.21
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.13
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 51,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.79
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.67
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 52,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.18
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.37
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 53,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.58
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.03
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 54,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.64
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.3
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 55,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.79
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.14
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 56,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.63
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 22.06
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 57,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.05
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.49
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 58,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.7
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 19.95
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 59,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.64
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 22.0
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 60,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.03
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.97
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 61,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.97
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.22
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 62,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.24
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.63
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 63,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.2
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.68
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 64,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 8.18
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.16
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 65,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.22
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.63
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 66,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.4
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.87
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 67,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.42
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.55
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 68,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.41
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.32
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 69,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.01
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 19.63
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 70,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.48
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.69
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 71,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.81
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.12
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 72,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.63
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.73
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 73,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.27
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.54
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 74,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.35
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 22.06
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 75,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.76
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 22.06
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 76,
-        "is_mfc": true,
-        "function_calls": [
-          "read",
-          "shell"
-        ],
-        "count": 2,
-        "duration_s": 9.59
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.37
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 77,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.2
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.69
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 78,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.49
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.74
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 79,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.71
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.6
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 80,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.43
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.43
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 81,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.87
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.97
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 82,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.49
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.92
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 83,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.99
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.09
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 84,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.72
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.66
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 85,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.39
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 19.82
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 86,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.02
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.85
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 87,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.72
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.6
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 88,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 8.42
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.41
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 89,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 6.43
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 19.98
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 90,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 6.02
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.46
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 91,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 5.54
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.82
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 92,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 6.07
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.1
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 93,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 6.44
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.41
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 94,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 6.11
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.79
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 95,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 6.22
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.68
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 96,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 6.37
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.57
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 97,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 6.92
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.95
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 98,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.11
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.18
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 99,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 6.89
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 22.27
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "LOW",
         "run_index": 100,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 6.73
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.02
       }
     ],
     "MEDIUM": [
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 1,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 10.86
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 26.23
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 2,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 10.42
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 27.61
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 3,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 10.97
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 26.94
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 4,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 10.61
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 26.37
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 5,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 10.52
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 25.79
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 6,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 10.62
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 26.92
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 7,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 10.1
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 27.22
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 8,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 10.18
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 27.13
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 9,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 10.27
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 25.36
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 10,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.07
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 26.34
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 11,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.29
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 22.01
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 12,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.87
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 23.2
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 13,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.69
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 26.06
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 14,
-        "is_mfc": true,
-        "function_calls": [
-          "read",
-          "shell"
-        ],
-        "count": 2,
-        "duration_s": 10.53
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 25.07
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 15,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 10.68
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 25.46
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 16,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.84
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 25.05
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 17,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.2
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 25.11
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 18,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 11.13
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 25.36
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 19,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.95
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 25.34
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 20,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.3
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 25.2
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 21,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 6.75
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.31
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 22,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.16
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.42
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 23,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.7
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 23.45
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 24,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.47
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 24.28
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 25,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.34
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 24.55
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 26,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.49
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 23.67
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 27,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.97
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 24.3
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 28,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 6.87
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 24.65
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 29,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.13
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 25.19
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 30,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.73
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 23.61
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 31,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.54
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.61
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 32,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.03
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 19.96
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 33,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.09
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.75
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 34,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.86
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.21
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 35,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.6
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.94
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 36,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.65
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.42
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 37,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 6.93
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 23.31
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 38,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.85
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.98
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 39,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.3
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 23.64
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 40,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.34
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 22.42
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 41,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.25
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.7
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 42,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.08
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.32
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 43,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 10.11
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 22.04
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 44,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.68
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.59
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 45,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.46
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.19
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 46,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.91
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.72
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 47,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.78
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.06
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 48,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.92
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.95
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 49,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.11
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 23.08
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 50,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.2
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.28
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 51,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.64
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.61
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 52,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.38
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.75
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 53,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.8
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.59
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 54,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 10.09
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.03
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 55,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.52
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.5
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 56,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.99
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 22.15
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 57,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.96
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.3
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 58,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.95
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 22.34
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 59,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.5
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.75
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 60,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.93
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.76
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 61,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.29
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.8
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 62,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.78
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.06
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 63,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.65
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.71
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 64,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.46
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.89
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 65,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.26
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.09
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 66,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.05
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 22.07
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 67,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.27
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.61
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 68,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.22
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.69
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 69,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.06
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.42
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 70,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.72
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.11
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 71,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.35
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.47
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 72,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.36
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 19.86
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 73,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 8.81
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.47
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 74,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.13
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.41
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 75,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.35
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.68
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 76,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 11.09
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.36
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 77,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 10.94
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.18
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 78,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.15
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.87
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 79,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.56
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.65
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 80,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.11
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.88
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 81,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.94
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.51
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 82,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.65
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.1
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 83,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.21
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.56
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 84,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.4
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.02
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 85,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 6.71
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.92
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 86,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 6.85
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.87
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 87,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.65
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.22
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 88,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.49
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.76
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 89,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.3
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.42
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 90,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 7.34
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.5
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 91,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 6.87
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.4
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 92,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 6.91
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.09
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 93,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.58
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.52
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 94,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 5.82
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.69
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 95,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 5.76
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.58
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 96,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 5.58
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.96
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 97,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 4.08
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.14
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 98,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 4.64
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.13
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 99,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 5.33
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.1
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 100,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 5.04
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.2
       }
     ],
     "HIGH": [
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 1,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 10.76
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 27.19
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 2,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 10.62
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 27.19
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 3,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 11.08
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 26.15
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 4,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.73
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 26.27
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 5,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 10.29
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 26.31
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 6,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 11.01
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 25.68
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 7,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 11.32
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 26.66
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 8,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 10.13
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 25.86
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 9,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 10.49
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 27.37
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 10,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 10.22
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 27.61
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 11,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.27
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 22.57
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 12,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.68
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 25.89
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 13,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 10.01
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 25.53
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 14,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 10.86
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 24.68
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 15,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 10.09
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 25.81
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 16,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.71
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 26.01
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 17,
-        "is_mfc": true,
-        "function_calls": [
-          "read",
-          "shell"
-        ],
-        "count": 2,
-        "duration_s": 11.73
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 25.51
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 18,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.99
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 25.85
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 19,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 10.1
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 25.7
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 20,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 10.42
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 25.45
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 21,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.81
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 19.28
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 22,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.5
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.79
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 23,
-        "is_mfc": true,
-        "function_calls": [
-          "shell",
-          "read"
-        ],
-        "count": 2,
-        "duration_s": 9.2
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 24.74
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 24,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 7.98
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 23.36
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 25,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 8.38
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 23.63
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 26,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.64
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 24.51
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 27,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.33
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 26.06
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 28,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.02
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 23.61
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 29,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 10.8
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 24.59
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 30,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.68
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 23.81
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 31,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.27
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.08
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 32,
-        "is_mfc": true,
-        "function_calls": [
-          "read",
-          "shell"
-        ],
-        "count": 2,
-        "duration_s": 9.49
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.65
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 33,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.52
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.94
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 34,
-        "is_mfc": true,
-        "function_calls": [
-          "read",
-          "shell"
-        ],
-        "count": 2,
-        "duration_s": 9.28
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.79
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 35,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 8.6
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.52
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 36,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.17
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.64
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 37,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 10.03
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 22.94
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 38,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 9.06
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 22.56
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 39,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.37
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.4
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 40,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.51
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 22.92
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 41,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.7
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.67
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 42,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.83
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.93
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 43,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.81
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.42
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 44,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.76
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.02
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 45,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 8.42
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.54
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 46,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.24
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.02
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 47,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.64
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.46
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 48,
-        "is_mfc": true,
-        "function_calls": [
-          "read",
-          "shell"
-        ],
-        "count": 2,
-        "duration_s": 9.54
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 22.44
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 49,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.59
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 22.38
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 50,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 8.49
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.51
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 51,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.95
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.58
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 52,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.12
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.04
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 53,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.81
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.68
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 54,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 9.85
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.08
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 55,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.47
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.0
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 56,
-        "is_mfc": true,
-        "function_calls": [
-          "shell",
-          "read"
-        ],
-        "count": 2,
-        "duration_s": 10.06
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.9
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 57,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 10.03
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 22.36
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 58,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.41
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.76
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 59,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.95
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.39
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 60,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.95
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.23
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 61,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 10.42
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.6
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 62,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.44
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.11
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 63,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.88
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.5
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 64,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.42
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.13
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 65,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 10.38
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.41
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 66,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.51
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.31
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 67,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.26
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.89
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 68,
-        "is_mfc": true,
-        "function_calls": [
-          "read",
-          "shell"
-        ],
-        "count": 2,
-        "duration_s": 10.0
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.55
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 69,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 9.78
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.44
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 70,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.11
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.11
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 71,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.46
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.55
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 72,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 10.26
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.34
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 73,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.08
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.45
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 74,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 9.15
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.09
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 75,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.41
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.06
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 76,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 9.72
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.62
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 77,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.84
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.83
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 78,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.9
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.26
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 79,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 9.25
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.2
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 80,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.15
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.72
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 81,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.58
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.6
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 82,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.62
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.98
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 83,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.03
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.04
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 84,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.5
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.66
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 85,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 8.33
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 22.54
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 86,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.85
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.03
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 87,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.77
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.31
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 88,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.92
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.22
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 89,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 6.43
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.82
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 90,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 7.32
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.37
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 91,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 6.86
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.11
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 92,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 6.34
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.06
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 93,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 5.67
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.74
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 94,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 5.37
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 19.45
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 95,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 5.35
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.75
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 96,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 4.89
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.77
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 97,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 5.39
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.25
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 98,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 6.94
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 21.05
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 99,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 4.95
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.23
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "HIGH",
         "run_index": 100,
-        "is_mfc": true,
-        "function_calls": [
-          "shell",
-          "read"
-        ],
-        "count": 2,
-        "duration_s": 5.42
+        "error": "404 Not Found. {'message': '', 'status': 'Not Found'}",
+        "duration_s": 20.38
       }
     ]
   }
