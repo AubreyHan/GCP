@@ -4,6 +4,7 @@
 from dotenv import load_dotenv
 import os
 import time
+import random
 import concurrent.futures
 from google import genai
 from google.genai import types
@@ -12,25 +13,20 @@ from loopit import user_prompt, system_instruction, tools_definition
 load_dotenv(override=True)
 
 THINKING_LEVELS = [
-    "THINKING_LEVEL_UNSPECIFIED",
     "MINIMAL",
     "LOW",
     "MEDIUM",
     "HIGH",
 ]
 
-def run_single_request(thinking_level, max_retries=3):
+def run_single_request(thinking_level, max_retries=5):
     client = genai.Client(
         project="cloud-llm-preview4",
         location="global",
         vertexai=True,
     )
     
-    t_config = (
-        types.ThinkingConfig(thinking_level=thinking_level)
-        if thinking_level != "THINKING_LEVEL_UNSPECIFIED"
-        else None
-    )
+    t_config = types.ThinkingConfig(thinking_level=thinking_level)
     
     config = types.GenerateContentConfig(
         system_instruction=system_instruction,
@@ -80,10 +76,10 @@ def run_single_request(thinking_level, max_retries=3):
                     "success": False,
                     "error": str(e)
                 }
-            time.sleep(2 * attempt)
+            time.sleep(1.5 * attempt + random.uniform(0.5, 1.5))
 
 def run_level(level, num_runs=100, max_workers=10):
-    print(f"\n[{level}] 开始运行 {num_runs} 次测试 (并发: {max_workers}) ...")
+    print(f"[{level}] 开始并行测试 {num_runs} 次 ...")
     t0 = time.time()
     
     completed = 0
@@ -101,12 +97,9 @@ def run_level(level, num_runs=100, max_workers=10):
             else:
                 errors += 1
                 
-            if completed % 20 == 0 or completed == num_runs:
-                print(f"  -> 进度: {completed}/{num_runs} (MFC 次数: {mfc_count}, 错误: {errors})")
-                
     t1 = time.time()
     rate = (mfc_count / num_runs) * 100
-    print(f"[{level}] 测试完成! 耗时: {t1-t0:.2f}s | MFC 出现次数: {mfc_count}/{num_runs} ({rate:.1f}%)")
+    print(f"[{level}] 完成! 耗时: {t1-t0:.2f}s | MFC 出现次数: {mfc_count}/{num_runs} ({rate:.1f}%)")
     return {
         "level": level,
         "mfc_count": mfc_count,
@@ -117,30 +110,31 @@ def run_level(level, num_runs=100, max_workers=10):
 
 if __name__ == "__main__":
     print("=" * 60)
-    print("      Gemini 3.5 Flash MFC (Multi-Function Calling) 检查")
+    print("      Gemini 3.5 Flash MFC 4个Level 并行检查")
     print("=" * 60)
     print("模型: gemini-3.5-flash")
-    print("单层级运行次数: 100 遍")
-    print(f"待测试 Thinking Levels: {THINKING_LEVELS}")
+    print("运行层级: MINIMAL, LOW, MEDIUM, HIGH (各 100 遍并发运行)")
     print("=" * 60)
     
-    summary = []
     t_start_all = time.time()
     
-    for level in THINKING_LEVELS:
-        res = run_level(level, num_runs=100, max_workers=10)
-        summary.append(res)
+    with concurrent.futures.ThreadPoolExecutor(max_workers=4) as level_executor:
+        future_map = {level_executor.submit(run_level, lvl, 100, 10): lvl for lvl in THINKING_LEVELS}
+        results = [fut.result() for fut in concurrent.futures.as_completed(future_map)]
         
     t_end_all = time.time()
     
+    level_order = {lvl: i for i, lvl in enumerate(THINKING_LEVELS)}
+    results.sort(key=lambda r: level_order[r['level']])
+    
     print("\n" + "=" * 60)
-    print("                       最终统计报告 (按 Thinking Level)")
+    print("                       最终统计报告 (并行完成)")
     print("=" * 60)
-    print(f"{'Thinking Level':<28} | {'MFC 次数 / 总遍数':<18} | {'MFC 概率':<10}")
+    print(f"{'Thinking Level':<20} | {'MFC 次数 / 总遍数':<18} | {'MFC 概率':<10}")
     print("-" * 60)
-    for row in summary:
+    for row in results:
         mfc_str = f"{row['mfc_count']} / 100"
         rate_str = f"{row['rate']:.1f}%"
-        print(f"{row['level']:<28} | {mfc_str:<18} | {rate_str:<10}")
+        print(f"{row['level']:<20} | {mfc_str:<18} | {rate_str:<10}")
     print("=" * 60)
-    print(f"总耗时: {t_end_all - t_start_all:.2f}s")
+    print(f"并行总耗时: {t_end_all - t_start_all:.2f}s")
