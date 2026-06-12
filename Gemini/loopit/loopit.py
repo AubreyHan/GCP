@@ -1,9 +1,10 @@
 from dotenv import load_dotenv
+import os
 from google import genai
 from google.genai import types
 
 load_dotenv(override=True)
-project_id = 
+project_id = os()
 
 client = genai.Client(
     project="hy-ai-demo",
