@@ -19,10 +19,11 @@ import os
 
 load_dotenv(override=True)
 project_id = os.environ.get("PROJECT_ID")
+location = os.environ.get("LOCATION")
 
 client = genai.Client(
-    project="cloud-llm-preview4",
-    location="global",
+    project=project_id,
+    location=location,
     vertexai=True,
 )
 ```
