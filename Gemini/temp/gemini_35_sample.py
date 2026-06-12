@@ -14,7 +14,7 @@ from google.genai import types
 def main():
     load_dotenv(override=True)
     
-    project_id = os.environ.get("PROJECT_ID", "cloud-llm-preview4")
+    project_id = os.environ.get("PROJECT_ID")
     location = os.environ.get("LOCATION", "global")
     base_url = os.environ.get("BASE_URL")
     
