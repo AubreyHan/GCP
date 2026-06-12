@@ -9,9 +9,9 @@ import random
 import concurrent.futures
 from google import genai
 from google.genai import types
-from loopit import user_prompt, system_instruction, tools_definition
+from loopit import user_prompt, system_instruction, tools_definition  # pyright: ignore[reportImplicitRelativeImport]
 
-load_dotenv(override=True)
+load_dotenv(override=True)  # pyright: ignore[reportUnusedCallResult]
 
 THINKING_LEVELS = [
     "MINIMAL",
@@ -66,7 +66,7 @@ def run_single_request(thinking_level, idx, max_retries=5):
                         fn_calls.append(part.function_call.name)
                         
             is_mfc = len(fn_calls) >= 2
-            return {
+            return {  # pyright: ignore[reportUnknownVariableType]
                 "success": True,
                 "thinking_level": thinking_level,
                 "run_index": idx,
@@ -77,7 +77,7 @@ def run_single_request(thinking_level, idx, max_retries=5):
             }
         except Exception as e:
             if attempt == max_retries:
-                return {
+                return {  # pyright: ignore[reportUnknownVariableType]
                     "success": False,
                     "thinking_level": thinking_level,
                     "run_index": idx,
@@ -86,7 +86,7 @@ def run_single_request(thinking_level, idx, max_retries=5):
                 }
             time.sleep(1.5 * attempt + random.uniform(0.5, 1.5))
 
-def run_level(level, num_runs=100, max_workers=10):
+def run_level(level, num_runs=100, max_workers=10):  # pyright: ignore[reportUnknownParameterType]
     print(f"[{level}] 开始并行测试 ({num_runs} 次) ...")
     t0 = time.time()
     

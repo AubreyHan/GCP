@@ -54,7 +54,7 @@ def main():
                     
         print("-" * 50)
         if response.usage_metadata:
-            print(f"Token 用量: Prompt={response.usage_metadata.prompt_token_count}, "
+            print(f"Token 用量: Prompt={response.usage_metadata.prompt_token_count}, "  # pyright: ignore[reportImplicitStringConcatenation]
                   f"Candidates={response.usage_metadata.candidates_token_count}, "
                   f"Total={response.usage_metadata.total_token_count}")
     except Exception as e:
