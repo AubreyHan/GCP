@@ -14,10 +14,7 @@ from loopit import user_prompt, system_instruction, tools_definition  # pyright:
 load_dotenv(override=True)
 
 THINKING_LEVELS = [
-    "MINIMAL",
-    "LOW",
     "MEDIUM",
-    "HIGH",
 ]
 
 def run_single_request(thinking_level, idx, max_retries=5):
@@ -130,15 +127,15 @@ def run_level(level, num_runs=100, max_workers=10):
 
 if __name__ == "__main__":
     print("=" * 60)
-    print("      Gemini 3.5 Flash MFC 终端实时监控 (4个Level)")
+    print("      Gemini 3.5 Flash MFC 终端实时监控 (MEDIUM)")
     print("=" * 60)
     print("模型: gemini-3.5-flash")
-    print("运行层级: MINIMAL, LOW, MEDIUM, HIGH")
+    print("运行层级: MEDIUM")
     print("=" * 60)
     
     t_start_all = time.time()
     
-    with concurrent.futures.ThreadPoolExecutor(max_workers=4) as level_executor:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=len(THINKING_LEVELS)) as level_executor:
         future_map = {level_executor.submit(run_level, lvl, 100, 10): lvl for lvl in THINKING_LEVELS}
         results = [fut.result() for fut in concurrent.futures.as_completed(future_map)]
         
