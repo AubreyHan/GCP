@@ -2,11 +2,16 @@ import concurrent.futures
 import time
 from google import genai
 from google.genai import types
-from loopit import client, user_prompt, system_instruction, tools_definition
+from loopit import user_prompt, system_instruction, tools_definition
 
-print("Testing concurrent execution (10 workers, 20 requests)...")
+print("Testing concurrent execution (10 workers, 20 requests) with per-request Client...")
 
 def run_request(idx):
+    client = genai.Client(
+        project="cloud-llm-preview4",
+        location="global",
+        vertexai=True,
+    )
     config = types.GenerateContentConfig(
         system_instruction=system_instruction,
         temperature=1.0,
