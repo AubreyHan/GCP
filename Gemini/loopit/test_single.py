@@ -1,19 +1,16 @@
-from dotenv import load_dotenv
-import os
+import concurrent.futures
+import time
 from google import genai
 from google.genai import types
 from loopit import client, user_prompt, system_instruction, tools_definition
 
-levels = ["THINKING_LEVEL_UNSPECIFIED", "MINIMAL", "LOW", "MEDIUM", "HIGH"]
+print("Testing concurrent execution (10 workers, 20 requests)...")
 
-for level in levels:
-    print(f"\nTesting thinking_level={level} ...")
-    t_config = types.ThinkingConfig(thinking_level=level) if level != "THINKING_LEVEL_UNSPECIFIED" else None
-    
+def run_request(idx):
     config = types.GenerateContentConfig(
         system_instruction=system_instruction,
         temperature=1.0,
-        thinking_config=t_config,
+        thinking_config=types.ThinkingConfig(thinking_level="MINIMAL"),
         tools=tools_definition,
         max_output_tokens=65536,
         tool_config=types.ToolConfig(
@@ -30,20 +27,32 @@ for level in levels:
             )
         ),
     )
-
     try:
-        response = client.models.generate_content(
+        t0 = time.time()
+        res = client.models.generate_content(
             model="gemini-3.5-flash",
             contents=user_prompt,
             config=config
         )
-        
+        t1 = time.time()
         fn_calls = []
-        if response.candidates and response.candidates[0].content and response.candidates[0].content.parts:
-            for part in response.candidates[0].content.parts:
-                if getattr(part, 'function_call', None):
-                    fn_calls.append(part.function_call.name)
-                    
-        print(f"-> Function calls invoked: {fn_calls} (Count: {len(fn_calls)})")
+        if res.candidates and res.candidates[0].content and res.candidates[0].content.parts:
+            for p in res.candidates[0].content.parts:
+                if getattr(p, 'function_call', None):
+                    fn_calls.append(p.function_call.name)
+        return {"status": "success", "count": len(fn_calls), "fn_calls": fn_calls, "time": t1 - t0}
     except Exception as e:
-        print(f"-> Error: {e}")
+        return {"status": "error", "error": str(e)}
+
+t_start = time.time()
+with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+    results = list(executor.map(run_request, range(20)))
+t_end = time.time()
+
+successes = [r for r in results if r["status"] == "success"]
+errors = [r for r in results if r["status"] == "error"]
+
+print(f"Total Time: {t_end - t_start:.2f}s")
+print(f"Success: {len(successes)}, Error: {len(errors)}")
+if errors:
+    print(f"Sample error: {errors[0]}")
