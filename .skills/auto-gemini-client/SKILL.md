@@ -25,7 +25,9 @@ base_url = os.environ.get("BASE_URL")
 client = genai.Client(
     project=project_id,
     location=location,
-    base_url=base_url,
+    http_options=types.HttpOptions(
+           base_url=base_url,
+       ),
     vertexai=True,
 )
 ```
