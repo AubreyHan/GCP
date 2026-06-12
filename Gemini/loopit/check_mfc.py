@@ -95,7 +95,7 @@ def run_level(level, num_runs=100, max_workers=10):
     mfc_count = 0
     errors = 0
     
-    with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
+    with concurrent.futures.ProcessPoolExecutor(max_workers=max_workers) as executor:
         futures = [executor.submit(run_single_request, level, idx + 1) for idx in range(num_runs)]
         for future in concurrent.futures.as_completed(futures):
             res = future.result()
