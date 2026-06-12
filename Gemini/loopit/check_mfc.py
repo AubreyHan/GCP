@@ -87,7 +87,7 @@ def run_single_request(thinking_level, idx, max_retries=5):
             time.sleep(1.5 * attempt + random.uniform(0.5, 1.5))
 
 def run_level(level, num_runs=100, max_workers=10):
-    print(f"[{level}] 开始并行测试并收集调用明细 ({num_runs} 次) ...")
+    print(f"[{level}] 开始并行测试 ({num_runs} 次) ...")
     t0 = time.time()
     
     details = []
@@ -99,6 +99,12 @@ def run_level(level, num_runs=100, max_workers=10):
         for future in concurrent.futures.as_completed(futures):
             res = future.result()
             details.append(res)
+            
+            # 实时将每一次测试结果输出到终端监控
+            mfc_flag = "★ MFC" if res.get("is_mfc") else "  SFC"
+            fn_list_str = ", ".join(res.get("function_calls", [])) or "None"
+            print(f"[{level}] #{res['run_index']:<3} | {mfc_flag} | {res.get('duration_s', 0):>5.2f}s | 函数: [{fn_list_str}]")
+            
             if res["success"]:
                 if res.get("is_mfc"):
                     mfc_count += 1
@@ -107,7 +113,7 @@ def run_level(level, num_runs=100, max_workers=10):
                 
     t1 = time.time()
     rate = (mfc_count / num_runs) * 100
-    print(f"[{level}] 收集完毕! 耗时: {t1-t0:.2f}s | MFC 次数: {mfc_count}/{num_runs} ({rate:.1f}%)")
+    print(f"[{level}] 完成! 耗时: {t1-t0:.2f}s | MFC 出现次数: {mfc_count}/{num_runs} ({rate:.1f}%)")
     
     details.sort(key=lambda x: x["run_index"])
     return {
@@ -121,7 +127,7 @@ def run_level(level, num_runs=100, max_workers=10):
 
 if __name__ == "__main__":
     print("=" * 60)
-    print("      Gemini 3.5 Flash MFC 并行运行与日志收集")
+    print("      Gemini 3.5 Flash MFC 终端实时监控 (4个Level)")
     print("=" * 60)
     print("模型: gemini-3.5-flash")
     print("运行层级: MINIMAL, LOW, MEDIUM, HIGH")
@@ -161,7 +167,7 @@ if __name__ == "__main__":
         json.dump(json_data, f, ensure_ascii=False, indent=2)
         
     print("\n" + "=" * 60)
-    print("                       最终统计报告 (带明细日志)")
+    print("                       最终统计报告 (带实时监控)")
     print("=" * 60)
     print(f"{'Thinking Level':<20} | {'MFC 次数 / 总遍数':<18} | {'MFC 概率':<10}")
     print("-" * 60)
