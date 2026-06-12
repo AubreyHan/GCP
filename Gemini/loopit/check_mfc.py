@@ -125,14 +125,7 @@ def run_level(level, num_runs=100, max_workers=10):
         "details": details
     }
 
-if __name__ == "__main__":
-    print("=" * 60)
-    print("      Gemini 3.5 Flash MFC 终端实时监控 (MEDIUM)")
-    print("=" * 60)
-    print("模型: gemini-3.5-flash")
-    print("运行层级: MEDIUM")
-    print("=" * 60)
-    
+def run_once():
     t_start_all = time.time()
     
     with concurrent.futures.ThreadPoolExecutor(max_workers=len(THINKING_LEVELS)) as level_executor:
@@ -144,6 +137,7 @@ if __name__ == "__main__":
     level_order = {lvl: i for i, lvl in enumerate(THINKING_LEVELS)}
     results.sort(key=lambda r: level_order[r['level']])
     
+    # Save the latest detailed results to mfc_details.json
     log_output_path = os.path.join(os.path.dirname(__file__), "mfc_details.json")
     json_data = {
         "model": "gemini-3.5-flash",
@@ -166,6 +160,14 @@ if __name__ == "__main__":
     with open(log_output_path, "w", encoding="utf-8") as f:
         json.dump(json_data, f, ensure_ascii=False, indent=2)
         
+    # Append the summary to mfc_history.log
+    history_log_path = os.path.join(os.path.dirname(__file__), "mfc_history.log")
+    local_time_str = time.strftime("%Y-%m-%d %H:%M:%S")
+    with open(history_log_path, "a", encoding="utf-8") as f_log:
+        for r in results:
+            log_line = f"[{local_time_str}] Model: gemini-3.5-flash | Level: {r['level']:<8} | MFC Count: {r['mfc_count']}/100 ({r['rate']:.1f}%) | Duration: {r['time']:.2f}s | Errors: {r['errors']}\n"
+            f_log.write(log_line)
+            
     print("\n" + "=" * 60)
     print("                       最终统计报告 (带实时监控)")
     print("=" * 60)
@@ -177,3 +179,27 @@ if __name__ == "__main__":
         print(f"{row['level']:<20} | {mfc_str:<18} | {rate_str:<10}")
     print("=" * 60)
     print(f"调用明细文件已导出至: {log_output_path}")
+    print(f"统计结果已追加至: {history_log_path}")
+
+if __name__ == "__main__":
+    INTERVAL_MINUTES = 15
+    print("=" * 60)
+    print(f"      Gemini 3.5 Flash MFC 终端实时监控 (每 {INTERVAL_MINUTES} 分钟循环运行)")
+    print("=" * 60)
+    print("模型: gemini-3.5-flash")
+    print("运行层级: MEDIUM")
+    print(f"运行间隔: {INTERVAL_MINUTES} 分钟")
+    print("=" * 60)
+    
+    try:
+        while True:
+            start_time = time.time()
+            print(f"\n>>> 启动新一轮测试 (时间: {time.strftime('%Y-%m-%d %H:%M:%S')})")
+            run_once()
+            
+            elapsed = time.time() - start_time
+            sleep_sec = max(0.0, INTERVAL_MINUTES * 60 - elapsed)
+            print(f"\n本轮运行耗时: {elapsed:.2f}s。将等待 {sleep_sec:.2f}s 后启动下一轮...")
+            time.sleep(sleep_sec)
+    except KeyboardInterrupt:
+        print("\n检测到 Ctrl+C，已退出循环测试。")
