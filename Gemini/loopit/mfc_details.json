@@ -1,14 +1,14 @@
 {
   "model": "gemini-3.5-flash",
-  "total_duration_s": 44.6,
-  "timestamp": "2026-06-12T12:21:06Z",
+  "total_duration_s": 47.32,
+  "timestamp": "2026-06-12T12:27:33Z",
   "summary": [
     {
       "thinking_level": "MEDIUM",
-      "mfc_count": 1,
+      "mfc_count": 2,
       "total_runs": 100,
-      "mfc_rate": "1.0%",
-      "duration_s": 44.59
+      "mfc_rate": "2.0%",
+      "duration_s": 47.32
     }
   ],
   "invocation_details": {
@@ -22,7 +22,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 6.19
+        "duration_s": 6.34
       },
       {
         "success": true,
@@ -30,10 +30,10 @@
         "run_index": 2,
         "is_mfc": false,
         "function_calls": [
-          "shell"
+          "read"
         ],
         "count": 1,
-        "duration_s": 5.4
+        "duration_s": 6.27
       },
       {
         "success": true,
@@ -44,7 +44,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.23
+        "duration_s": 6.21
       },
       {
         "success": true,
@@ -52,21 +52,22 @@
         "run_index": 4,
         "is_mfc": false,
         "function_calls": [
-          "shell"
+          "read"
         ],
         "count": 1,
-        "duration_s": 4.8
+        "duration_s": 6.41
       },
       {
         "success": true,
         "thinking_level": "MEDIUM",
         "run_index": 5,
-        "is_mfc": false,
+        "is_mfc": true,
         "function_calls": [
-          "shell"
+          "read",
+          "read"
         ],
-        "count": 1,
-        "duration_s": 4.96
+        "count": 2,
+        "duration_s": 6.49
       },
       {
         "success": true,
@@ -77,7 +78,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.83
+        "duration_s": 5.08
       },
       {
         "success": true,
@@ -88,7 +89,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 6.58
+        "duration_s": 7.79
       },
       {
         "success": true,
@@ -99,18 +100,19 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.45
+        "duration_s": 5.99
       },
       {
         "success": true,
         "thinking_level": "MEDIUM",
         "run_index": 9,
-        "is_mfc": false,
+        "is_mfc": true,
         "function_calls": [
+          "read",
           "shell"
         ],
-        "count": 1,
-        "duration_s": 5.43
+        "count": 2,
+        "duration_s": 6.51
       },
       {
         "success": true,
@@ -121,7 +123,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.71
+        "duration_s": 5.83
       },
       {
         "success": true,
@@ -132,7 +134,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.56
+        "duration_s": 3.68
       },
       {
         "success": true,
@@ -140,10 +142,10 @@
         "run_index": 12,
         "is_mfc": false,
         "function_calls": [
-          "shell"
+          "read"
         ],
         "count": 1,
-        "duration_s": 3.99
+        "duration_s": 5.72
       },
       {
         "success": true,
@@ -151,10 +153,10 @@
         "run_index": 13,
         "is_mfc": false,
         "function_calls": [
-          "shell"
+          "read"
         ],
         "count": 1,
-        "duration_s": 4.0
+        "duration_s": 5.75
       },
       {
         "success": true,
@@ -165,7 +167,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.19
+        "duration_s": 5.04
       },
       {
         "success": true,
@@ -176,7 +178,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.03
+        "duration_s": 4.06
       },
       {
         "success": true,
@@ -187,7 +189,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.52
+        "duration_s": 4.44
       },
       {
         "success": true,
@@ -198,155 +200,12 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.84
+        "duration_s": 4.9
       },
       {
         "success": true,
         "thinking_level": "MEDIUM",
         "run_index": 18,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 4.65
-      },
-      {
-        "success": true,
-        "thinking_level": "MEDIUM",
-        "run_index": 19,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 4.72
-      },
-      {
-        "success": true,
-        "thinking_level": "MEDIUM",
-        "run_index": 20,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 3.66
-      },
-      {
-        "success": true,
-        "thinking_level": "MEDIUM",
-        "run_index": 21,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 4.22
-      },
-      {
-        "success": true,
-        "thinking_level": "MEDIUM",
-        "run_index": 22,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 4.24
-      },
-      {
-        "success": true,
-        "thinking_level": "MEDIUM",
-        "run_index": 23,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 4.46
-      },
-      {
-        "success": true,
-        "thinking_level": "MEDIUM",
-        "run_index": 24,
-        "is_mfc": false,
-        "function_calls": [
-          "shell"
-        ],
-        "count": 1,
-        "duration_s": 4.08
-      },
-      {
-        "success": true,
-        "thinking_level": "MEDIUM",
-        "run_index": 25,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 4.5
-      },
-      {
-        "success": true,
-        "thinking_level": "MEDIUM",
-        "run_index": 26,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 3.49
-      },
-      {
-        "success": true,
-        "thinking_level": "MEDIUM",
-        "run_index": 27,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 3.2
-      },
-      {
-        "success": true,
-        "thinking_level": "MEDIUM",
-        "run_index": 28,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 3.48
-      },
-      {
-        "success": true,
-        "thinking_level": "MEDIUM",
-        "run_index": 29,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 3.48
-      },
-      {
-        "success": true,
-        "thinking_level": "MEDIUM",
-        "run_index": 30,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 4.87
-      },
-      {
-        "success": true,
-        "thinking_level": "MEDIUM",
-        "run_index": 31,
         "is_mfc": false,
         "function_calls": [
           "read"
@@ -357,13 +216,156 @@
       {
         "success": true,
         "thinking_level": "MEDIUM",
+        "run_index": 19,
+        "is_mfc": false,
+        "function_calls": [
+          "shell"
+        ],
+        "count": 1,
+        "duration_s": 4.52
+      },
+      {
+        "success": true,
+        "thinking_level": "MEDIUM",
+        "run_index": 20,
+        "is_mfc": false,
+        "function_calls": [
+          "read"
+        ],
+        "count": 1,
+        "duration_s": 5.56
+      },
+      {
+        "success": true,
+        "thinking_level": "MEDIUM",
+        "run_index": 21,
+        "is_mfc": false,
+        "function_calls": [
+          "read"
+        ],
+        "count": 1,
+        "duration_s": 4.64
+      },
+      {
+        "success": true,
+        "thinking_level": "MEDIUM",
+        "run_index": 22,
+        "is_mfc": false,
+        "function_calls": [
+          "read"
+        ],
+        "count": 1,
+        "duration_s": 4.96
+      },
+      {
+        "success": true,
+        "thinking_level": "MEDIUM",
+        "run_index": 23,
+        "is_mfc": false,
+        "function_calls": [
+          "read"
+        ],
+        "count": 1,
+        "duration_s": 3.46
+      },
+      {
+        "success": true,
+        "thinking_level": "MEDIUM",
+        "run_index": 24,
+        "is_mfc": false,
+        "function_calls": [
+          "read"
+        ],
+        "count": 1,
+        "duration_s": 3.81
+      },
+      {
+        "success": true,
+        "thinking_level": "MEDIUM",
+        "run_index": 25,
+        "is_mfc": false,
+        "function_calls": [
+          "read"
+        ],
+        "count": 1,
+        "duration_s": 3.95
+      },
+      {
+        "success": true,
+        "thinking_level": "MEDIUM",
+        "run_index": 26,
+        "is_mfc": false,
+        "function_calls": [
+          "read"
+        ],
+        "count": 1,
+        "duration_s": 3.65
+      },
+      {
+        "success": true,
+        "thinking_level": "MEDIUM",
+        "run_index": 27,
+        "is_mfc": false,
+        "function_calls": [
+          "shell"
+        ],
+        "count": 1,
+        "duration_s": 4.76
+      },
+      {
+        "success": true,
+        "thinking_level": "MEDIUM",
+        "run_index": 28,
+        "is_mfc": false,
+        "function_calls": [
+          "read"
+        ],
+        "count": 1,
+        "duration_s": 4.56
+      },
+      {
+        "success": true,
+        "thinking_level": "MEDIUM",
+        "run_index": 29,
+        "is_mfc": false,
+        "function_calls": [
+          "read"
+        ],
+        "count": 1,
+        "duration_s": 3.19
+      },
+      {
+        "success": true,
+        "thinking_level": "MEDIUM",
+        "run_index": 30,
+        "is_mfc": false,
+        "function_calls": [
+          "read"
+        ],
+        "count": 1,
+        "duration_s": 3.93
+      },
+      {
+        "success": true,
+        "thinking_level": "MEDIUM",
+        "run_index": 31,
+        "is_mfc": false,
+        "function_calls": [
+          "read"
+        ],
+        "count": 1,
+        "duration_s": 4.14
+      },
+      {
+        "success": true,
+        "thinking_level": "MEDIUM",
         "run_index": 32,
         "is_mfc": false,
         "function_calls": [
           "read"
         ],
         "count": 1,
-        "duration_s": 5.15
+        "duration_s": 3.28
       },
       {
         "success": true,
@@ -374,7 +376,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.44
+        "duration_s": 4.61
       },
       {
         "success": true,
@@ -385,7 +387,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.87
+        "duration_s": 4.53
       },
       {
         "success": true,
@@ -396,7 +398,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.05
+        "duration_s": 4.03
       },
       {
         "success": true,
@@ -407,7 +409,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.02
+        "duration_s": 3.48
       },
       {
         "success": true,
@@ -418,7 +420,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.94
+        "duration_s": 3.88
       },
       {
         "success": true,
@@ -429,7 +431,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.05
+        "duration_s": 4.3
       },
       {
         "success": true,
@@ -440,7 +442,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.2
+        "duration_s": 3.47
       },
       {
         "success": true,
@@ -462,7 +464,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.5
+        "duration_s": 3.95
       },
       {
         "success": true,
@@ -473,7 +475,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.17
+        "duration_s": 3.98
       },
       {
         "success": true,
@@ -484,7 +486,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.69
+        "duration_s": 4.29
       },
       {
         "success": true,
@@ -495,7 +497,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.01
+        "duration_s": 4.73
       },
       {
         "success": true,
@@ -503,10 +505,10 @@
         "run_index": 45,
         "is_mfc": false,
         "function_calls": [
-          "shell"
+          "read"
         ],
         "count": 1,
-        "duration_s": 4.59
+        "duration_s": 4.07
       },
       {
         "success": true,
@@ -517,7 +519,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.09
+        "duration_s": 3.26
       },
       {
         "success": true,
@@ -528,7 +530,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.82
+        "duration_s": 4.54
       },
       {
         "success": true,
@@ -539,7 +541,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.69
+        "duration_s": 4.1
       },
       {
         "success": true,
@@ -550,7 +552,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.24
+        "duration_s": 3.27
       },
       {
         "success": true,
@@ -561,7 +563,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.35
+        "duration_s": 3.57
       },
       {
         "success": true,
@@ -572,7 +574,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.75
+        "duration_s": 4.82
       },
       {
         "success": true,
@@ -583,7 +585,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.54
+        "duration_s": 4.02
       },
       {
         "success": true,
@@ -594,7 +596,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.36
+        "duration_s": 3.24
       },
       {
         "success": true,
@@ -605,7 +607,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.6
+        "duration_s": 4.4
       },
       {
         "success": true,
@@ -616,7 +618,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.18
+        "duration_s": 4.13
       },
       {
         "success": true,
@@ -624,10 +626,10 @@
         "run_index": 56,
         "is_mfc": false,
         "function_calls": [
-          "read"
+          "shell"
         ],
         "count": 1,
-        "duration_s": 4.39
+        "duration_s": 4.03
       },
       {
         "success": true,
@@ -635,10 +637,10 @@
         "run_index": 57,
         "is_mfc": false,
         "function_calls": [
-          "read"
+          "shell"
         ],
         "count": 1,
-        "duration_s": 3.48
+        "duration_s": 3.78
       },
       {
         "success": true,
@@ -646,10 +648,10 @@
         "run_index": 58,
         "is_mfc": false,
         "function_calls": [
-          "read"
+          "shell"
         ],
         "count": 1,
-        "duration_s": 3.3
+        "duration_s": 3.9
       },
       {
         "success": true,
@@ -660,7 +662,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.54
+        "duration_s": 5.72
       },
       {
         "success": true,
@@ -671,7 +673,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.74
+        "duration_s": 4.48
       },
       {
         "success": true,
@@ -682,7 +684,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.41
+        "duration_s": 5.15
       },
       {
         "success": true,
@@ -693,7 +695,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.08
+        "duration_s": 3.75
       },
       {
         "success": true,
@@ -701,10 +703,10 @@
         "run_index": 63,
         "is_mfc": false,
         "function_calls": [
-          "read"
+          "shell"
         ],
         "count": 1,
-        "duration_s": 3.39
+        "duration_s": 3.81
       },
       {
         "success": true,
@@ -715,7 +717,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.18
+        "duration_s": 3.69
       },
       {
         "success": true,
@@ -726,7 +728,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.89
+        "duration_s": 3.51
       },
       {
         "success": true,
@@ -737,7 +739,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.16
+        "duration_s": 3.71
       },
       {
         "success": true,
@@ -748,7 +750,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.13
+        "duration_s": 4.31
       },
       {
         "success": true,
@@ -756,10 +758,10 @@
         "run_index": 68,
         "is_mfc": false,
         "function_calls": [
-          "shell"
+          "read"
         ],
         "count": 1,
-        "duration_s": 3.32
+        "duration_s": 4.29
       },
       {
         "success": true,
@@ -770,7 +772,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.94
+        "duration_s": 3.89
       },
       {
         "success": true,
@@ -781,7 +783,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.71
+        "duration_s": 4.25
       },
       {
         "success": true,
@@ -792,7 +794,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.48
+        "duration_s": 3.64
       },
       {
         "success": true,
@@ -803,19 +805,18 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.22
+        "duration_s": 3.49
       },
       {
         "success": true,
         "thinking_level": "MEDIUM",
         "run_index": 73,
-        "is_mfc": true,
+        "is_mfc": false,
         "function_calls": [
-          "read",
-          "shell"
+          "read"
         ],
-        "count": 2,
-        "duration_s": 4.27
+        "count": 1,
+        "duration_s": 3.78
       },
       {
         "success": true,
@@ -826,7 +827,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.09
+        "duration_s": 4.02
       },
       {
         "success": true,
@@ -837,7 +838,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.79
+        "duration_s": 4.05
       },
       {
         "success": true,
@@ -848,7 +849,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.5
+        "duration_s": 4.42
       },
       {
         "success": true,
@@ -859,7 +860,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.64
+        "duration_s": 4.07
       },
       {
         "success": true,
@@ -870,7 +871,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.71
+        "duration_s": 3.92
       },
       {
         "success": true,
@@ -881,7 +882,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.48
+        "duration_s": 4.79
       },
       {
         "success": true,
@@ -892,7 +893,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.71
+        "duration_s": 4.1
       },
       {
         "success": true,
@@ -903,7 +904,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.39
+        "duration_s": 4.03
       },
       {
         "success": true,
@@ -914,7 +915,7 @@
           "shell"
         ],
         "count": 1,
-        "duration_s": 4.06
+        "duration_s": 4.17
       },
       {
         "success": true,
@@ -925,7 +926,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.65
+        "duration_s": 3.29
       },
       {
         "success": true,
@@ -936,7 +937,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.69
+        "duration_s": 3.66
       },
       {
         "success": true,
@@ -944,10 +945,10 @@
         "run_index": 85,
         "is_mfc": false,
         "function_calls": [
-          "read"
+          "shell"
         ],
         "count": 1,
-        "duration_s": 4.09
+        "duration_s": 4.72
       },
       {
         "success": true,
@@ -958,7 +959,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.19
+        "duration_s": 4.6
       },
       {
         "success": true,
@@ -969,7 +970,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 2.78
+        "duration_s": 4.69
       },
       {
         "success": true,
@@ -980,7 +981,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.11
+        "duration_s": 4.33
       },
       {
         "success": true,
@@ -991,7 +992,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.58
+        "duration_s": 4.04
       },
       {
         "success": true,
@@ -1002,7 +1003,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.75
+        "duration_s": 3.62
       },
       {
         "success": true,
@@ -1013,7 +1014,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.2
+        "duration_s": 4.48
       },
       {
         "success": true,
@@ -1024,7 +1025,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.14
+        "duration_s": 3.93
       },
       {
         "success": true,
@@ -1035,7 +1036,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.62
+        "duration_s": 3.8
       },
       {
         "success": true,
@@ -1046,7 +1047,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.58
+        "duration_s": 4.15
       },
       {
         "success": true,
@@ -1057,7 +1058,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.68
+        "duration_s": 4.09
       },
       {
         "success": true,
@@ -1065,10 +1066,10 @@
         "run_index": 96,
         "is_mfc": false,
         "function_calls": [
-          "shell"
+          "read"
         ],
         "count": 1,
-        "duration_s": 4.24
+        "duration_s": 3.49
       },
       {
         "success": true,
@@ -1079,7 +1080,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.29
+        "duration_s": 3.85
       },
       {
         "success": true,
@@ -1090,7 +1091,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.45
+        "duration_s": 4.67
       },
       {
         "success": true,
@@ -1098,10 +1099,10 @@
         "run_index": 99,
         "is_mfc": false,
         "function_calls": [
-          "shell"
+          "read"
         ],
         "count": 1,
-        "duration_s": 4.53
+        "duration_s": 4.32
       },
       {
         "success": true,
@@ -1112,7 +1113,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.25
+        "duration_s": 4.07
       }
     ]
   }
