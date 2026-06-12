@@ -12,7 +12,6 @@ from google import genai
 from google.genai import types
 
 def main():
-    # 加载环境变量
     load_dotenv(override=True)
     
     project_id = os.environ.get("PROJECT_ID", "cloud-llm-preview4")
@@ -48,7 +47,15 @@ def main():
             contents=prompt,
             config=config,
         )
-        print(response.text)
+        
+        # 遍历解析打印生成内容
+        if response.candidates and response.candidates[0].content and response.candidates[0].content.parts:
+            for part in response.candidates[0].content.parts:
+                if getattr(part, 'text', None):
+                    print(part.text)
+                elif getattr(part, 'function_call', None):
+                    print(f"[Function Call]: {part.function_call.name}")
+                    
         print("-" * 50)
         if response.usage_metadata:
             print(f"Token 用量: Prompt={response.usage_metadata.prompt_token_count}, "
