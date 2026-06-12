@@ -20,10 +20,12 @@ import os
 load_dotenv(override=True)
 project_id = os.environ.get("PROJECT_ID")
 location = os.environ.get("LOCATION")
+base_url = os.environ.get("BASE_URL")
 
 client = genai.Client(
     project=project_id,
     location=location,
+    base_url=base_url,
     vertexai=True,
 )
 ```
