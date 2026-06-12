@@ -4,7 +4,7 @@ from google import genai
 from google.genai import types
 
 load_dotenv(override=True)
-project_id = os(environ.get(PROJECT_ID))
+project_id = os.environ.get(PROJECT_ID)
 
 client = genai.Client(
     project=project_id,
