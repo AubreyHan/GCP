@@ -11,7 +11,7 @@ from google import genai
 from google.genai import types
 from loopit import user_prompt, system_instruction, tools_definition  # pyright: ignore[reportImplicitRelativeImport]
 
-load_dotenv(override=True)  # pyright: ignore[reportUnusedCallResult]
+load_dotenv(override=True)
 
 THINKING_LEVELS = [
     "MINIMAL",
@@ -21,13 +21,14 @@ THINKING_LEVELS = [
 ]
 
 def run_single_request(thinking_level, idx, max_retries=5):
+    base_url = os.environ.get("BASE_URL")
+    http_opts = types.HttpOptions(base_url=base_url) if base_url else None
+
     client = genai.Client(
-        project="cloud-llm-preview4",
-        location="global",
+        project=os.environ.get("PROJECT_ID", "cloud-llm-preview4"),
+        location=os.environ.get("LOCATION", "global"),
         vertexai=True,
-        http_options=types.HttpOptions(
-            base_url="https://aiplatform.googleapis.com/v1",
-        ),
+        http_options=http_opts,
     )
     
     t_config = types.ThinkingConfig(thinking_level=thinking_level)
@@ -69,7 +70,7 @@ def run_single_request(thinking_level, idx, max_retries=5):
                         fn_calls.append(part.function_call.name)
                         
             is_mfc = len(fn_calls) >= 2
-            return {  # pyright: ignore[reportUnknownVariableType]
+            return {
                 "success": True,
                 "thinking_level": thinking_level,
                 "run_index": idx,
@@ -80,7 +81,7 @@ def run_single_request(thinking_level, idx, max_retries=5):
             }
         except Exception as e:
             if attempt == max_retries:
-                return {  # pyright: ignore[reportUnknownVariableType]
+                return {
                     "success": False,
                     "thinking_level": thinking_level,
                     "run_index": idx,
@@ -89,7 +90,7 @@ def run_single_request(thinking_level, idx, max_retries=5):
                 }
             time.sleep(1.5 * attempt + random.uniform(0.5, 1.5))
 
-def run_level(level, num_runs=100, max_workers=10):  # pyright: ignore[reportUnknownParameterType]
+def run_level(level, num_runs=100, max_workers=10):
     print(f"[{level}] 开始并行测试 ({num_runs} 次) ...")
     t0 = time.time()
     
@@ -103,16 +104,15 @@ def run_level(level, num_runs=100, max_workers=10):  # pyright: ignore[reportUnk
             res = future.result()
             details.append(res)
             
-            # 实时将每一次测试结果输出到终端监控
-            mfc_flag = "★ MFC" if res.get("is_mfc") else "  SFC"
-            fn_list_str = ", ".join(res.get("function_calls", [])) or "None"
-            print(f"[{level}] #{res['run_index']:<3} | {mfc_flag} | {res.get('duration_s', 0):>5.2f}s | 函数: [{fn_list_str}]")
-            
-            if res["success"]:
+            if res.get("success"):
+                mfc_flag = "★ MFC" if res.get("is_mfc") else "  SFC"
+                fn_list_str = ", ".join(res.get("function_calls", [])) or "None"
+                print(f"[{level}] #{res['run_index']:<3} | {mfc_flag} | {res.get('duration_s', 0):>5.2f}s | 函数: [{fn_list_str}]")
                 if res.get("is_mfc"):
                     mfc_count += 1
             else:
                 errors += 1
+                print(f"[{level}] #{res['run_index']:<3} | [ERROR] | {res.get('duration_s', 0):>5.2f}s | 错误: {res.get('error')}")
                 
     t1 = time.time()
     rate = (mfc_count / num_runs) * 100
