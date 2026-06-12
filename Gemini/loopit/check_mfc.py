@@ -23,8 +23,11 @@ THINKING_LEVELS = [
 def run_single_request(thinking_level, idx, max_retries=5):
     client = genai.Client(
         project="cloud-llm-preview4",
-        location="global",
+        location="us",
         vertexai=True,
+        http_options=types.HttpOptions(
+            base_url="https://aiplatform.googleapis.com/v1beta",
+        ),
     )
     
     t_config = types.ThinkingConfig(thinking_level=thinking_level)
