@@ -1,14 +1,14 @@
 {
   "model": "gemini-3.5-flash",
-  "total_duration_s": 275.6,
-  "timestamp": "2026-06-12T15:39:53Z",
+  "total_duration_s": 561.05,
+  "timestamp": "2026-06-12T15:40:14Z",
   "summary": [
     {
       "thinking_level": "MEDIUM",
-      "mfc_count": 3,
+      "mfc_count": 1,
       "total_runs": 100,
-      "mfc_rate": "3.0%",
-      "duration_s": 275.6
+      "mfc_rate": "1.0%",
+      "duration_s": 561.04
     }
   ],
   "invocation_details": {
@@ -22,7 +22,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 224.23
+        "duration_s": 10.19
       },
       {
         "success": true,
@@ -33,7 +33,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 224.16
+        "duration_s": 10.13
       },
       {
         "success": true,
@@ -41,10 +41,10 @@
         "run_index": 3,
         "is_mfc": false,
         "function_calls": [
-          "shell"
+          "read"
         ],
         "count": 1,
-        "duration_s": 230.23
+        "duration_s": 9.53
       },
       {
         "success": true,
@@ -55,7 +55,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 224.12
+        "duration_s": 9.72
       },
       {
         "success": true,
@@ -66,7 +66,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 223.79
+        "duration_s": 10.55
       },
       {
         "success": true,
@@ -77,7 +77,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 231.84
+        "duration_s": 10.21
       },
       {
         "success": true,
@@ -85,10 +85,10 @@
         "run_index": 7,
         "is_mfc": false,
         "function_calls": [
-          "read"
+          "shell"
         ],
         "count": 1,
-        "duration_s": 223.68
+        "duration_s": 10.76
       },
       {
         "success": true,
@@ -96,22 +96,21 @@
         "run_index": 8,
         "is_mfc": false,
         "function_calls": [
-          "read"
+          "shell"
         ],
         "count": 1,
-        "duration_s": 223.61
+        "duration_s": 9.01
       },
       {
         "success": true,
         "thinking_level": "MEDIUM",
         "run_index": 9,
-        "is_mfc": true,
+        "is_mfc": false,
         "function_calls": [
-          "read",
-          "shell"
+          "read"
         ],
-        "count": 2,
-        "duration_s": 225.51
+        "count": 1,
+        "duration_s": 9.95
       },
       {
         "success": true,
@@ -122,7 +121,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 223.48
+        "duration_s": 9.38
       },
       {
         "success": true,
@@ -133,7 +132,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.79
+        "duration_s": 4.66
       },
       {
         "success": true,
@@ -144,7 +143,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 6.18
+        "duration_s": 3.86
       },
       {
         "success": true,
@@ -155,7 +154,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.54
+        "duration_s": 3.35
       },
       {
         "success": true,
@@ -166,7 +165,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.55
+        "duration_s": 4.66
       },
       {
         "success": true,
@@ -177,7 +176,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.96
+        "duration_s": 5.57
       },
       {
         "success": true,
@@ -188,7 +187,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.05
+        "duration_s": 5.35
       },
       {
         "success": true,
@@ -199,7 +198,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.48
+        "duration_s": 6.24
       },
       {
         "success": true,
@@ -210,7 +209,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.01
+        "duration_s": 6.01
       },
       {
         "success": true,
@@ -221,7 +220,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.49
+        "duration_s": 7.6
       },
       {
         "success": true,
@@ -232,7 +231,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.19
+        "duration_s": 6.45
       },
       {
         "success": true,
@@ -243,7 +242,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.44
+        "duration_s": 5.19
       },
       {
         "success": true,
@@ -254,7 +253,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.12
+        "duration_s": 4.52
       },
       {
         "success": true,
@@ -265,7 +264,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.7
+        "duration_s": 5.41
       },
       {
         "success": true,
@@ -276,7 +275,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.81
+        "duration_s": 4.03
       },
       {
         "success": true,
@@ -287,7 +286,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.72
+        "duration_s": 5.86
       },
       {
         "success": true,
@@ -298,7 +297,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.96
+        "duration_s": 4.38
       },
       {
         "success": true,
@@ -309,7 +308,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.17
+        "duration_s": 4.61
       },
       {
         "success": true,
@@ -320,7 +319,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.52
+        "duration_s": 5.4
       },
       {
         "success": true,
@@ -331,7 +330,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.77
+        "duration_s": 4.44
       },
       {
         "success": true,
@@ -342,7 +341,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.85
+        "duration_s": 6.23
       },
       {
         "success": true,
@@ -350,10 +349,10 @@
         "run_index": 31,
         "is_mfc": false,
         "function_calls": [
-          "shell"
+          "read"
         ],
         "count": 1,
-        "duration_s": 4.07
+        "duration_s": 6.28
       },
       {
         "success": true,
@@ -364,7 +363,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.18
+        "duration_s": 6.07
       },
       {
         "success": true,
@@ -375,7 +374,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.6
+        "duration_s": 5.49
       },
       {
         "success": true,
@@ -386,7 +385,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.73
+        "duration_s": 6.92
       },
       {
         "success": true,
@@ -397,7 +396,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.54
+        "duration_s": 5.38
       },
       {
         "success": true,
@@ -405,10 +404,10 @@
         "run_index": 36,
         "is_mfc": false,
         "function_calls": [
-          "read"
+          "shell"
         ],
         "count": 1,
-        "duration_s": 4.48
+        "duration_s": 5.99
       },
       {
         "success": true,
@@ -419,7 +418,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.49
+        "duration_s": 4.88
       },
       {
         "success": true,
@@ -430,7 +429,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.9
+        "duration_s": 4.82
       },
       {
         "success": true,
@@ -441,7 +440,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.07
+        "duration_s": 4.66
       },
       {
         "success": true,
@@ -452,7 +451,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.81
+        "duration_s": 4.69
       },
       {
         "success": true,
@@ -463,18 +462,19 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.13
+        "duration_s": 4.95
       },
       {
         "success": true,
         "thinking_level": "MEDIUM",
         "run_index": 42,
-        "is_mfc": false,
+        "is_mfc": true,
         "function_calls": [
-          "read"
+          "read",
+          "shell"
         ],
-        "count": 1,
-        "duration_s": 4.54
+        "count": 2,
+        "duration_s": 6.44
       },
       {
         "success": true,
@@ -485,7 +485,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.35
+        "duration_s": 5.55
       },
       {
         "success": true,
@@ -496,7 +496,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.45
+        "duration_s": 4.23
       },
       {
         "success": true,
@@ -507,7 +507,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.44
+        "duration_s": 219.15
       },
       {
         "success": true,
@@ -518,7 +518,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.08
+        "duration_s": 218.94
       },
       {
         "success": true,
@@ -529,19 +529,18 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.01
+        "duration_s": 247.9
       },
       {
         "success": true,
         "thinking_level": "MEDIUM",
         "run_index": 48,
-        "is_mfc": true,
+        "is_mfc": false,
         "function_calls": [
-          "read",
-          "shell"
+          "read"
         ],
-        "count": 2,
-        "duration_s": 5.15
+        "count": 1,
+        "duration_s": 248.03
       },
       {
         "success": true,
@@ -549,10 +548,10 @@
         "run_index": 49,
         "is_mfc": false,
         "function_calls": [
-          "shell"
+          "read"
         ],
         "count": 1,
-        "duration_s": 3.27
+        "duration_s": 220.39
       },
       {
         "success": true,
@@ -563,7 +562,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.88
+        "duration_s": 225.18
       },
       {
         "success": true,
@@ -574,7 +573,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.91
+        "duration_s": 218.21
       },
       {
         "success": true,
@@ -585,7 +584,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.97
+        "duration_s": 217.64
       },
       {
         "success": true,
@@ -596,7 +595,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.92
+        "duration_s": 217.3
       },
       {
         "success": true,
@@ -607,7 +606,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.35
+        "duration_s": 514.35
       },
       {
         "success": true,
@@ -618,7 +617,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.01
+        "duration_s": 5.01
       },
       {
         "success": true,
@@ -629,7 +628,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.54
+        "duration_s": 4.61
       },
       {
         "success": true,
@@ -640,7 +639,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.06
+        "duration_s": 5.6
       },
       {
         "success": true,
@@ -651,7 +650,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.15
+        "duration_s": 4.81
       },
       {
         "success": true,
@@ -662,7 +661,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.25
+        "duration_s": 3.84
       },
       {
         "success": true,
@@ -673,7 +672,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.52
+        "duration_s": 4.63
       },
       {
         "success": true,
@@ -681,10 +680,10 @@
         "run_index": 61,
         "is_mfc": false,
         "function_calls": [
-          "read"
+          "shell"
         ],
         "count": 1,
-        "duration_s": 3.73
+        "duration_s": 4.28
       },
       {
         "success": true,
@@ -695,7 +694,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.85
+        "duration_s": 4.83
       },
       {
         "success": true,
@@ -706,7 +705,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.33
+        "duration_s": 4.87
       },
       {
         "success": true,
@@ -717,7 +716,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.14
+        "duration_s": 5.13
       },
       {
         "success": true,
@@ -728,7 +727,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.8
+        "duration_s": 4.76
       },
       {
         "success": true,
@@ -739,7 +738,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.27
+        "duration_s": 4.68
       },
       {
         "success": true,
@@ -750,7 +749,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.94
+        "duration_s": 3.93
       },
       {
         "success": true,
@@ -761,7 +760,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.77
+        "duration_s": 6.06
       },
       {
         "success": true,
@@ -772,7 +771,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.31
+        "duration_s": 5.47
       },
       {
         "success": true,
@@ -783,7 +782,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.56
+        "duration_s": 4.76
       },
       {
         "success": true,
@@ -794,7 +793,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.39
+        "duration_s": 4.12
       },
       {
         "success": true,
@@ -805,7 +804,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.0
+        "duration_s": 4.96
       },
       {
         "success": true,
@@ -816,7 +815,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.85
+        "duration_s": 5.0
       },
       {
         "success": true,
@@ -827,7 +826,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.75
+        "duration_s": 4.67
       },
       {
         "success": true,
@@ -838,7 +837,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.45
+        "duration_s": 4.13
       },
       {
         "success": true,
@@ -849,7 +848,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.58
+        "duration_s": 4.95
       },
       {
         "success": true,
@@ -860,7 +859,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.16
+        "duration_s": 5.4
       },
       {
         "success": true,
@@ -871,7 +870,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.13
+        "duration_s": 4.36
       },
       {
         "success": true,
@@ -882,7 +881,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.16
+        "duration_s": 4.54
       },
       {
         "success": true,
@@ -890,10 +889,10 @@
         "run_index": 80,
         "is_mfc": false,
         "function_calls": [
-          "read"
+          "shell"
         ],
         "count": 1,
-        "duration_s": 4.92
+        "duration_s": 6.67
       },
       {
         "success": true,
@@ -904,7 +903,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.23
+        "duration_s": 8.14
       },
       {
         "success": true,
@@ -915,7 +914,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.02
+        "duration_s": 10.83
       },
       {
         "success": true,
@@ -926,7 +925,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.29
+        "duration_s": 9.27
       },
       {
         "success": true,
@@ -937,7 +936,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.87
+        "duration_s": 10.22
       },
       {
         "success": true,
@@ -948,7 +947,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.54
+        "duration_s": 9.37
       },
       {
         "success": true,
@@ -959,7 +958,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.29
+        "duration_s": 10.05
       },
       {
         "success": true,
@@ -970,7 +969,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.37
+        "duration_s": 225.85
       },
       {
         "success": true,
@@ -981,7 +980,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.77
+        "duration_s": 224.31
       },
       {
         "success": true,
@@ -992,7 +991,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.32
+        "duration_s": 220.59
       },
       {
         "success": true,
@@ -1003,7 +1002,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.54
+        "duration_s": 220.44
       },
       {
         "success": true,
@@ -1014,7 +1013,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.09
+        "duration_s": 220.38
       },
       {
         "success": true,
@@ -1025,7 +1024,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.98
+        "duration_s": 219.8
       },
       {
         "success": true,
@@ -1036,7 +1035,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.66
+        "duration_s": 219.44
       },
       {
         "success": true,
@@ -1047,18 +1046,14 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.97
+        "duration_s": 219.24
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 95,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 4.71
+        "error": "Context has already been used to create a Connection, it cannot be mutated again",
+        "duration_s": 282.72
       },
       {
         "success": true,
@@ -1069,7 +1064,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.27
+        "duration_s": 4.99
       },
       {
         "success": true,
@@ -1077,10 +1072,10 @@
         "run_index": 97,
         "is_mfc": false,
         "function_calls": [
-          "read"
+          "shell"
         ],
         "count": 1,
-        "duration_s": 4.7
+        "duration_s": 5.3
       },
       {
         "success": true,
@@ -1091,7 +1086,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.73
+        "duration_s": 4.03
       },
       {
         "success": true,
@@ -1102,19 +1097,18 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.01
+        "duration_s": 6.44
       },
       {
         "success": true,
         "thinking_level": "MEDIUM",
         "run_index": 100,
-        "is_mfc": true,
+        "is_mfc": false,
         "function_calls": [
-          "read",
-          "shell"
+          "read"
         ],
-        "count": 2,
-        "duration_s": 5.37
+        "count": 1,
+        "duration_s": 4.83
       }
     ]
   }
