@@ -87,7 +87,7 @@ def run_single_request(thinking_level, idx, max_retries=5):
                 }
             time.sleep(1.5 * attempt + random.uniform(0.5, 1.5))
 
-def run_level(level, num_runs=100, max_workers=10):
+def run_level(level, num_runs=1000, max_workers=10):
     print(f"[{level}] 开始并行测试 ({num_runs} 次) ...")
     t0 = time.time()
     
@@ -104,12 +104,12 @@ def run_level(level, num_runs=100, max_workers=10):
             if res.get("success"):
                 mfc_flag = "★ MFC" if res.get("is_mfc") else "  SFC"
                 fn_list_str = ", ".join(res.get("function_calls", [])) or "None"
-                print(f"[{level}] #{res['run_index']:<3} | {mfc_flag} | {res.get('duration_s', 0):>5.2f}s | 函数: [{fn_list_str}]")
+                print(f"[{level}] #{res['run_index']:<4} | {mfc_flag} | {res.get('duration_s', 0):>5.2f}s | 函数: [{fn_list_str}]")
                 if res.get("is_mfc"):
                     mfc_count += 1
             else:
                 errors += 1
-                print(f"[{level}] #{res['run_index']:<3} | [ERROR] | {res.get('duration_s', 0):>5.2f}s | 错误: {res.get('error')}")
+                print(f"[{level}] #{res['run_index']:<4} | [ERROR] | {res.get('duration_s', 0):>5.2f}s | 错误: {res.get('error')}")
                 
     t1 = time.time()
     rate = (mfc_count / num_runs) * 100
@@ -129,7 +129,7 @@ def run_once():
     t_start_all = time.time()
     
     with concurrent.futures.ThreadPoolExecutor(max_workers=len(THINKING_LEVELS)) as level_executor:
-        future_map = {level_executor.submit(run_level, lvl, 100, 10): lvl for lvl in THINKING_LEVELS}
+        future_map = {level_executor.submit(run_level, lvl, 1000, 10): lvl for lvl in THINKING_LEVELS}
         results = [fut.result() for fut in concurrent.futures.as_completed(future_map)]
         
     t_end_all = time.time()
@@ -146,7 +146,7 @@ def run_once():
             {
                 "thinking_level": r["level"],
                 "mfc_count": r["mfc_count"],
-                "total_runs": 100,
+                "total_runs": 1000,
                 "mfc_rate": f"{r['rate']:.1f}%",
                 "duration_s": r["time"]
             } for r in results
@@ -163,16 +163,16 @@ def run_once():
     local_time_str = time.strftime("%Y-%m-%d %H:%M:%S")
     with open(history_log_path, "a", encoding="utf-8") as f_log:
         for r in results:
-            log_line = f"[{local_time_str}] Model: gemini-3.5-flash | Level: {r['level']:<8} | MFC Count: {r['mfc_count']}/100 ({r['rate']:.1f}%) | Duration: {r['time']:.2f}s | Errors: {r['errors']}\n"
+            log_line = f"[{local_time_str}] Model: gemini-3.5-flash | Level: {r['level']:<8} | MFC Count: {r['mfc_count']}/1000 ({r['rate']:.1f}%) | Duration: {r['time']:.2f}s | Errors: {r['errors']}\n"
             f_log.write(log_line)
             
     print("\n" + "=" * 60)
-    print("                       最终统计报告 (单次手动运行)")
+    print("                       最终统计报告 (1000 次运行)")
     print("=" * 60)
     print(f"{'Thinking Level':<20} | {'MFC 次数 / 总遍数':<18} | {'MFC 概率':<10}")
     print("-" * 60)
     for row in results:
-        mfc_str = f"{row['mfc_count']} / 100"
+        mfc_str = f"{row['mfc_count']} / 1000"
         rate_str = f"{row['rate']:.1f}%"
         print(f"{row['level']:<20} | {mfc_str:<18} | {rate_str:<10}")
     print("=" * 60)
@@ -181,7 +181,7 @@ def run_once():
 
 if __name__ == "__main__":
     print("=" * 60)
-    print("      Gemini 3.5 Flash MFC 终端实时监控 (单次手动运行)")
+    print("      Gemini 3.5 Flash MFC 终端实时监控 (1000 次运行)")
     print("=" * 60)
     print("模型: gemini-3.5-flash")
     print(f"运行层级: {', '.join(THINKING_LEVELS)}")
