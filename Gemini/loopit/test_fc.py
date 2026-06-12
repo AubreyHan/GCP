@@ -6,13 +6,14 @@ from loopit import user_prompt, system_instruction, tools_definition
 
 load_dotenv(override=True)
 
+base_url = os.environ.get("BASE_URL")
+http_opts = types.HttpOptions(base_url=base_url) if base_url else None
+
 client = genai.Client(
-    project="cloud-llm-preview4",
-    location="global",
+    project=os.environ.get("PROJECT_ID", "cloud-llm-preview4"),
+    location=os.environ.get("LOCATION", "global"),
     vertexai=True,
-    http_options=types.HttpOptions(
-        base_url="https://aiplatform.googleapis.com/v1",
-    ),
+    http_options=http_opts,
 )
 
 config = types.GenerateContentConfig(
@@ -43,12 +44,6 @@ try:
         config=config
     )
 
-    print("Dump:")
-    if hasattr(response, 'model_dump_json'):
-        print(response.model_dump_json(indent=2))
-    else:
-        print(response)
-        
     fn_calls = []
     if response.candidates and response.candidates[0].content and response.candidates[0].content.parts:
         for part in response.candidates[0].content.parts:
