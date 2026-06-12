@@ -17,6 +17,8 @@ THINKING_LEVELS = [
     "MEDIUM",
 ]
 
+MODEL_NAME = "gemini-flash-2.5"
+
 def run_single_request(thinking_level, idx, max_retries=5):
     base_url = os.environ.get("BASE_URL")
     http_opts = types.HttpOptions(base_url=base_url) if base_url else None
@@ -55,7 +57,7 @@ def run_single_request(thinking_level, idx, max_retries=5):
     for attempt in range(1, max_retries + 1):
         try:
             response = client.models.generate_content(
-                model="gemini-3.5-flash",
+                model=MODEL_NAME,
                 contents=user_prompt,
                 config=config
             )
@@ -139,7 +141,7 @@ def run_once():
     
     log_output_path = os.path.join(os.path.dirname(__file__), "mfc_details.json")
     json_data = {
-        "model": "gemini-3.5-flash",
+        "model": MODEL_NAME,
         "total_duration_s": round(t_end_all - t_start_all, 2),
         "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
         "summary": [
@@ -163,7 +165,7 @@ def run_once():
     local_time_str = time.strftime("%Y-%m-%d %H:%M:%S")
     with open(history_log_path, "a", encoding="utf-8") as f_log:
         for r in results:
-            log_line = f"[{local_time_str}] Model: gemini-3.5-flash | Level: {r['level']:<8} | MFC Count: {r['mfc_count']}/1000 ({r['rate']:.1f}%) | Duration: {r['time']:.2f}s | Errors: {r['errors']}\n"
+            log_line = f"[{local_time_str}] Model: {MODEL_NAME} | Level: {r['level']:<8} | MFC Count: {r['mfc_count']}/1000 ({r['rate']:.1f}%) | Duration: {r['time']:.2f}s | Errors: {r['errors']}\n"
             f_log.write(log_line)
             
     print("\n" + "=" * 60)
@@ -181,9 +183,9 @@ def run_once():
 
 if __name__ == "__main__":
     print("=" * 60)
-    print("      Gemini 3.5 Flash MFC 终端实时监控 (1000 次运行)")
+    print("      Gemini Flash 2.5 MFC 终端实时监控 (1000 次运行)")
     print("=" * 60)
-    print("模型: gemini-3.5-flash")
+    print(f"模型: {MODEL_NAME}")
     print(f"运行层级: {', '.join(THINKING_LEVELS)}")
     print("=" * 60)
     
