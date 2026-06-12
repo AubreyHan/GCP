@@ -26,7 +26,7 @@ def run_single_request(thinking_level, idx, max_retries=5):
         location="eu",
         vertexai=True,
         http_options=types.HttpOptions(
-            base_url="https://aiplatform.googleapis.com/v1beta",
+            base_url="https://aiplatform.googleapis.com/v1",
         ),
     )
     
