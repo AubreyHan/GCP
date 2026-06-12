@@ -1,14 +1,14 @@
 {
   "model": "gemini-3.5-flash",
-  "total_duration_s": 48.88,
-  "timestamp": "2026-06-12T13:59:22Z",
+  "total_duration_s": 3547.18,
+  "timestamp": "2026-06-12T14:05:01Z",
   "summary": [
     {
       "thinking_level": "MEDIUM",
-      "mfc_count": 3,
+      "mfc_count": 2,
       "total_runs": 100,
-      "mfc_rate": "3.0%",
-      "duration_s": 48.87
+      "mfc_rate": "2.0%",
+      "duration_s": 3547.18
     }
   ],
   "invocation_details": {
@@ -22,19 +22,18 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 6.42
+        "duration_s": 5.3
       },
       {
         "success": true,
         "thinking_level": "MEDIUM",
         "run_index": 2,
-        "is_mfc": true,
+        "is_mfc": false,
         "function_calls": [
-          "read",
-          "shell"
+          "read"
         ],
-        "count": 2,
-        "duration_s": 6.98
+        "count": 1,
+        "duration_s": 5.64
       },
       {
         "success": true,
@@ -42,10 +41,10 @@
         "run_index": 3,
         "is_mfc": false,
         "function_calls": [
-          "read"
+          "shell"
         ],
         "count": 1,
-        "duration_s": 6.01
+        "duration_s": 5.73
       },
       {
         "success": true,
@@ -56,7 +55,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.66
+        "duration_s": 5.85
       },
       {
         "success": true,
@@ -67,7 +66,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 6.2
+        "duration_s": 5.13
       },
       {
         "success": true,
@@ -78,7 +77,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.88
+        "duration_s": 5.32
       },
       {
         "success": true,
@@ -89,7 +88,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.07
+        "duration_s": 6.84
       },
       {
         "success": true,
@@ -100,7 +99,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.87
+        "duration_s": 4.75
       },
       {
         "success": true,
@@ -111,7 +110,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.31
+        "duration_s": 5.7
       },
       {
         "success": true,
@@ -122,7 +121,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.97
+        "duration_s": 5.93
       },
       {
         "success": true,
@@ -133,7 +132,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.38
+        "duration_s": 3.2
       },
       {
         "success": true,
@@ -144,7 +143,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.61
+        "duration_s": 4.39
       },
       {
         "success": true,
@@ -155,7 +154,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.69
+        "duration_s": 3.58
       },
       {
         "success": true,
@@ -166,7 +165,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.41
+        "duration_s": 4.35
       },
       {
         "success": true,
@@ -177,7 +176,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.89
+        "duration_s": 5.16
       },
       {
         "success": true,
@@ -188,7 +187,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.67
+        "duration_s": 4.56
       },
       {
         "success": true,
@@ -199,7 +198,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.82
+        "duration_s": 4.32
       },
       {
         "success": true,
@@ -210,7 +209,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.18
+        "duration_s": 5.09
       },
       {
         "success": true,
@@ -221,7 +220,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.4
+        "duration_s": 6.38
       },
       {
         "success": true,
@@ -232,7 +231,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.5
+        "duration_s": 4.13
       },
       {
         "success": true,
@@ -243,7 +242,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.28
+        "duration_s": 4.23
       },
       {
         "success": true,
@@ -254,7 +253,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.19
+        "duration_s": 4.39
       },
       {
         "success": true,
@@ -265,7 +264,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.03
+        "duration_s": 4.39
       },
       {
         "success": true,
@@ -276,7 +275,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.67
+        "duration_s": 4.28
       },
       {
         "success": true,
@@ -287,7 +286,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.65
+        "duration_s": 3.5
       },
       {
         "success": true,
@@ -298,7 +297,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.78
+        "duration_s": 3.62
       },
       {
         "success": true,
@@ -309,7 +308,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.18
+        "duration_s": 4.37
       },
       {
         "success": true,
@@ -317,10 +316,10 @@
         "run_index": 28,
         "is_mfc": false,
         "function_calls": [
-          "read"
+          "shell"
         ],
         "count": 1,
-        "duration_s": 4.72
+        "duration_s": 4.34
       },
       {
         "success": true,
@@ -331,7 +330,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.01
+        "duration_s": 3.85
       },
       {
         "success": true,
@@ -342,7 +341,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.39
+        "duration_s": 3.82
       },
       {
         "success": true,
@@ -353,18 +352,14 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.7
+        "duration_s": 4.16
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 32,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 4.8
+        "error": "Context has already been used to create a Connection, it cannot be mutated again",
+        "duration_s": 3532.36
       },
       {
         "success": true,
@@ -375,29 +370,21 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.07
+        "duration_s": 4.02
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 34,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 4.03
+        "error": "Context has already been used to create a Connection, it cannot be mutated again",
+        "duration_s": 3531.22
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 35,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 3.84
+        "error": "Context has already been used to create a Connection, it cannot be mutated again",
+        "duration_s": 3530.64
       },
       {
         "success": true,
@@ -408,40 +395,28 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.55
+        "duration_s": 3.8
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 37,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 4.13
+        "error": "Context has already been used to create a Connection, it cannot be mutated again",
+        "duration_s": 3530.14
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 38,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 4.69
+        "error": "Context has already been used to create a Connection, it cannot be mutated again",
+        "duration_s": 3529.27
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 39,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 3.72
+        "error": "Context has already been used to create a Connection, it cannot be mutated again",
+        "duration_s": 3529.28
       },
       {
         "success": true,
@@ -452,18 +427,14 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.02
+        "duration_s": 1102.07
       },
       {
-        "success": true,
+        "success": false,
         "thinking_level": "MEDIUM",
         "run_index": 41,
-        "is_mfc": false,
-        "function_calls": [
-          "read"
-        ],
-        "count": 1,
-        "duration_s": 3.91
+        "error": "Context has already been used to create a Connection, it cannot be mutated again",
+        "duration_s": 3527.51
       },
       {
         "success": true,
@@ -474,7 +445,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.65
+        "duration_s": 979.91
       },
       {
         "success": true,
@@ -485,7 +456,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.4
+        "duration_s": 979.85
       },
       {
         "success": true,
@@ -496,7 +467,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.96
+        "duration_s": 4.17
       },
       {
         "success": true,
@@ -507,7 +478,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.4
+        "duration_s": 5.81
       },
       {
         "success": true,
@@ -518,7 +489,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.25
+        "duration_s": 4.1
       },
       {
         "success": true,
@@ -529,7 +500,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.59
+        "duration_s": 4.85
       },
       {
         "success": true,
@@ -540,7 +511,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.22
+        "duration_s": 3.76
       },
       {
         "success": true,
@@ -551,7 +522,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.6
+        "duration_s": 4.95
       },
       {
         "success": true,
@@ -562,7 +533,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.34
+        "duration_s": 4.26
       },
       {
         "success": true,
@@ -573,7 +544,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.39
+        "duration_s": 4.0
       },
       {
         "success": true,
@@ -581,10 +552,10 @@
         "run_index": 52,
         "is_mfc": false,
         "function_calls": [
-          "shell"
+          "read"
         ],
         "count": 1,
-        "duration_s": 4.21
+        "duration_s": 4.63
       },
       {
         "success": true,
@@ -595,7 +566,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.91
+        "duration_s": 4.23
       },
       {
         "success": true,
@@ -606,19 +577,18 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.89
+        "duration_s": 4.16
       },
       {
         "success": true,
         "thinking_level": "MEDIUM",
         "run_index": 55,
-        "is_mfc": true,
+        "is_mfc": false,
         "function_calls": [
-          "read",
-          "shell"
+          "read"
         ],
-        "count": 2,
-        "duration_s": 4.74
+        "count": 1,
+        "duration_s": 3.92
       },
       {
         "success": true,
@@ -629,7 +599,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.68
+        "duration_s": 4.48
       },
       {
         "success": true,
@@ -640,7 +610,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.09
+        "duration_s": 4.78
       },
       {
         "success": true,
@@ -651,7 +621,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.77
+        "duration_s": 4.65
       },
       {
         "success": true,
@@ -662,7 +632,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.86
+        "duration_s": 4.66
       },
       {
         "success": true,
@@ -670,10 +640,10 @@
         "run_index": 60,
         "is_mfc": false,
         "function_calls": [
-          "read"
+          "shell"
         ],
         "count": 1,
-        "duration_s": 4.1
+        "duration_s": 4.78
       },
       {
         "success": true,
@@ -684,7 +654,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.17
+        "duration_s": 3.76
       },
       {
         "success": true,
@@ -695,7 +665,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.25
+        "duration_s": 3.3
       },
       {
         "success": true,
@@ -706,18 +676,19 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.08
+        "duration_s": 3.84
       },
       {
         "success": true,
         "thinking_level": "MEDIUM",
         "run_index": 64,
-        "is_mfc": false,
+        "is_mfc": true,
         "function_calls": [
-          "read"
+          "read",
+          "shell"
         ],
-        "count": 1,
-        "duration_s": 4.75
+        "count": 2,
+        "duration_s": 5.06
       },
       {
         "success": true,
@@ -728,7 +699,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 2.99
+        "duration_s": 5.68
       },
       {
         "success": true,
@@ -739,7 +710,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.82
+        "duration_s": 4.25
       },
       {
         "success": true,
@@ -750,7 +721,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.03
+        "duration_s": 3.36
       },
       {
         "success": true,
@@ -761,7 +732,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.58
+        "duration_s": 6.83
       },
       {
         "success": true,
@@ -772,7 +743,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.07
+        "duration_s": 5.23
       },
       {
         "success": true,
@@ -783,19 +754,18 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.5
+        "duration_s": 3.98
       },
       {
         "success": true,
         "thinking_level": "MEDIUM",
         "run_index": 71,
-        "is_mfc": true,
+        "is_mfc": false,
         "function_calls": [
-          "read",
-          "shell"
+          "read"
         ],
-        "count": 2,
-        "duration_s": 6.29
+        "count": 1,
+        "duration_s": 4.48
       },
       {
         "success": true,
@@ -806,7 +776,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.64
+        "duration_s": 3.66
       },
       {
         "success": true,
@@ -817,7 +787,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.24
+        "duration_s": 3.91
       },
       {
         "success": true,
@@ -828,7 +798,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.87
+        "duration_s": 4.02
       },
       {
         "success": true,
@@ -839,7 +809,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.42
+        "duration_s": 3.71
       },
       {
         "success": true,
@@ -850,7 +820,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.0
+        "duration_s": 4.4
       },
       {
         "success": true,
@@ -858,10 +828,10 @@
         "run_index": 77,
         "is_mfc": false,
         "function_calls": [
-          "read"
+          "shell"
         ],
         "count": 1,
-        "duration_s": 3.93
+        "duration_s": 4.5
       },
       {
         "success": true,
@@ -872,7 +842,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.26
+        "duration_s": 3.63
       },
       {
         "success": true,
@@ -883,7 +853,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.94
+        "duration_s": 4.52
       },
       {
         "success": true,
@@ -894,7 +864,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.99
+        "duration_s": 4.12
       },
       {
         "success": true,
@@ -905,7 +875,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.79
+        "duration_s": 3.33
       },
       {
         "success": true,
@@ -913,10 +883,10 @@
         "run_index": 82,
         "is_mfc": false,
         "function_calls": [
-          "shell"
+          "read"
         ],
         "count": 1,
-        "duration_s": 4.96
+        "duration_s": 4.03
       },
       {
         "success": true,
@@ -927,7 +897,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.49
+        "duration_s": 3.95
       },
       {
         "success": true,
@@ -938,7 +908,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.65
+        "duration_s": 4.76
       },
       {
         "success": true,
@@ -949,7 +919,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.95
+        "duration_s": 4.76
       },
       {
         "success": true,
@@ -960,7 +930,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.1
+        "duration_s": 4.66
       },
       {
         "success": true,
@@ -971,7 +941,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.0
+        "duration_s": 4.79
       },
       {
         "success": true,
@@ -982,7 +952,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.44
+        "duration_s": 4.95
       },
       {
         "success": true,
@@ -993,7 +963,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.89
+        "duration_s": 4.86
       },
       {
         "success": true,
@@ -1004,7 +974,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.96
+        "duration_s": 4.04
       },
       {
         "success": true,
@@ -1015,7 +985,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.09
+        "duration_s": 5.63
       },
       {
         "success": true,
@@ -1023,10 +993,10 @@
         "run_index": 92,
         "is_mfc": false,
         "function_calls": [
-          "read"
+          "shell"
         ],
         "count": 1,
-        "duration_s": 4.3
+        "duration_s": 4.97
       },
       {
         "success": true,
@@ -1037,7 +1007,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 3.9
+        "duration_s": 3.66
       },
       {
         "success": true,
@@ -1048,18 +1018,19 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.26
+        "duration_s": 4.12
       },
       {
         "success": true,
         "thinking_level": "MEDIUM",
         "run_index": 95,
-        "is_mfc": false,
+        "is_mfc": true,
         "function_calls": [
-          "read"
+          "read",
+          "shell"
         ],
-        "count": 1,
-        "duration_s": 3.87
+        "count": 2,
+        "duration_s": 5.26
       },
       {
         "success": true,
@@ -1070,7 +1041,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 5.48
+        "duration_s": 4.46
       },
       {
         "success": true,
@@ -1081,7 +1052,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.89
+        "duration_s": 4.45
       },
       {
         "success": true,
@@ -1092,7 +1063,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.35
+        "duration_s": 3.81
       },
       {
         "success": true,
@@ -1103,7 +1074,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.17
+        "duration_s": 3.61
       },
       {
         "success": true,
@@ -1114,7 +1085,7 @@
           "read"
         ],
         "count": 1,
-        "duration_s": 4.46
+        "duration_s": 4.04
       }
     ]
   }
