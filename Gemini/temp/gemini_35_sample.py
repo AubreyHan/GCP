@@ -47,9 +47,8 @@ def main():
             config=config,
         )
         
-        if response.candidates and response.candidates[0].content and response.candidates[0].content.parts:
-            for part in response.candidates[0].content.parts:
-                print(part)
+        # 打印原始响应结构
+        print(response.model_dump_json(indent=2) if hasattr(response, 'model_dump_json') else response)
                     
         print("-" * 50)
         if response.usage_metadata:
