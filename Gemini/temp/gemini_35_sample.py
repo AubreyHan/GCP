@@ -32,7 +32,7 @@ def main():
     
     config = types.GenerateContentConfig(
         temperature=0.7,
-        max_output_tokens=2048,
+        max_output_tokens=65536,
         system_instruction="你是一位资深的 AI 架构师，回答要求清晰条理，重点突出。",
     )
     
@@ -47,8 +47,10 @@ def main():
             config=config,
         )
         
-        # 打印原始响应结构
-        print(response.model_dump_json(indent=2) if hasattr(response, 'model_dump_json') else response)
+        if getattr(response, 'text', None):
+            print(response.text)
+        else:
+            print(response.model_dump_json(indent=2) if hasattr(response, 'model_dump_json') else response)
                     
         print("-" * 50)
         if response.usage_metadata:
