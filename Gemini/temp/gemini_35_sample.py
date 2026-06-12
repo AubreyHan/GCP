@@ -20,7 +20,6 @@ def main():
     
     http_opts = types.HttpOptions(base_url=base_url) if base_url else None
 
-    # 严格遵循 auto-gemini-client 规范初始化 Client
     client = genai.Client(
         project=project_id,
         location=location,
@@ -48,13 +47,9 @@ def main():
             config=config,
         )
         
-        # 遍历解析打印生成内容
         if response.candidates and response.candidates[0].content and response.candidates[0].content.parts:
             for part in response.candidates[0].content.parts:
-                if getattr(part, 'text', None):
-                    print(part.text)
-                elif getattr(part, 'function_call', None):
-                    print(f"[Function Call]: {part.function_call.name}")
+                print(part)
                     
         print("-" * 50)
         if response.usage_metadata:
