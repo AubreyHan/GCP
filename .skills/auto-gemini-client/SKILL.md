@@ -22,12 +22,12 @@ project_id = os.environ.get("PROJECT_ID")
 location = os.environ.get("LOCATION")
 base_url = os.environ.get("BASE_URL")
 
-client = genai.Client
+client = genai.Client(
     project=project_id,
     location=location,
     http_options=types.HttpOptions(
            base_url=base_url,
-      ),
+    ),
     vertexai=True,
 )
 ```
