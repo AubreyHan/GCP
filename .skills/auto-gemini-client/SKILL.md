@@ -14,6 +14,11 @@ Whenever you create a new Python program or modify an existing script that uses 
 
 ```python
 from google import genai
+from dotenv import load_dotenv
+import os
+
+load_dotenv(override=True)
+project_id = os.environ.get("PROJECT_ID")
 
 client = genai.Client(
     project="cloud-llm-preview4",
