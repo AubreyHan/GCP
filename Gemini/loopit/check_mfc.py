@@ -17,7 +17,7 @@ THINKING_LEVELS = [
     "MEDIUM",
 ]
 
-MODEL_NAME = "gemini-flash-2.5"
+MODEL_NAME = "gemini-2.5-flash"
 
 def run_single_request(thinking_level, idx, max_retries=5):
     base_url = os.environ.get("BASE_URL")
