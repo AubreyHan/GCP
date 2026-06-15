@@ -1,3 +1,5 @@
 # get access token
 echo $(gcloud auth application-default print-access-token)
 
+# 授权服务账号
+export GOOGLE_APPLICATION_CREDENTIALS="/Users/yourname/keys/hy-ai-demo-key.json"
