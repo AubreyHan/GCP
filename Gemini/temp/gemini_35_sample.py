@@ -10,8 +10,8 @@ api_key = os.environ.get("API_KEY")
 def generate():
   client = genai.Client(
       vertexai=True,
-      project="hy-ai-demo",
-      location="global",
+      #project="hy-ai-demo",
+      #location="global",
       api_key=api_key,
   )
 
