@@ -17,7 +17,7 @@ def main():
     project_id = os.environ.get("PROJECT_ID")
     location = os.environ.get("LOCATION", "global")
     base_url = os.environ.get("BASE_URL")
-    
+    api_key = os.environ.get("API_KEY")
     
     http_opts = types.HttpOptions(base_url=base_url) if base_url else None
 
