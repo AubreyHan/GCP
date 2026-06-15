@@ -5,7 +5,7 @@ gcloud iam service-accounts add-iam-policy-binding \
     --role="roles/iam.serviceAccountTokenCreator"
 
 curl -X POST \
-  -H "Authorization: Bearer $(gcloud auth application-default print-access-token)" \
+  -H "Authorization: Bearer $(gcloud auth print-access-token --impersonate-service-account=demo001-20260615-001del@hy-ai-demo.iam.gserviceaccount.com)" \
   -H "Content-Type: application/json; charset=utf-8" \
   -d '{
     "contents": {
