@@ -1,1 +1,2 @@
 # get access token
+echo $(gcloud auth application-default print-access-token)
