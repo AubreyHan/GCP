@@ -9,7 +9,7 @@ export TARGET_SA="demo001-20260615-002del@hy-ai-demo.iam.gserviceaccount.com"
 # 这一步会绕过本地 ADC 缓存，直接调用 IAM 接口，用你当前的个人登录凭据现场换取服务账号的 Access Token
 echo "正在尝试模拟服务账号并生成临时 Token..."
 export IMPERSONATED_TOKEN=$(gcloud auth print-access-token \
-    --impersonate-service-account="${TARGET_SA)")
+    --impersonate-service-account="${TARGET_SA}")
 
 # 简单验证 Token 是否成功拿到
 if [ -z "$IMPERSONATED_TOKEN" ]; then
