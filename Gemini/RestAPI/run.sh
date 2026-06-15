@@ -3,7 +3,7 @@
 export PROJECT_ID="hy-ai-demo"
 
 # 你想要假冒的目标服务账号
-export TARGET_SA="demo001-20260615-002del@hy-ai-demo.iam.gserviceaccount.com"
+export TARGET_SA="demo001-20260615-001del@hy-ai-demo.iam.gserviceaccount.com"
 
 # ==================== 2. 核心：动态模拟换票 ====================
 # 这一步会绕过本地 ADC 缓存，直接调用 IAM 接口，用你当前的个人登录凭据现场换取服务账号的 Access Token
