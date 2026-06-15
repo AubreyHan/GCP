@@ -5,6 +5,8 @@ import os
 
 load_dotenv(override=True)
 
+
+
 api_key = os.environ.get("API_KEY")
 
 def generate():
