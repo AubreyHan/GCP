@@ -18,6 +18,7 @@ def main():
     location = os.environ.get("LOCATION", "global")
     base_url = os.environ.get("BASE_URL")
     
+    
     http_opts = types.HttpOptions(base_url=base_url) if base_url else None
 
     client = genai.Client(
