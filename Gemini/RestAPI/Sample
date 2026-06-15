@@ -2,4 +2,4 @@
 echo $(gcloud auth application-default print-access-token)
 
 # 授权服务账号
-export GOOGLE_APPLICATION_CREDENTIALS="/Users/yourname/keys/001.json"
+export GOOGLE_APPLICATION_CREDENTIALS="/Users/aubreyhan/Tools/git_repo/GCP/Gemini/sa_key/keys/001.json"
