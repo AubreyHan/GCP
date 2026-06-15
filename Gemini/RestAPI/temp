@@ -1,55 +1,16 @@
-cat << EOF > request.json
-{
-    "contents": [
-        {
-            "role": "user",
-            "parts": [
-                {
-                    "text": "hello"
-                }
-            ]
-        }
-    ]
-    , "generationConfig": {
-        "temperature": 1
-        ,"maxOutputTokens": 65535
-        ,"topP": 0.95
-        ,"thinkingConfig": {
-            "thinkingLevel": "MEDIUM"
-        }
-    },
-    "safetySettings": [
-        {
-            "category": "HARM_CATEGORY_HATE_SPEECH",
-            "threshold": "OFF"
-        },
-        {
-            "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
-            "threshold": "OFF"
-        },
-        {
-            "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
-            "threshold": "OFF"
-        },
-        {
-            "category": "HARM_CATEGORY_HARASSMENT",
-            "threshold": "OFF"
-        }
-    ]
-    , "tools": [
-      {
-        "googleSearch": {}
+curl -X POST \
+  -H "Authorization: Bearer ${ACCESS_TOKEN}" \
+  -H "Content-Type: application/json; charset=utf-8" \
+  -d '{
+    "contents": {
+      "role": "user",
+      "parts": {
+        "text": "请简述什么是谷歌云的应用默认凭据（ADC）？"
       }
-    ]
-}
-EOF
-
-API_KEY="<YOUR_API_KEY>"
-API_ENDPOINT="aiplatform.googleapis.com"
-MODEL_ID="gemini-3.5-flash"
-GENERATE_CONTENT_API="streamGenerateContent"
-
-curl \
--X POST \
--H "Content-Type: application/json" \
-"https://aiplatform.googleapis.com/v1/publishers/google/models/gemini-3.5-flash:${GENERATE_CONTENT_API}?key=${API_KEY}" -d '@request.json'
+    },
+    "generationConfig": {
+      "temperature": 0.2,
+      "maxOutputTokens": 1024
+    }
+  }' \
+  "https://us-central1-aiplatform.googleapis.com/v1/projects/${PROJECT_ID}/locations/us-central1/publishers/google/models/gemini-1.5-flash-001:generateContent"
