@@ -23,9 +23,9 @@ def main():
 
     client = genai.Client(
         api_key=api_key,
-        project=project_id,
-        location=location,
-        http_options=http_opts,
+        #project=project_id,
+        #location=location,
+        #http_options=http_opts,
         vertexai=True,
     )
     
