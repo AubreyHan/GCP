@@ -1,4 +1,4 @@
-export GOOGLE_APPLICATION_CREDENTIALS="/Users/aubreyhan/Tools/git_repo/GCP/Gemini/sa_key/001.json"
+export GOOGLE_APPLICATION_CREDENTIALS="/Users/aubreyhan/Tools/git_repo/GCP/Gemini/sa_key/002.json"
 
 curl -X POST \
   -H "Authorization: Bearer $(gcloud auth application-default print-access-token)" \
