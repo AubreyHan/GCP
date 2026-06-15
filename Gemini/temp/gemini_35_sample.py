@@ -1,12 +1,16 @@
 from google import genai
 from google.genai import types
-import base64
+from dotenv import load_dotenv
 import os
+
+load_dotenv(override=True)
+
+api_key = os.environ.get("API_KEY")
 
 def generate():
   client = genai.Client(
       vertexai=True,
-      api_key=os.environ.get("GOOGLE_CLOUD_API_KEY"),
+      api_key=api_key,
   )
 
 
