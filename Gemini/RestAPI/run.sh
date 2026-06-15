@@ -38,4 +38,4 @@ curl -X POST \
         "maxOutputTokens": 1024
     }
 }' \
-  "https://aiplatform.googleapis.com/v1/projects/hy-ai-demo/locations/global/publishers/google/models/gemini-3.5-flash:generateContent"
+  "https://aiplatform.googleapis.com/v1/projects/hy-ai-demo/locations/global/publishers/google/models/gemini-2.5-flash:generateContent"
