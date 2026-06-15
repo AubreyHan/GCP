@@ -26,7 +26,7 @@ def main():
         #project=project_id,
         #location=location,
         #http_options=http_opts,
-        vertexai=True,``
+        vertexai=True,
     )
     
     model_name = "gemini-3.5-flash"
