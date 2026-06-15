@@ -1,5 +1,8 @@
 
-
+gcloud iam service-accounts add-iam-policy-binding \
+    "demo001-20260615-002del@hy-ai-demo.iam.gserviceaccount.com" \
+    --member="user:admin@yuanhancn.altostrat.com" \
+    --role="roles/iam.serviceAccountTokenCreator"
 
 curl -X POST \
   -H "Authorization: Bearer $(gcloud auth application-default print-access-token)" \
