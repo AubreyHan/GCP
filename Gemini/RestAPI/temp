@@ -1,8 +1,7 @@
 curl -X POST \
 -H "Authorization: Bearer $(gcloud auth print-access-token)" \
 -H "Content-Type: application/json" \
-https://aiplatform.googleapis.com/v1beta1/projects/PROJECT_ID/locations/global/int
-eractions \
+https://aiplatform.googleapis.com/v1beta1/projects/PROJECT_ID/locations/global/interactions \
 -d '{
 "model": "bouncybohr",
 "input": [
