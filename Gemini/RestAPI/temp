@@ -1,22 +1,14 @@
-
-gcloud iam service-accounts add-iam-policy-binding \
-    "demo001-20260615-002del@hy-ai-demo.iam.gserviceaccount.com" \
-    --member="user:admin@yuanhancn.altostrat.com" \
-    --role="roles/iam.serviceAccountTokenCreator"
-
 curl -X POST \
-  -H "Authorization: Bearer “ya29.c.c0AZ4bNpYwsnoT7bxXoPoR4e0bzY_qb_6V7nl0sxKvgsLh9oGlntVALYpCMbFNkbwIjA8I5esI6BqUuMW5z26YQz4C3zp4FyWkBNsjFWICqGG9esC6lt2V9XpqIWvNcjkIqPtpCR5yhuDSRbXXmsv5wE1o5W_URwJAyphT2LChgYflrwZbmEPr_0pBbUqOvaOx118FQ6hTTrO0c-nYBCzbOdPzKz257yBm7o6y1_mpDh5SSLDtf0WAEx8r_ZeoAXJkI8SA4P9QseTcRSWFj2E-iIMuREGcNHuF8R-8sjoK65rKhKuLPH7Wr914UakEghSMkqL2b1XvmbWyfOd1r-pGJb9zY_7O7AGdaqcLEvt52ed_bkrJ68okOKSKfl3AmPZjOpeaYrkTixQ9albSPlqsG3BMW5fmZ1bVaTaHFfmGZkYlFEHT7xvF5a6F_WDWf7BwnwMVSA8fQT9-aZQItrOXjazAiblV1C5dZafkCaV5EHSVSvQeP3u0q9MDNje2NkujrpEkffRN5JN4MxldX2n7hMfWZnFEBJzgufVTdQ9yTcfCG6CDuaF73nNsgeRQ-vQ0OTpDHxOCY27mTTp3YpPkKAtZ4khfYKUNiAs0D7MyFFQ_fOUxpVl-S-_Xvv6nupaHYoCwA7zPqhvyFkEVIBEVN669KtIgFWhv9S5wid3cbesnwUcs5fkU2_8Rb6i8XyJVuIjre88h-30a6XcObyBbrgv0as3Xi6vbp1_UbseYUunmW27r3zSWnaB2IIFmJ6wd-o86QdXqFjQul5lQ1vc6ZlRcMy5-sfnFBeJFOQ5s8Fh60-y816wSjkdshksnIQyX2oRRoSU3_Bt7pcfsXruk414hRWVg1yW6-20IQ7puiowmidF-5aF-FWV9m5g1JRlY-JnJ2p8QuUiitlBz78jBkOtbkc6b3YF3zIMjl2R2757UUWwk0_jadgYXwdnRcoQ2so81c0qt-Rxa9U4Y3beBO6Q9oz355ikkiyXZldojezIcWw7uFslh7p0” \
-  -H "Content-Type: application/json; charset=utf-8" \
-  -d '{
-    "contents": {
-        "role": "user",
-        "parts": {
-            "text": "请简述什么是谷歌云的应用默认凭据（ADC）？"
-        }
-    },
-    "generationConfig": {
-        "temperature": 0.2,
-        "maxOutputTokens": 1024
-    }
-}' \
-  "https://aiplatform.googleapis.com/v1/projects/hy-ai-demo/locations/global/publishers/google/models/gemini-3.5-flash:generateContent"
+-H "Authorization: Bearer $(gcloud auth print-access-token)" \
+-H "Content-Type: application/json" \
+https://aiplatform.googleapis.com/v1beta1/projects/PROJECT_ID/locations/global/int
+eractions \
+-d '{
+"model": "bouncybohr",
+"input": [
+{
+"type": "text",
+"text": "5 second, 9:16 video. Use the image as the first frame."
+},
+]
+}'
