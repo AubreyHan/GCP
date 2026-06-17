@@ -4,6 +4,7 @@ curl -X POST \
 https://aiplatform.googleapis.com/v1beta1/projects/PROJECT_ID/locations/global/interactions \
 -d '{
 "model": "bouncybohr",
+"background": true,
 "input": [
 {
 "type": "text",
