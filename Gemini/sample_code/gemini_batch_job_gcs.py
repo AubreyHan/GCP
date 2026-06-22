@@ -6,7 +6,7 @@ from Gemini.loopit.loopit import project_id
 
 client = genai.Client(
   enterprise=True,
-  project='hy-ai-demo',
+  project='cloud-llm-preview4',
   location='global'
 )
 
