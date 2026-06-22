@@ -16,3 +16,17 @@ job = client.batches.create(
   config=CreateBatchJobConfig(dest='gs://hy-ai-bucket')
 )
 
+print(f"Job name: {job.name}")
+print(f"Job state: {job.state}")
+
+completed_states = {
+    JobState.JOB_STATE_SUCCEEDED,
+    JobState.JOB_STATE_FAILED,
+    JobState.JOB_STATE_CANCELLED,
+    JobState.JOB_STATE_PAUSED,
+}
+
+while job.state not in completed_states:
+    time.sleep(30)
+    job = client.batches.get(name=job.name)
+    print(f"Job state: {job.state}")
