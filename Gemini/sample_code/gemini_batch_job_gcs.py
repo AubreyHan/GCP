@@ -4,6 +4,6 @@ from google.genai.types import CreateBatchJobConfig, JobState, HttpOptions
 
 from Gemini.loopit.loopit import project_id
 
-client = genai.client(
-
+client = genai.Client(
+  
 )
