@@ -9,7 +9,7 @@ client = genai.Client(
 )
 
 job = client.batches.create(
-  model='gemini-3.0-flash-',
+  model='gemini-3.0-flash-preview',
   src='gs://cloud-samples-data/batch/prompt_for_batch_gemini_predict.jsonl',
   config=CreateBatchJobConfig(dest='gs://hy-ai-bucket')
 )
