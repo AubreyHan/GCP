@@ -12,6 +12,7 @@ client = genai.Client(
 
 job = client.batches.create(
   model='gemini-2.5-flash',
-  src='https://storage.googleapis.com/cloud-samples-data/generative-ai/batch/batch_requests_for_multimodal_input_2.jsonl',
-  config=CreateBatchJobConfig()
-),
+  src='gs://cloud-samples-data/batch/prompt_for_batch_gemini_predict.jsonl',
+  config=CreateBatchJobConfig(dest='gs://hy-ai-bucket')
+)
+
