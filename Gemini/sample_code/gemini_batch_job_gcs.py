@@ -4,7 +4,7 @@ from google.genai.types import CreateBatchJobConfig, JobState, HttpOptions
 
 client = genai.Client(
   enterprise=True,
-  project='cloud-llm-preview4',
+  project='hy-ai-demo',
   location='global'
 )
 
