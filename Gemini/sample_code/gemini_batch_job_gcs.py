@@ -7,5 +7,10 @@ from Gemini.loopit.loopit import project_id
 client = genai.Client(
   enterprise=True,
   project='hy-ai-demo',
-  location=
+  location='global'
+)
+
+job = client.batches.create(
+  model='gemini-2.5-flash',
+  src=
 )
