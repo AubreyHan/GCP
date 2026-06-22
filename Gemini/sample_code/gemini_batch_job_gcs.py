@@ -12,5 +12,6 @@ client = genai.Client(
 
 job = client.batches.create(
   model='gemini-2.5-flash',
-  src=''
-)
+  src='https://storage.googleapis.com/cloud-samples-data/generative-ai/batch/batch_requests_for_multimodal_input_2.jsonl',
+  config=CreateBatchJobConfig()
+),
