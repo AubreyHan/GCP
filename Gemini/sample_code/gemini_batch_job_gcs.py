@@ -12,5 +12,5 @@ client = genai.Client(
 
 job = client.batches.create(
   model='gemini-2.5-flash',
-  src=
+  src=''
 )
