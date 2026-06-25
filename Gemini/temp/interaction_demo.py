@@ -7,4 +7,7 @@ from dotenv import load_dotenv
 if load_dotenv(override=True):
   pass
 
-client = gen
+client = genai.Client(
+  enterprise=True,
+  api_key=
+)
