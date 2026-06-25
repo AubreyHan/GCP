@@ -10,5 +10,5 @@ if load_dotenv(override=True):
 
 client = genai.Client(
   enterprise=True,
-  api_key=
+  api_key=os.
 )
