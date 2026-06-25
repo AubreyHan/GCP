@@ -51,7 +51,7 @@ generate_content_config = types.GenerateContentConfig(
   ),
 )
 
-resopnse = genai.interactions.agent(
+resopnse = genai.interactions.crea(
   model=model,
   config=generate_content_config,
   contents=contents
