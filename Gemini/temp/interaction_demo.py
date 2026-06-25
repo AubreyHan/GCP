@@ -15,7 +15,8 @@ api_key = os.environ.get("API_KEY")
 
 client = genai.Client(
   enterprise=True,
-  api_key=api_key
+  api_key=api_keyclear
+  
 )
 
 model = "gemini-3.5-flash"
