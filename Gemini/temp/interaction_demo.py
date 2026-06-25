@@ -46,7 +46,6 @@ generate_content_config = types.GenerateContentConfig(
     category="HARM_CATEGORY_HARASSMENT",
     threshold="OFF"
   )],
-  tools = tools,
   thinking_config=types.ThinkingConfig(
     thinking_level="MEDIUM",
   ),
