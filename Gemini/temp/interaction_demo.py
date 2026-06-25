@@ -10,7 +10,7 @@ if load_dotenv(override=True):
 
 api_key = os.environ.get("API_KEY")
 
-print(ap)
+print(api_key)
 
 client = genai.Client(
   enterprise=True,
