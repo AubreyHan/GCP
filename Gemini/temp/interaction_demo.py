@@ -8,7 +8,12 @@ import os
 if load_dotenv(override=True):
   pass
 
+api_key = os.environ.get("API_KEY")
+
+print(ap)
+
 client = genai.Client(
   enterprise=True,
-  api_key=os.
+  api_key=os.environ.get("API_KEY")
 )
+
