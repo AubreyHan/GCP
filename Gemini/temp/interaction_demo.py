@@ -20,7 +20,7 @@ client = genai.Client(
 
 )
 
-model = "gemini-3.5-flash"
+model = "gemini-3.1-pro-preview"
 interaction = client.interactions.create(
     model='gemini-3.5-flash',
     input='Tell me a short joke about programming.'
