@@ -16,5 +16,13 @@ client = genai.Client(
   api_key=api_key
 )
 
-
+model = "gemini-3.5-flash"
+  contents = [
+    types.Content(
+      role="user",
+      parts=[
+        types.Part.from_text(text="""hello""")
+      ]
+    )
+  ]
 
