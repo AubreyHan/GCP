@@ -17,12 +17,15 @@ client = genai.Client(
 )
 
 model = "gemini-3.5-flash"
-  contents = [
-    types.Content(
-      role="user",
-      parts=[
-        types.Part.from_text(text="""hello""")
-      ]
-    )
-  ]
+
+contents = [
+  types.Content(
+    role="user",
+    parts=[
+      types.Part.from_text(text="""hello""")
+    ]
+  )
+]
+
+
 
