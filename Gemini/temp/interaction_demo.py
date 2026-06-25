@@ -15,7 +15,8 @@ api_key = os.environ.get("API_KEY")
 
 client = genai.Client(
   enterprise=True,
-  api_key=api_key
+  project="hy-ai-demo",
+  location=
 
 )
 
