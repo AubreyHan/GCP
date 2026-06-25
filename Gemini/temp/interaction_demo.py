@@ -5,6 +5,8 @@ from google.genai.types import HttpOptions
 from dotenv import load_dotenv
 import os
 
+from pydantic import config
+
 if load_dotenv(override=True):
   pass
 
@@ -51,7 +53,11 @@ generate_content_config = types.GenerateContentConfig(
 )
 
 resopnse = genai.interactions.agent(
-  model
+  model=model,
+  config=generate_content_config
+  contents=contents
 )
+
+print(resopnse)
 
 
