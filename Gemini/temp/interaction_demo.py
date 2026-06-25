@@ -54,7 +54,7 @@ generate_content_config = types.GenerateContentConfig(
 resopnse_turn01 = client.interactions.create(
   model=model,
   generation_config=generate_content_config,
-  contents=contents
+  input="who are you"
 )
 
 print(resopnse_turn01)
