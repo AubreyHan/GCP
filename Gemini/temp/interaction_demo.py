@@ -50,6 +50,6 @@ generate_content_config = types.GenerateContentConfig(
   ),
 )
 
-gen
+resopnse = genai.interactions.
 
 
