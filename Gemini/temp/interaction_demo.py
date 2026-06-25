@@ -3,6 +3,7 @@ from google.genai import types
 from google.genai.types import HttpOptions
 
 from dotenv import load_dotenv
+import os
 
 if load_dotenv(override=True):
   pass
