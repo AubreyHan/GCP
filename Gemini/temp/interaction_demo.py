@@ -51,12 +51,12 @@ generate_content_config = types.GenerateContentConfig(
   ),
 )
 
-resopnse = client.(
+resopnse_turn01 = client.interactions.create(
   model=model,
   config=generate_content_config,
   contents=contents
 )
 
-print(resopnse)
+print(resopnse_turn01)
 
 
