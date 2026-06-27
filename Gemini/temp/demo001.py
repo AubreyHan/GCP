@@ -15,7 +15,7 @@ client = genai.Client(
     location=location
 )
 
-model = "projects/939090871257/locations/asia-southeast1/publishers/google/models/gemini-3-pro-image"
+model = "projects/939090871257/locations/global/publishers/google/models/gemini-3-pro-image"
 
 start_time = time.time()
 
