@@ -8,11 +8,11 @@ if load_dotenv(override=True):
     projec_id = os.getenv("PROJECT_ID")
     location = os.getenv("LOCATION")
     base_url = os.getenv("BASE_URL")
-    api_key = os.getenv("API_KEY")
 
 client = genai.Client(
     enterprise=True,
-    api_key=api_key
+    project=projec_id,
+    location=location
 )
 
 model = "projects/939090871257/locations/global/publishers/google/models/gemini-3-pro-image"
@@ -63,15 +63,23 @@ response = client.models.generate_content(
 import uuid
 
 print("Response generated.")
+print(f"Response type: {type(response)}")
+print(f"Response candidates: {getattr(response, 'candidates', None)}")
 
 if response.candidates and response.candidates[0].content.parts:
     part = response.candidates[0].content.parts[0]
+    print(f"Part type: {type(part)}")
+    print(f"Part attributes: {dir(part)}")
     image_bytes = None
     
     if hasattr(part, "inline_data") and part.inline_data:
         image_bytes = part.inline_data.data
+        print("Found inline_data.")
     elif hasattr(part, "image") and part.image:
         image_bytes = part.image.image_bytes
+        print("Found image.image_bytes.")
+    elif hasattr(part, "file_data") and part.file_data:
+        print("Found file_data, but don't know how to download it yet.")
         
     if image_bytes:
         random_filename = f"{uuid.uuid4().hex}.png"
@@ -79,6 +87,6 @@ if response.candidates and response.candidates[0].content.parts:
             f.write(image_bytes)
         print(f"Saved generated image to {random_filename}")
     else:
-        print("No image data found in the response.")
+        print("No image data found in the response. Full part data:", part)
 else:
-    print("No candidates found in the response.")
+    print("No candidates found in the response. Full response:", response)
