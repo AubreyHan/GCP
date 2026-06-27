@@ -15,7 +15,7 @@ client = genai.Client(
     api_key=api_key,
 )
 
-model = "gemini-3.5-flash"
+model = "gemini-3.1-pro-preview"
 
 start_time = time.time()
 
