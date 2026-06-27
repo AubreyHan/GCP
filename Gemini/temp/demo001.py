@@ -21,4 +21,6 @@ model = "gemini-3.1-flash-lite"
 
 start_time = time.time()
 
+contents = "how tall is the eiffel tower?"
+
 
