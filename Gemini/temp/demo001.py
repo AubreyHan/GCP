@@ -69,5 +69,4 @@ response = client.models.generate_content(
 
 end_time = time.time()
 print(f"Time taken: {end_time - start_time:.2f} seconds")
-print("Response:")
-print(response.text)
+
