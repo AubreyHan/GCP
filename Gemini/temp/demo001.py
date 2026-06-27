@@ -47,6 +47,11 @@ generate_content_config = types.GenerateContentConfig(
     category="HARM_CATEGORY_HARASSMENT",
     threshold="OFF"
   )],
+  image_config=types.ImageConfig(
+      aspect_ratio="1:1",
+      image_size="2K",
+      output_mime_type="image/png",
+    ),
 )
 
 response = client.models.generate_content(
