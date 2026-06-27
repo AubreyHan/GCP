@@ -11,12 +11,14 @@ if load_dotenv(override=True):
     location = os.getenv("LOCATION")
     base_url = os.getenv("BASE_URL")
 
-
-print(projec_id, location,base_url)
-    
-
-
 client = genai.Client(
     enterprise=True,
-    project=
+    project=projec_id,
+    location=location
 )
+
+model = "gemini-3.1-flash-lite"
+
+start_time = time.time()
+
+
