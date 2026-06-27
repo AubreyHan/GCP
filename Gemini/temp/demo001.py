@@ -17,5 +17,6 @@ print(projec_id, location,base_url)
 
 
 client = genai.Client(
-    api_key=os.getenv("GOOGLE_API_KEY"),
+    enterprise=True,
+    project=
 )
