@@ -12,9 +12,9 @@ if load_dotenv(override=True):
     base_url = os.getenv("BASE_URL")
 
 
-print(projec_id)
+print(projec_id, location,base_url)
     
 
 
-#client = genai.Client(
-#)
+client = genai.Client(
+)
