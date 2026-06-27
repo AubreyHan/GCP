@@ -4,14 +4,14 @@ from google.genai import types
 import os
 import time
 
-if load_dotenv(override=True):
-    projec_id = os.getenv("PROJECT_ID")
-    location = os.getenv("LOCATION")
-    base_url = os.getenv("BASE_URL")
+load_dotenv(override=True)
+project_id = os.getenv("PROJECT_ID")
+location = os.getenv("LOCATION")
+base_url = os.getenv("BASE_URL")
 
 client = genai.Client(
     enterprise=True,
-    project=projec_id,
+    project=project_id,
     location=location
 )
 
