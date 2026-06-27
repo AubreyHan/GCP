@@ -4,6 +4,8 @@ from google.genai import types
 import os
 import time
 
+from Gemini.temp.gemini_35_sample import api_key
+
 if load_dotenv(override=True):
     projec_id = os.getenv("PROJECT_ID")
     location = os.getenv("LOCATION")
@@ -56,7 +58,7 @@ generate_content_config = types.GenerateContentConfig(
 
 response = client.models.generate_content(
     model=model,
-    api
+    api_key=api_key
 )
 
 import uuid
