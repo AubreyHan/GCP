@@ -4,8 +4,8 @@ from google.genai import types
 import os
 import time
 
-load_dotenv(override=True)
-project_id = os.getenv("PROJECT_ID")
+if load_dotenv(override=True):
+    projec_id = os.getenv("PROJECT_ID")
 location = os.getenv("LOCATION")
 base_url = os.getenv("BASE_URL")
 
@@ -67,3 +67,7 @@ response = client.models.generate_content(
     config=generate_content_config,
 )
 
+end_time = time.time()
+print(f"Time taken: {end_time - start_time:.2f} seconds")
+print("Response:")
+print(response.text)
