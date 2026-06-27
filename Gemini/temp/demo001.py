@@ -6,10 +6,10 @@ from dotenv import load_dotenv
 import os
 import time
 
-if load_dotenv(overload=True):
-    pass
+if load_dotenv(override=True):
+    api_key = os.getenv("API_KEY")
 
-api_key = os.getenv("API_KEY")
+
 
 print(f"API Key: {api_key}")
     
