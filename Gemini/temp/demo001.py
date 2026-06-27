@@ -9,9 +9,11 @@ import time
 if load_dotenv(overload=True):
     pass
 
-api_key = os.getenv("GOOGLE_API_KEY")
+api_key = os.getenv("API_KEY")
+
+print(f"API Key: {api_key}")
     
 
 
-client = genai.Client(
-)
+#client = genai.Client(
+#)
