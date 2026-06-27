@@ -8,11 +8,11 @@ if load_dotenv(override=True):
     projec_id = os.getenv("PROJECT_ID")
     location = os.getenv("LOCATION")
     base_url = os.getenv("BASE_URL")
+    api_key = os.getenv("API_KEY")
 
 client = genai.Client(
     enterprise=True,
-    project=projec_id,
-    location=location
+    api_key=api_key
 )
 
 model = "projects/939090871257/locations/global/publishers/google/models/gemini-3-pro-image"
