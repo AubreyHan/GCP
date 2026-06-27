@@ -1,8 +1,6 @@
-from http import client
-from typing import overload
-
 from google import genai
 from dotenv import load_dotenv
+from google.genai import types
 import os
 import time
 
