@@ -61,7 +61,7 @@ generate_content_config = types.GenerateContentConfig(
   )],
 )
 
-respnse = client.models.generate_content(
+response = client.models.generate_content(
     model=model,
     contents=contents,
     config=generate_content_config,
