@@ -7,11 +7,12 @@ import os
 import time
 
 if load_dotenv(override=True):
-    api_key = os.getenv("API_KEY")
+    projec_id = os.getenv("PROJECT_ID")
+    location = os.getenv("LOCATION")
+    base_url = os.getenv("BASE_URL")
 
 
-
-print(f"API Key: {api_key}")
+print(projec_id)
     
 
 
