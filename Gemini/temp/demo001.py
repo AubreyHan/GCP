@@ -56,8 +56,7 @@ generate_content_config = types.GenerateContentConfig(
 
 response = client.models.generate_content(
     model=model,
-    contents=contents,
-    config=generate_content_config,
+    api
 )
 
 import uuid
