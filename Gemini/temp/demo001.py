@@ -8,11 +8,11 @@ load_dotenv(override=True)
 project_id = os.getenv("PROJECT_ID")
 location = os.getenv("LOCATION")
 base_url = os.getenv("BASE_URL")
+api_key = os.getenv("API_KEY")
 
 client = genai.Client(
     enterprise=True,
-    project=project_id,
-    location=location
+    api_key=api_key,
 )
 
 model = "gemini-3.1-flash-lite"
