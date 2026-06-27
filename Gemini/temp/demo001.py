@@ -55,6 +55,6 @@ response = client.models.generate_content(
     config=generate_content_config,
 )
 
-print("Response:")
+print(response)
 
 
