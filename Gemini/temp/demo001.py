@@ -4,7 +4,6 @@ from google.genai import types
 import os
 import time
 
-from Gemini.temp.gemini_35_sample import api_key
 
 if load_dotenv(override=True):
     projec_id = os.getenv("PROJECT_ID")
