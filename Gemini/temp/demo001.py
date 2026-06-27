@@ -60,6 +60,25 @@ response = client.models.generate_content(
     config=generate_content_config,
 )
 
-print(response)
+import uuid
 
+print("Response generated.")
 
+if response.candidates and response.candidates[0].content.parts:
+    part = response.candidates[0].content.parts[0]
+    image_bytes = None
+    
+    if hasattr(part, "inline_data") and part.inline_data:
+        image_bytes = part.inline_data.data
+    elif hasattr(part, "image") and part.image:
+        image_bytes = part.image.image_bytes
+        
+    if image_bytes:
+        random_filename = f"{uuid.uuid4().hex}.png"
+        with open(random_filename, "wb") as f:
+            f.write(image_bytes)
+        print(f"Saved generated image to {random_filename}")
+    else:
+        print("No image data found in the response.")
+else:
+    print("No candidates found in the response.")
