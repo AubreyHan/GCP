@@ -29,7 +29,11 @@ contents = [
 generate_content_config = types.GenerateContentConfig(
     temperature=1,
     top_p=0.95
-    max_output_tokens=
+    max_output_tokens=65535,
+    response_modalities=["TEXT","Image"],
+    image_config=types.ImageConfig(
+        aspec
+    )
 )
 
 
