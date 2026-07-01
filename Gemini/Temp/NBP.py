@@ -28,12 +28,18 @@ contents = [
 
 generate_content_config = types.GenerateContentConfig(
     temperature=1,
-    top_p=0.95
+    top_p=0.95,
     max_output_tokens=65535,
     response_modalities=["TEXT","Image"],
     image_config=types.ImageConfig(
-        aspec
+        aspect_ratio="1:1",
+        image_size="1k",
+        output_mime_type="image/jpg"
     )
 )
 
+
+response = client.models.generate_content(
+    model=model
+)
 
