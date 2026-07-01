@@ -7,7 +7,6 @@ import os
 _ = load_dotenv(find_dotenv())  
 
 api_key = os.getenv("API_KEY")
-print(api_key)
 project_root = os.getenv("PROJECT_ROOT")
 
 client = genai.Client(
