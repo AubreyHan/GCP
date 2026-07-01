@@ -7,7 +7,7 @@ dotenv_path = "/root/git_repo/GCP/.env"
 _ = load_dotenv(dotenv_path=dotenv_path)  
 
 api_key = os.getenv("API_KEY")
-pt
+print(api_key)
 project_root = os.getenv("PROJECT_ROOT")
 
 client = genai.Client(
