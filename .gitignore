@@ -3,7 +3,7 @@
 
 #temp_output
 temp_output/*
-!
+!temp_output/.gitkeep
 
 #env
 .env
