@@ -1,10 +1,10 @@
 from google import genai
 from google.genai import client, types
-from dotenv import load_dotenv
+from dotenv import load_dotenv, find_dotenv
 import os
 
-dotenv_path = "/Users/aubreyhan/Tools/git_repo/GCP/.env"
-_ = load_dotenv(dotenv_path=dotenv_path)  
+#dotenv_path = "/Users/aubreyhan/Tools/git_repo/GCP/.env"
+_ = load_dotenv()  
 
 api_key = os.getenv("API_KEY")
 print(api_key)
