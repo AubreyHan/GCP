@@ -77,6 +77,7 @@ def print_simplified(obj):
                     simplify(v)
 
     simplify(cloned)
-    print(cloned)
+    from google.genai._common import _pretty_repr
+    print(_pretty_repr(cloned, max_items=9999, depth=20))
 
 print_simplified(response)
