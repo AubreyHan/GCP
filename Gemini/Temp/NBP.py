@@ -45,39 +45,38 @@ response = client.models.generate_content(
     contents=contents
 )
 
-def print_simplified(obj):
-    import copy
-    import pydantic
-    # Create a deep copy to keep the original response object intact
-    cloned = copy.deepcopy(obj)
-    
-    # Recursive helper to simplify fields in Pydantic models or collections
-    def simplify(node):
-        if isinstance(node, pydantic.BaseModel):
-            for field in list(type(node).model_fields.keys()):
-                val = getattr(node, field, None)
-                if val is None:
-                    continue
-                if field == "inline_data":
-                    if hasattr(val, "data") and isinstance(val.data, bytes):
-                        size = len(val.data)
-                        val.data = f"<bytes: {size}>".encode()
-                elif isinstance(val, bytes) and len(val) > 100:
-                    setattr(node, field, f"<bytes: {len(val)} Richmond>".encode() if False else f"<bytes: {len(val)}>".encode())
-                else:
-                    simplify(val)
-        elif isinstance(node, list):
-            for item in node:
-                simplify(item)
-        elif isinstance(node, dict):
-            for k, v in node.items():
-                if isinstance(v, bytes) and len(v) > 100:
-                    node[k] = f"<bytes: {len(v)}>".encode()
-                else:
-                    simplify(v)
+import google.genai._common as google_genai_common
 
-    simplify(cloned)
-    from google.genai._common import _pretty_repr
-    print(_pretty_repr(cloned, max_items=9999, depth=20))
+original_pretty_repr = google_genai_common._pretty_repr
+
+def custom_pretty_repr(
+    obj,
+    *,
+    indent_level=0,
+    indent_delta=2,
+    max_len=100,
+    max_items=9999,      # Prevent any "<... 1 more items ...>" list/dict truncations
+    depth=20,            # Prevent any "<... Max depth ...>" placeholders
+    visited=None,
+):
+    # Dynamically simplify large bytes objects (e.g. image inline_data, thought_signature)
+    if isinstance(obj, bytes) and len(obj) > 100:
+        return f"b'<bytes: {len(obj)}>'"
+        
+    return original_pretty_repr(
+        obj,
+        indent_level=indent_level,
+        indent_delta=indent_delta,
+        max_len=max_len,
+        max_items=max_items,
+        depth=depth,
+        visited=visited,
+    )
+
+# Apply global patch to google-genai representation module
+google_genai_common._pretty_repr = custom_pretty_repr
+
+def print_simplified(obj):
+    print(obj)
 
 print_simplified(response)
