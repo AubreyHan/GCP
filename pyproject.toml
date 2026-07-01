@@ -6,5 +6,6 @@ readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
     "google-genai>=2.10.0",
+    "pyopenssl>=26.3.0",
     "python-dotenv>=1.2.2",
 ]

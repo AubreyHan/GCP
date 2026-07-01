@@ -45,4 +45,38 @@ response = client.models.generate_content(
     contents=contents
 )
 
-print(response.model_dump_json(indent=2))
+def print_simplified(obj):
+    import copy
+    import pydantic
+    # Create a deep copy to keep the original response object intact
+    cloned = copy.deepcopy(obj)
+    
+    # Recursive helper to simplify fields in Pydantic models or collections
+    def simplify(node):
+        if isinstance(node, pydantic.BaseModel):
+            for field in list(type(node).model_fields.keys()):
+                val = getattr(node, field, None)
+                if val is None:
+                    continue
+                if field == "inline_data":
+                    if hasattr(val, "data") and isinstance(val.data, bytes):
+                        size = len(val.data)
+                        val.data = f"<bytes: {size}>".encode()
+                elif isinstance(val, bytes) and len(val) > 100:
+                    setattr(node, field, f"<bytes: {len(val)} Richmond>".encode() if False else f"<bytes: {len(val)}>".encode())
+                else:
+                    simplify(val)
+        elif isinstance(node, list):
+            for item in node:
+                simplify(item)
+        elif isinstance(node, dict):
+            for k, v in node.items():
+                if isinstance(v, bytes) and len(v) > 100:
+                    node[k] = f"<bytes: {len(v)}>".encode()
+                else:
+                    simplify(v)
+
+    simplify(cloned)
+    print(cloned)
+
+print_simplified(response)
