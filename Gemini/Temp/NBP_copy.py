@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 import os
 
 dotenv_path = "/root/git_repo/GCP/.env"
+
 _ = load_dotenv(dotenv_path=dotenv_path)  
 
 api_key = os.getenv("API_KEY")
