@@ -13,7 +13,7 @@ client = genai.Client(
     api_key=api_key
 )
 
-model = "gemini-3-pro-image"
+model = "gemini-3.1-flash-image"
 
 contents = [
     types.Content(
@@ -33,7 +33,7 @@ generate_content_config = types.GenerateContentConfig(
     response_modalities=["TEXT","Image"],
     image_config=types.ImageConfig(
         aspect_ratio="1:1",
-        image_size="4k",
+        image_size="1k",
         output_mime_type="image/jpeg"
     )
 )
