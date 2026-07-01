@@ -40,6 +40,9 @@ generate_content_config = types.GenerateContentConfig(
 
 
 response = client.models.generate_content(
-    model=model
+    model=model,
+    config=generate_content_config,
+    contents=contents
 )
 
+print(response)
