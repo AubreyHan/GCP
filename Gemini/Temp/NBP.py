@@ -18,9 +18,18 @@ model = "gemini-3-pro-image"
 contents = [
     types.Content(
         role="User",
-        types.Part=[
-            
+        parts=[
+            types.Part.from_text(text='''
+            一只小狗在草地上奔跑
+            ''')
         ]
     )
 ]
+
+generate_content_config = types.GenerateContentConfig(
+    temperature=1,
+    top_p=0.95
+    max_output_tokens=
+)
+
 
