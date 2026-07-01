@@ -7,6 +7,7 @@ dotenv_path = "/root/git_repo/GCP/.env"
 _ = load_dotenv(dotenv_path=dotenv_path)  
 
 api_key = os.getenv("API_KEY")
+project_root = os.getenv("PROJECT_ROOT")
 
 client = genai.Client(
     enterprise=True,
@@ -82,7 +83,7 @@ def print_simplified(obj):
 print_simplified(response)
 
 # --- Save inline images to temp_output ---
-project_root = "/root/git_repo/GCP"
+#project_root = "/root/git_repo/GCP"
 output_dir = os.path.join(project_root, "temp_output")
 os.makedirs(output_dir, exist_ok=True)
 
