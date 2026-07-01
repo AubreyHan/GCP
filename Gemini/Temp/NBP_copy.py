@@ -13,7 +13,7 @@ client = genai.Client(
     api_key=api_key
 )
 
-model = "gemini-3.1-flash-image"
+model = "gemini-3.1-flash-lite-image"
 
 contents = [
     types.Content(
