@@ -3,7 +3,8 @@ from google.genai import types
 from dotenv import load_dotenv
 import os
 
-load_dotenv  # pyright: ignore[reportUnusedExpression]
+dotenv_path = "/root/git_repo/GCP/.env"
+load_dotenv(dotenv_path=dotenv_path)  # pyright: ignore[reportUnusedExpression]
 
 api_key = os.getenv("API_KEY")
 print(api_key)
