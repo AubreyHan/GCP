@@ -82,7 +82,7 @@ def print_simplified(obj):
 print_simplified(response)
 
 # --- Save inline images to temp_output ---
-project_root = "/root/git_repo/uv/git_repo/GCP"
+project_root = "/root/git_repo/GCP"
 output_dir = os.path.join(project_root, "temp_output")
 os.makedirs(output_dir, exist_ok=True)
 
