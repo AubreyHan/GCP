@@ -2,7 +2,8 @@
 .DS_Store
 
 #temp_output
-temp_output
+temp_output/*
+!
 
 #env
 .env
