@@ -21,7 +21,7 @@ contents = [
         role="User",
         parts=[
             types.Part.from_text(text='''
-            一只小狗在草地上奔跑
+            一只小猫在草地上奔跑
             ''')
         ]
     )
