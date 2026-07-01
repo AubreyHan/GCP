@@ -33,7 +33,7 @@ generate_content_config = types.GenerateContentConfig(
     response_modalities=["TEXT","Image"],
     image_config=types.ImageConfig(
         aspect_ratio="1:1",
-        image_size="1k",
+        image_size="2k",
         output_mime_type="image/jpeg"
     )
 )
